@@ -28,7 +28,7 @@ xcodebuild -project VitaEpoch.xcodeproj -scheme VitaEpoch \
   -destination 'platform=iOS Simulator,name=iPhone 17 Pro' CODE_SIGNING_ALLOWED=NO test
 ```
 
-Core tests run independently of UIKit and Bluetooth. The Xcode test action runs a UI navigation/empty-state test. `scripts/generate_project.py` regenerates project references after adding Swift files; it requires only Python's standard library.
+Core tests run independently of UIKit and Bluetooth. The Xcode test action runs isolated empty-state and populated fixture tests for navigation, chart ranges, safe areas, and history rendering. `scripts/generate_project.py` regenerates project references after adding Swift files; it requires only Python's standard library.
 
 ## Architecture
 
@@ -39,7 +39,9 @@ Core tests run independently of UIKit and Bluetooth. The Xcode test action runs 
 - `Tests`: confirmed fixture tests plus explicitly synthetic paging/transport cases.
 - `UITests`: first-run navigation checks.
 
-The first build stores an atomic JSON archive in Application Support. It preserves all raw evidence without a retention cutoff. Before extended daily use, replace this adapter with indexed SQLite/SwiftData and batched background writes; the current whole-file writes are intended for initial device validation.
+The app stores an atomic JSON archive in Application Support. Parsing, query preparation, migration, and batched writes run on a background actor. Raw evidence has no retention cutoff; migration makes an exact backup and retains prior decodes. Indexed SQLite/SwiftData remains a future storage optimization for extended use.
+
+See [the correctness/stability report](docs/STABILITY_VALIDATION.md) for the real-device archive findings, capture-scoped timestamp correction, precise incomplete requests, fixture provenance, and remaining physical-validation requirements.
 
 ## Next milestones
 

@@ -1,321 +1,62 @@
 // !$*UTF8*$!
-{
-	archiveVersion = 1;
-	classes = {
-	};
-	objectVersion = 56;
-	objects = {
-
-/* Begin PBXBuildFile section */
-		066437371F9872CAFF11CFB1 /* VitaEpoch/UI/RootTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71345742EB90F4A7C9981103 /* VitaEpoch/UI/RootTabView.swift */; };
-		0E2A98F6F12E1EE8694691E4 /* VitaEpoch/VitaEpochApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DE0BD175571966120D4846 /* VitaEpoch/VitaEpochApp.swift */; };
-		499C271D1568AD9F7FE29D31 /* VitaEpoch/BLE/X6CentralManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A439CFE235833FEF52715C5 /* VitaEpoch/BLE/X6CentralManager.swift */; };
-		6ACBD72B6FFBFC89981ED835 /* VitaEpoch/UI/Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9132AD0A025889AD786D7B24 /* VitaEpoch/UI/Components.swift */; };
-		77D2BF585D67A1348020EB26 /* Sources/VitaEpochCore/Domain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2D709EA58F7960DEA01C38 /* Sources/VitaEpochCore/Domain.swift */; };
-		7C4AD7E54C3C3BA21F59C1E8 /* Sources/VitaEpochCore/LocalArchive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3ADB5CC4FAA006DBF5D389 /* Sources/VitaEpochCore/LocalArchive.swift */; };
-		7D8F590959318C6DAE1721BA /* VitaEpoch/UI/DeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298B09FE5102FD86880B2651 /* VitaEpoch/UI/DeviceView.swift */; };
-		8F69D2603037B23E80BB9FA3 /* UITests/VitaEpochUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDE1B02B46FB05CF1955EC0 /* UITests/VitaEpochUITests.swift */; };
-		A9CA2A786BEEF6D536FEAB97 /* VitaEpoch/UI/MetricDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BF1A9A1AFD64FC0F19BD54 /* VitaEpoch/UI/MetricDetailView.swift */; };
-		B1878186A9C7E71075F765FA /* VitaEpoch/Storage/AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89B82DF37C438A9AF5C2F54 /* VitaEpoch/Storage/AppStore.swift */; };
-		C39FCFF04BB63AD24B6EF823 /* Sources/VitaEpochCore/X6Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0068684CC189AA21EB44EF1 /* Sources/VitaEpochCore/X6Protocol.swift */; };
-/* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		D799BAE6088A90139B415FCC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 98F54143AB4E86B28C3AFEE0 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0E8A3AD980EC179856012B7E;
-			remoteInfo = VitaEpoch;
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXFileReference section */
-		298B09FE5102FD86880B2651 /* VitaEpoch/UI/DeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitaEpoch/UI/DeviceView.swift; sourceTree = SOURCE_ROOT; };
-		2D3ADB5CC4FAA006DBF5D389 /* Sources/VitaEpochCore/LocalArchive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sources/VitaEpochCore/LocalArchive.swift; sourceTree = SOURCE_ROOT; };
-		38A007151ABE87CC01A5B6E9 /* VitaEpoch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; path = VitaEpoch.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		4DDE1B02B46FB05CF1955EC0 /* UITests/VitaEpochUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITests/VitaEpochUITests.swift; sourceTree = SOURCE_ROOT; };
-		6A2D709EA58F7960DEA01C38 /* Sources/VitaEpochCore/Domain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sources/VitaEpochCore/Domain.swift; sourceTree = SOURCE_ROOT; };
-		70BF1A9A1AFD64FC0F19BD54 /* VitaEpoch/UI/MetricDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitaEpoch/UI/MetricDetailView.swift; sourceTree = SOURCE_ROOT; };
-		71345742EB90F4A7C9981103 /* VitaEpoch/UI/RootTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitaEpoch/UI/RootTabView.swift; sourceTree = SOURCE_ROOT; };
-		7A439CFE235833FEF52715C5 /* VitaEpoch/BLE/X6CentralManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitaEpoch/BLE/X6CentralManager.swift; sourceTree = SOURCE_ROOT; };
-		9132AD0A025889AD786D7B24 /* VitaEpoch/UI/Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitaEpoch/UI/Components.swift; sourceTree = SOURCE_ROOT; };
-		9D3AD977850B7EAC0E4F6585 /* VitaEpochUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = VitaEpochUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A89B82DF37C438A9AF5C2F54 /* VitaEpoch/Storage/AppStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitaEpoch/Storage/AppStore.swift; sourceTree = SOURCE_ROOT; };
-		D0068684CC189AA21EB44EF1 /* Sources/VitaEpochCore/X6Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sources/VitaEpochCore/X6Protocol.swift; sourceTree = SOURCE_ROOT; };
-		E2DE0BD175571966120D4846 /* VitaEpoch/VitaEpochApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitaEpoch/VitaEpochApp.swift; sourceTree = SOURCE_ROOT; };
-/* End PBXFileReference section */
-
-/* Begin PBXFrameworksBuildPhase section */
-		7561BFB015D8F536760CB671 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
-
-/* Begin PBXGroup section */
-		DC76E9F0C0006E8F919E0C51 = {
-			isa = PBXGroup;
-			children = (
-				6A2D709EA58F7960DEA01C38 /* Sources/VitaEpochCore/Domain.swift */,
-				2D3ADB5CC4FAA006DBF5D389 /* Sources/VitaEpochCore/LocalArchive.swift */,
-				D0068684CC189AA21EB44EF1 /* Sources/VitaEpochCore/X6Protocol.swift */,
-				7A439CFE235833FEF52715C5 /* VitaEpoch/BLE/X6CentralManager.swift */,
-				A89B82DF37C438A9AF5C2F54 /* VitaEpoch/Storage/AppStore.swift */,
-				9132AD0A025889AD786D7B24 /* VitaEpoch/UI/Components.swift */,
-				298B09FE5102FD86880B2651 /* VitaEpoch/UI/DeviceView.swift */,
-				70BF1A9A1AFD64FC0F19BD54 /* VitaEpoch/UI/MetricDetailView.swift */,
-				71345742EB90F4A7C9981103 /* VitaEpoch/UI/RootTabView.swift */,
-				E2DE0BD175571966120D4846 /* VitaEpoch/VitaEpochApp.swift */,
-				FBDC4F23F93125BBEEAE800C /* Products */,
-				4DDE1B02B46FB05CF1955EC0 /* UITests/VitaEpochUITests.swift */,
-			);
-			sourceTree = "<group>";
-		};
-		FBDC4F23F93125BBEEAE800C /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				38A007151ABE87CC01A5B6E9 /* VitaEpoch.app */,
-				9D3AD977850B7EAC0E4F6585 /* VitaEpochUITests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-/* End PBXGroup section */
-
-/* Begin PBXNativeTarget section */
-		0E8A3AD980EC179856012B7E /* VitaEpoch */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C57128001CE614BF8549D6BB /* Build configuration list for PBXNativeTarget "VitaEpoch" */;
-			buildPhases = (
-				BCE16DD0260827ECF338C787 /* Sources */,
-				7561BFB015D8F536760CB671 /* Frameworks */,
-				0189424A5A60FED329FA868E /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = VitaEpoch;
-			productName = VitaEpoch;
-			productReference = 38A007151ABE87CC01A5B6E9 /* VitaEpoch.app */;
-			productType = "com.apple.product-type.application";
-		};
-		D24B997AF00C71C20D86BE4D /* VitaEpochUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 3646145E0A90C6FF41610EFE /* Build configuration list for PBXNativeTarget "VitaEpochUITests" */;
-			buildPhases = (
-				95FC400A54C228DD62344224 /* Sources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DE58E2B17C19600779694943 /* PBXTargetDependency */,
-			);
-			name = VitaEpochUITests;
-			productName = VitaEpochUITests;
-			productReference = 9D3AD977850B7EAC0E4F6585 /* VitaEpochUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
-/* End PBXNativeTarget section */
-
-/* Begin PBXProject section */
-		98F54143AB4E86B28C3AFEE0 /* Project object */ = {
-			isa = PBXProject;
-			attributes = {
-				LastUpgradeCheck = 2640;
-			};
-			buildConfigurationList = 862894B703A6DEDF96A9DD6C /* Build configuration list for PBXProject "VitaEpoch" */;
-			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
-			hasScannedForEncodings = 0;
-			knownRegions = (
-				en,
-				Base,
-			);
-			mainGroup = DC76E9F0C0006E8F919E0C51;
-			productRefGroup = FBDC4F23F93125BBEEAE800C /* Products */;
-			projectDirPath = "";
-			projectRoot = "";
-			targets = (
-				0E8A3AD980EC179856012B7E /* VitaEpoch */,
-				D24B997AF00C71C20D86BE4D /* VitaEpochUITests */,
-			);
-		};
-/* End PBXProject section */
-
-/* Begin PBXResourcesBuildPhase section */
-		0189424A5A60FED329FA868E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
-/* Begin PBXSourcesBuildPhase section */
-		95FC400A54C228DD62344224 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8F69D2603037B23E80BB9FA3 /* UITests/VitaEpochUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BCE16DD0260827ECF338C787 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				77D2BF585D67A1348020EB26 /* Sources/VitaEpochCore/Domain.swift in Sources */,
-				7C4AD7E54C3C3BA21F59C1E8 /* Sources/VitaEpochCore/LocalArchive.swift in Sources */,
-				C39FCFF04BB63AD24B6EF823 /* Sources/VitaEpochCore/X6Protocol.swift in Sources */,
-				499C271D1568AD9F7FE29D31 /* VitaEpoch/BLE/X6CentralManager.swift in Sources */,
-				B1878186A9C7E71075F765FA /* VitaEpoch/Storage/AppStore.swift in Sources */,
-				6ACBD72B6FFBFC89981ED835 /* VitaEpoch/UI/Components.swift in Sources */,
-				7D8F590959318C6DAE1721BA /* VitaEpoch/UI/DeviceView.swift in Sources */,
-				A9CA2A786BEEF6D536FEAB97 /* VitaEpoch/UI/MetricDetailView.swift in Sources */,
-				066437371F9872CAFF11CFB1 /* VitaEpoch/UI/RootTabView.swift in Sources */,
-				0E2A98F6F12E1EE8694691E4 /* VitaEpoch/VitaEpochApp.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		DE58E2B17C19600779694943 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 0E8A3AD980EC179856012B7E /* VitaEpoch */;
-			targetProxy = D799BAE6088A90139B415FCC /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
-/* Begin XCBuildConfiguration section */
-		003254340176A76C2BC8F6D4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				GENERATE_INFOPLIST_FILE = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.vitaepoch.uitests;
-				PRODUCT_NAME = VitaEpochUITests;
-				SWIFT_VERSION = 6.0;
-				TEST_TARGET_NAME = VitaEpoch;
-			};
-			name = Release;
-		};
-		59CE1A55E3C0DC7EDB1A684D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				GENERATE_INFOPLIST_FILE = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.vitaepoch.uitests;
-				PRODUCT_NAME = VitaEpochUITests;
-				SWIFT_VERSION = 6.0;
-				TEST_TARGET_NAME = VitaEpoch;
-			};
-			name = Debug;
-		};
-		639A7CA24D39909E713B47F7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = C24DNX42WF;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = VitaEpoch;
-				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "VitaEpoch connects to your X6 band to sync health readings and activity to this iPhone.";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
-				MARKETING_VERSION = 0.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.omaralsaabi.vitaepoch;
-				PRODUCT_NAME = VitaEpoch;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		7082CC0B6FC1282FCEABD07A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = C24DNX42WF;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = VitaEpoch;
-				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "VitaEpoch connects to your X6 band to sync health readings and activity to this iPhone.";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
-				MARKETING_VERSION = 0.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.omaralsaabi.vitaepoch;
-				PRODUCT_NAME = VitaEpoch;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		89E1FD6268CC0F221A2BE178 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				SDKROOT = iphoneos;
-				SWIFT_VERSION = 6.0;
-			};
-			name = Debug;
-		};
-		E6DE6C99132752C914FEF632 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				SDKROOT = iphoneos;
-				SWIFT_VERSION = 6.0;
-			};
-			name = Release;
-		};
-/* End XCBuildConfiguration section */
-
-/* Begin XCConfigurationList section */
-		3646145E0A90C6FF41610EFE /* Build configuration list for PBXNativeTarget "VitaEpochUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				59CE1A55E3C0DC7EDB1A684D /* Debug */,
-				003254340176A76C2BC8F6D4 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		862894B703A6DEDF96A9DD6C /* Build configuration list for PBXProject "VitaEpoch" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				89E1FD6268CC0F221A2BE178 /* Debug */,
-				E6DE6C99132752C914FEF632 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C57128001CE614BF8549D6BB /* Build configuration list for PBXNativeTarget "VitaEpoch" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				7082CC0B6FC1282FCEABD07A /* Debug */,
-				639A7CA24D39909E713B47F7 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-/* End XCConfigurationList section */
-	};
-	rootObject = 98F54143AB4E86B28C3AFEE0 /* Project object */;
-}
+{ archiveVersion = 1; classes = {}; objectVersion = 56; objects = {
+182A40C4192BD926438A041E = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/VitaEpochCore/ArchiveWorker.swift"; sourceTree = SOURCE_ROOT; };
+9974990AAF1178F09B295F4C = { isa = PBXBuildFile; fileRef = 182A40C4192BD926438A041E; };
+6A2D709EA58F7960DEA01C38 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/VitaEpochCore/Domain.swift"; sourceTree = SOURCE_ROOT; };
+77D2BF585D67A1348020EB26 = { isa = PBXBuildFile; fileRef = 6A2D709EA58F7960DEA01C38; };
+A7D26A86617B99D999B90694 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/VitaEpochCore/LegacySyncAudit.swift"; sourceTree = SOURCE_ROOT; };
+E8280E2CFF087C014E468481 = { isa = PBXBuildFile; fileRef = A7D26A86617B99D999B90694; };
+2D3ADB5CC4FAA006DBF5D389 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/VitaEpochCore/LocalArchive.swift"; sourceTree = SOURCE_ROOT; };
+7C4AD7E54C3C3BA21F59C1E8 = { isa = PBXBuildFile; fileRef = 2D3ADB5CC4FAA006DBF5D389; };
+2B4B7E5CAC49CE4801CB45B0 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/VitaEpochCore/MetricQueries.swift"; sourceTree = SOURCE_ROOT; };
+738433B02054832B6795E14E = { isa = PBXBuildFile; fileRef = 2B4B7E5CAC49CE4801CB45B0; };
+18D0060E9FBDD3248EC619E1 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/VitaEpochCore/PacketProcessor.swift"; sourceTree = SOURCE_ROOT; };
+335F3230B22A10DA35BC1D52 = { isa = PBXBuildFile; fileRef = 18D0060E9FBDD3248EC619E1; };
+A552D0A68E5BF6F776B90222 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/VitaEpochCore/SyncDiagnostics.swift"; sourceTree = SOURCE_ROOT; };
+E124D030A9596BF53882FC38 = { isa = PBXBuildFile; fileRef = A552D0A68E5BF6F776B90222; };
+4FBD98333839A23FF4CBA617 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/VitaEpochCore/TimestampEvidence.swift"; sourceTree = SOURCE_ROOT; };
+ABA5F987BFAF6803547A8940 = { isa = PBXBuildFile; fileRef = 4FBD98333839A23FF4CBA617; };
+D0068684CC189AA21EB44EF1 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/VitaEpochCore/X6Protocol.swift"; sourceTree = SOURCE_ROOT; };
+C39FCFF04BB63AD24B6EF823 = { isa = PBXBuildFile; fileRef = D0068684CC189AA21EB44EF1; };
+7A439CFE235833FEF52715C5 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VitaEpoch/BLE/X6CentralManager.swift"; sourceTree = SOURCE_ROOT; };
+499C271D1568AD9F7FE29D31 = { isa = PBXBuildFile; fileRef = 7A439CFE235833FEF52715C5; };
+A89B82DF37C438A9AF5C2F54 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VitaEpoch/Storage/AppStore.swift"; sourceTree = SOURCE_ROOT; };
+B1878186A9C7E71075F765FA = { isa = PBXBuildFile; fileRef = A89B82DF37C438A9AF5C2F54; };
+9132AD0A025889AD786D7B24 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VitaEpoch/UI/Components.swift"; sourceTree = SOURCE_ROOT; };
+6ACBD72B6FFBFC89981ED835 = { isa = PBXBuildFile; fileRef = 9132AD0A025889AD786D7B24; };
+298B09FE5102FD86880B2651 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VitaEpoch/UI/DeviceView.swift"; sourceTree = SOURCE_ROOT; };
+7D8F590959318C6DAE1721BA = { isa = PBXBuildFile; fileRef = 298B09FE5102FD86880B2651; };
+70BF1A9A1AFD64FC0F19BD54 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VitaEpoch/UI/MetricDetailView.swift"; sourceTree = SOURCE_ROOT; };
+A9CA2A786BEEF6D536FEAB97 = { isa = PBXBuildFile; fileRef = 70BF1A9A1AFD64FC0F19BD54; };
+71345742EB90F4A7C9981103 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VitaEpoch/UI/RootTabView.swift"; sourceTree = SOURCE_ROOT; };
+066437371F9872CAFF11CFB1 = { isa = PBXBuildFile; fileRef = 71345742EB90F4A7C9981103; };
+E2DE0BD175571966120D4846 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VitaEpoch/VitaEpochApp.swift"; sourceTree = SOURCE_ROOT; };
+0E2A98F6F12E1EE8694691E4 = { isa = PBXBuildFile; fileRef = E2DE0BD175571966120D4846; };
+38A007151ABE87CC01A5B6E9 = { isa = PBXFileReference; explicitFileType = wrapper.application; path = VitaEpoch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+9D3AD977850B7EAC0E4F6585 = { isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = VitaEpochUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+FBDC4F23F93125BBEEAE800C = { isa = PBXGroup; children = (38A007151ABE87CC01A5B6E9,9D3AD977850B7EAC0E4F6585); name = Products; sourceTree = "<group>"; };
+DC76E9F0C0006E8F919E0C51 = { isa = PBXGroup; children = (182A40C4192BD926438A041E,6A2D709EA58F7960DEA01C38,A7D26A86617B99D999B90694,2D3ADB5CC4FAA006DBF5D389,2B4B7E5CAC49CE4801CB45B0,18D0060E9FBDD3248EC619E1,A552D0A68E5BF6F776B90222,4FBD98333839A23FF4CBA617,D0068684CC189AA21EB44EF1,7A439CFE235833FEF52715C5,A89B82DF37C438A9AF5C2F54,9132AD0A025889AD786D7B24,298B09FE5102FD86880B2651,70BF1A9A1AFD64FC0F19BD54,71345742EB90F4A7C9981103,E2DE0BD175571966120D4846,FBDC4F23F93125BBEEAE800C,4DDE1B02B46FB05CF1955EC0); sourceTree = "<group>"; };
+BCE16DD0260827ECF338C787 = { isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (9974990AAF1178F09B295F4C,77D2BF585D67A1348020EB26,E8280E2CFF087C014E468481,7C4AD7E54C3C3BA21F59C1E8,738433B02054832B6795E14E,335F3230B22A10DA35BC1D52,E124D030A9596BF53882FC38,ABA5F987BFAF6803547A8940,C39FCFF04BB63AD24B6EF823,499C271D1568AD9F7FE29D31,B1878186A9C7E71075F765FA,6ACBD72B6FFBFC89981ED835,7D8F590959318C6DAE1721BA,A9CA2A786BEEF6D536FEAB97,066437371F9872CAFF11CFB1,0E2A98F6F12E1EE8694691E4); runOnlyForDeploymentPostprocessing = 0; };
+7561BFB015D8F536760CB671 = { isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+0189424A5A60FED329FA868E = { isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+89E1FD6268CC0F221A2BE178 = { isa = XCBuildConfiguration; name = Debug; buildSettings = { CLANG_ENABLE_MODULES = YES; SDKROOT = iphoneos; IPHONEOS_DEPLOYMENT_TARGET = 17.0; SWIFT_VERSION = 6.0; }; };
+7082CC0B6FC1282FCEABD07A = { isa = XCBuildConfiguration; name = Debug; buildSettings = { PRODUCT_NAME = VitaEpoch;  GENERATE_INFOPLIST_FILE = YES;  CURRENT_PROJECT_VERSION = 1; MARKETING_VERSION = 0.1.0; TARGETED_DEVICE_FAMILY = "1,2"; SUPPORTED_PLATFORMS = "iphoneos iphonesimulator"; INFOPLIST_KEY_CFBundleDisplayName = VitaEpoch; INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "VitaEpoch connects to your X6 band to sync health readings and activity to this iPhone."; INFOPLIST_KEY_UILaunchScreen_Generation = YES; INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES; INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait; INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"; SWIFT_EMIT_LOC_STRINGS = YES; PRODUCT_BUNDLE_IDENTIFIER = "com.omaralsaabi.vitaepoch"; DEVELOPMENT_TEAM = "C24DNX42WF"; CODE_SIGN_STYLE = "Automatic"; SWIFT_OPTIMIZATION_LEVEL = "-Onone"; SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG; }; };
+E6DE6C99132752C914FEF632 = { isa = XCBuildConfiguration; name = Release; buildSettings = { CLANG_ENABLE_MODULES = YES; SDKROOT = iphoneos; IPHONEOS_DEPLOYMENT_TARGET = 17.0; SWIFT_VERSION = 6.0; }; };
+639A7CA24D39909E713B47F7 = { isa = XCBuildConfiguration; name = Release; buildSettings = { PRODUCT_NAME = VitaEpoch;  GENERATE_INFOPLIST_FILE = YES;  CURRENT_PROJECT_VERSION = 1; MARKETING_VERSION = 0.1.0; TARGETED_DEVICE_FAMILY = "1,2"; SUPPORTED_PLATFORMS = "iphoneos iphonesimulator"; INFOPLIST_KEY_CFBundleDisplayName = VitaEpoch; INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "VitaEpoch connects to your X6 band to sync health readings and activity to this iPhone."; INFOPLIST_KEY_UILaunchScreen_Generation = YES; INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES; INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait; INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"; SWIFT_EMIT_LOC_STRINGS = YES; PRODUCT_BUNDLE_IDENTIFIER = "com.omaralsaabi.vitaepoch"; DEVELOPMENT_TEAM = "C24DNX42WF"; CODE_SIGN_STYLE = "Automatic"; SWIFT_OPTIMIZATION_LEVEL = "-O"; }; };
+862894B703A6DEDF96A9DD6C = { isa = XCConfigurationList; buildConfigurations = (89E1FD6268CC0F221A2BE178,E6DE6C99132752C914FEF632); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+C57128001CE614BF8549D6BB = { isa = XCConfigurationList; buildConfigurations = (7082CC0B6FC1282FCEABD07A,639A7CA24D39909E713B47F7); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+0E8A3AD980EC179856012B7E = { isa = PBXNativeTarget; buildConfigurationList = C57128001CE614BF8549D6BB; buildPhases = (BCE16DD0260827ECF338C787,7561BFB015D8F536760CB671,0189424A5A60FED329FA868E); buildRules = (); dependencies = (); name = VitaEpoch; productName = VitaEpoch; productReference = 38A007151ABE87CC01A5B6E9; productType = "com.apple.product-type.application"; };
+4DDE1B02B46FB05CF1955EC0 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITests/VitaEpochUITests.swift; sourceTree = SOURCE_ROOT; };
+8F69D2603037B23E80BB9FA3 = { isa = PBXBuildFile; fileRef = 4DDE1B02B46FB05CF1955EC0; };
+1814E1D984AB3F99D4B162B0 = { isa = PBXFileReference; lastKnownFileType = text.json; path = "Tests/VitaEpochCoreTests/Fixtures/device-2026-09-26.json"; sourceTree = SOURCE_ROOT; };
+838A650ADA7AC8D140AD6D2C = { isa = PBXBuildFile; fileRef = 1814E1D984AB3F99D4B162B0; };
+982E1154C06168BB1270FBE6 = { isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (838A650ADA7AC8D140AD6D2C); runOnlyForDeploymentPostprocessing = 0; };
+95FC400A54C228DD62344224 = { isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (8F69D2603037B23E80BB9FA3); runOnlyForDeploymentPostprocessing = 0; };
+D799BAE6088A90139B415FCC = { isa = PBXContainerItemProxy; containerPortal = 98F54143AB4E86B28C3AFEE0; proxyType = 1; remoteGlobalIDString = 0E8A3AD980EC179856012B7E; remoteInfo = VitaEpoch; };
+DE58E2B17C19600779694943 = { isa = PBXTargetDependency; target = 0E8A3AD980EC179856012B7E; targetProxy = D799BAE6088A90139B415FCC; };
+59CE1A55E3C0DC7EDB1A684D = { isa = XCBuildConfiguration; name = Debug; buildSettings = { PRODUCT_NAME = VitaEpochUITests; PRODUCT_BUNDLE_IDENTIFIER = com.example.vitaepoch.uitests; GENERATE_INFOPLIST_FILE = YES; CODE_SIGN_STYLE = Automatic; TEST_TARGET_NAME = VitaEpoch; SWIFT_VERSION = 6.0; }; };
+003254340176A76C2BC8F6D4 = { isa = XCBuildConfiguration; name = Release; buildSettings = { PRODUCT_NAME = VitaEpochUITests; PRODUCT_BUNDLE_IDENTIFIER = com.example.vitaepoch.uitests; GENERATE_INFOPLIST_FILE = YES; CODE_SIGN_STYLE = Automatic; TEST_TARGET_NAME = VitaEpoch; SWIFT_VERSION = 6.0; }; };
+3646145E0A90C6FF41610EFE = { isa = XCConfigurationList; buildConfigurations = (59CE1A55E3C0DC7EDB1A684D,003254340176A76C2BC8F6D4); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+D24B997AF00C71C20D86BE4D = { isa = PBXNativeTarget; buildConfigurationList = 3646145E0A90C6FF41610EFE; buildPhases = (95FC400A54C228DD62344224,982E1154C06168BB1270FBE6); buildRules = (); dependencies = (DE58E2B17C19600779694943); name = VitaEpochUITests; productName = VitaEpochUITests; productReference = 9D3AD977850B7EAC0E4F6585; productType = "com.apple.product-type.bundle.ui-testing"; };
+98F54143AB4E86B28C3AFEE0 = { isa = PBXProject; attributes = { LastUpgradeCheck = 2640; }; buildConfigurationList = 862894B703A6DEDF96A9DD6C; compatibilityVersion = "Xcode 14.0"; developmentRegion = en; hasScannedForEncodings = 0; knownRegions = (en,Base); mainGroup = DC76E9F0C0006E8F919E0C51; productRefGroup = FBDC4F23F93125BBEEAE800C; projectDirPath = ""; projectRoot = ""; targets = (0E8A3AD980EC179856012B7E,D24B997AF00C71C20D86BE4D); };
+}; rootObject = 98F54143AB4E86B28C3AFEE0; }

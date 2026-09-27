@@ -40,7 +40,7 @@ struct TodayView: View {
                 Text("Your metrics").font(.title2.bold())
                 LazyVGrid(columns: Array(repeating: GridItem(.flexible(), alignment: .top), count: typeSize.isAccessibilitySize ? 1 : 2), spacing: 12) {
                     ForEach(metrics) { kind in
-                        NavigationLink { MetricDetailView(kind: kind) } label: { MetricCard(kind: kind, sample: store.latest(kind)) }.buttonStyle(.plain)
+                        NavigationLink { MetricDetailView(kind: kind) } label: { MetricCard(kind: kind, sample: store.latest(kind)) }.buttonStyle(.plain).accessibilityIdentifier("metric-\(kind.rawValue)")
                     }
                 }
             }
@@ -62,7 +62,7 @@ struct AgeProgressCard: View {
             Text("Every day adds\nperspective.").font(.system(.largeTitle, design: .rounded, weight: .semibold)).fixedSize(horizontal: false, vertical: true)
             Text("Building your baseline").font(.subheadline).foregroundStyle(.secondary)
             ProgressView(value: Double(min(store.observedDays, 7)), total: 7).tint(.teal)
-            Text("\(store.observedDays) days with heart data · 7 recommended to begin").font(.caption).foregroundStyle(.secondary)
+            Text("\(store.observedDays) \(store.observedDays == 1 ? "day" : "days") with heart data · 7 recommended to begin").font(.caption).foregroundStyle(.secondary)
             DataConfidenceBadge(text: "Insufficient data · model pending")
         }
     }
@@ -83,7 +83,7 @@ struct AgeView: View {
                 Divider()
                 input("VO₂ max", detail: "Unavailable — HealthKit bridge planned", symbol: "lungs")
                 Divider()
-                input("Sleep", detail: "Not available on this device yet", symbol: "moon")
+                input("Sleep", detail: "Awaiting protocol validation", symbol: "moon")
             }
             Surface {
                 DisclosureGroup("How this will be calculated") {

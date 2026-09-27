@@ -20,6 +20,7 @@ public struct X6Frame: Sendable {
 public struct X6FrameAssembler: Sendable {
     private var buffer: [UInt8] = []
     public init() {}
+    public var bufferedByteCount: Int { buffer.count }
     public mutating func reset() { buffer.removeAll() }
     public mutating func append(_ data: Data) -> [Data] {
         buffer.append(contentsOf: data)
@@ -56,14 +57,14 @@ public enum X6Command: CaseIterable, Sendable {
 }
 
 public enum X6Decoder {
-    public static func decode(_ frame: X6Frame, packet: RawPacket, calendar: Calendar = .current) throws -> [MetricSample] {
+    public static func decode(_ frame: X6Frame, packet: RawPacket, calendar: Calendar = .current, reference: ManualTimestampReference? = nil) throws -> [MetricSample] {
         guard frame.group == 2 else { throw ProtocolError.unsupportedFeature(frame.feature) }
         let b = frame.payload
         let feature = String(format: "02%02X", frame.feature)
         func sample(_ metric: MetricKind, _ value: Double, _ date: Date, _ method: SampleMethod,
-                    _ confidence: MetricConfidence = .deviceReported) -> MetricSample {
+                    _ confidence: MetricConfidence = .deviceReported, _ evidence: TimestampEvidence? = nil) -> MetricSample {
             MetricSample(metric: metric, value: value, timestamp: date, method: method, feature: feature,
-                         deviceID: packet.deviceID, packetID: packet.id, confidence: confidence)
+                         deviceID: packet.deviceID, packetID: packet.id, confidence: confidence, timestampEvidence: evidence)
         }
         switch frame.feature {
         case 9, 0x0B, 0x19:
@@ -71,18 +72,28 @@ public enum X6Decoder {
             let kind: MetricKind = frame.feature == 9 ? .heartRate : frame.feature == 0x0B ? .oxygen : .stress
             return stride(from: 1, to: b.count, by: 5).compactMap { i in
                 guard kind == .stress || b[i] != 0 else { return nil }
-                return sample(kind, Double(b[i]), Date(timeIntervalSince1970: Double(u32(b, i+1))), .manual)
+                let raw = u32(b, i+1)
+                let resolved = reference?.resolve(raw: raw, feature: frame.feature, deviceID: packet.deviceID)
+                var evidence = resolved?.1 ?? TimestampEvidence(basis: .unixUnverified, rawSeconds: raw,
+                    timeZoneID: calendar.timeZone.identifier)
+                evidence.rawBytesHex = Data(b[(i+1)...(i+4)]).hex
+                return sample(kind, Double(b[i]), resolved?.0 ?? Date(timeIntervalSince1970: Double(raw)), .manual,
+                              .deviceReported, evidence)
             }
         case 0x0D:
             guard b.count == 17 else { throw ProtocolError.invalidPayload }
             let date = try day(b[0], packet.timestamp, calendar)
-            return [sample(.steps, Double(u32(b,1)), date, .dailySummary, .provisionalLayout),
-                    sample(.calories, Double(u32(b,5))/10000, date, .dailySummary, .provisionalLayout),
-                    sample(.distance, Double(u32(b,13))/100, date, .dailySummary, .provisionalLayout)]
+            let evidence = TimestampEvidence(basis: .localDaySlotProvisional, dayOffset: b[0], timeZoneID: calendar.timeZone.identifier)
+            return [sample(.steps, Double(u32(b,1)), date, .dailySummary, .provisionalLayout, evidence),
+                    sample(.calories, Double(u32(b,5))/10000, date, .dailySummary, .provisionalLayout, evidence),
+                    sample(.distance, Double(u32(b,13))/100, date, .dailySummary, .provisionalLayout, evidence)]
         case 0x0F, 0x10, 0x16:
-            guard b.count == 146 else { throw ProtocolError.invalidPayload }
+            // A header-only page is an explicit empty page; arbitrary short bodies are not
+            // assigned invented slot offsets. Full all-zero pages are valid too.
+            guard b.count == 2 || b.count == 146 else { throw ProtocolError.invalidPayload }
             let isHR = frame.feature == 0x0F
             guard b[1] < (isHR ? 2 : 4) else { throw ProtocolError.invalidPage }
+            if b.count == 2 { return [] }
             let base = try day(b[0], packet.timestamp, calendar)
             let slots = isHR ? 24 : 72
             let interval = isHR ? 30 : 5
@@ -92,8 +103,17 @@ public enum X6Decoder {
                 guard raw != 0 else { return nil }
                 let minute = (Int(b[1]) * slots + slot) * interval
                 // Device slots describe local wall-clock time, not elapsed seconds across DST.
-                guard let date = calendar.date(bySettingHour: minute/60, minute: minute%60, second: 0, of: base) else { return nil }
-                return sample(kind, Double(raw)/(kind == .wristTemperature ? 10 : 1), date, .periodic, .provisionalLayout)
+                guard let date = calendar.date(bySettingHour: minute/60, minute: minute%60, second: 0, of: base),
+                      calendar.isDate(date, inSameDayAs: base),
+                      calendar.component(.hour, from: date) == minute/60,
+                      calendar.component(.minute, from: date) == minute%60 else {
+                    // A nonexistent DST wall-clock slot must not silently become a different
+                    // slot. The raw page remains available for a later timezone interpretation.
+                    return nil
+                }
+                return sample(kind, Double(raw)/(kind == .wristTemperature ? 10 : 1), date, .periodic, .provisionalLayout,
+                              TimestampEvidence(basis: .localDaySlotProvisional, dayOffset: b[0], page: b[1], slot: slot,
+                                                timeZoneID: calendar.timeZone.identifier))
             }
         default: throw ProtocolError.unsupportedFeature(frame.feature)
         }
@@ -110,7 +130,8 @@ public enum X6Decoder {
         let value = flags & 1 == 0 ? UInt16(b[1]) : u16(b,1)
         guard value > 0 else { return [] }
         return [MetricSample(metric: .heartRate, value: Double(value), timestamp: packet.timestamp,
-                             method: .manual, feature: "2A37", deviceID: packet.deviceID, packetID: packet.id)]
+                             method: .manual, feature: "2A37", deviceID: packet.deviceID, packetID: packet.id,
+                             timestampEvidence: TimestampEvidence(basis: .receiptTime, timeZoneID: packet.timeZoneID ?? TimeZone.current.identifier))]
     }
 
     public static func compactActivity(_ packet: RawPacket, calendar: Calendar = .current) throws -> [MetricSample] {
@@ -119,7 +140,9 @@ public enum X6Decoder {
         return [(MetricKind.steps,0),(.distance,3),(.calories,6)].map { kind, offset in
             MetricSample(metric: kind, value: Double(u16(b,offset)), timestamp: calendar.startOfDay(for: packet.timestamp),
                          method: .dailySummary, feature: "FDD1", deviceID: packet.deviceID, packetID: packet.id,
-                         confidence: .provisionalLayout)
+                         confidence: .provisionalLayout,
+                         timestampEvidence: TimestampEvidence(basis: .localDaySlotProvisional, dayOffset: 0,
+                                                              timeZoneID: calendar.timeZone.identifier))
         }
     }
     private static func u16(_ b: [UInt8], _ i: Int) -> UInt16 { UInt16(b[i]) | UInt16(b[i+1]) << 8 }

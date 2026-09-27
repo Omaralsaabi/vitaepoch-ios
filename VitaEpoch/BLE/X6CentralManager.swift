@@ -19,16 +19,17 @@ final class X6CentralManager: NSObject, ObservableObject {
     private var peripheral: CBPeripheral?
     private var discovered: [UUID: CBPeripheral] = [:]
     private var writer: CBCharacteristic?
-    private var assembler = X6FrameAssembler()
+    private var sessionID = UUID()
+    private var requestDeadline: Task<Void, Never>?
+    private var continuationTask: Task<Void, Never>?
     private var pending: [X6Command] = []
-    private var active: X6Command?
-    private var pages: Set<UInt8> = []
+    private var active: SyncProgress?
+    private var incompleteIDs: [String] = []
     private var connectionTimeout: Task<Void, Never>?
     private var timeout: Task<Void, Never>?
     private var scanTimeout: Task<Void, Never>?
     private var reconnectTask: Task<Void, Never>?
     private var measurementTimeout: Task<Void, Never>?
-    private var failures = 0
     private var reconnectAttempts = 0
     private var userDisconnected = false
     private var responseSubscribed = false
@@ -87,39 +88,80 @@ final class X6CentralManager: NSObject, ObservableObject {
         clearConnection(); peripheral = nil; devices = []; status = "Device forgotten. Saved readings remain available."
     }
     private func clearConnection() {
-        connectionTimeout?.cancel(); timeout?.cancel(); measurementTimeout?.cancel(); active = nil; pending = []; pages = []
+        connectionTimeout?.cancel(); timeout?.cancel(); measurementTimeout?.cancel(); continuationTask?.cancel(); requestDeadline?.cancel()
+        if var progress = active {
+            progress.finish(at: Date(), interrupted: "Connection ended before request completion")
+            store.diagnostic(progress.diagnostic)
+        }
+        active = nil; pending = []; sessionID = UUID()
         ready = false; syncing = false; measuring = false; writer = nil; responseSubscribed = false
-        assembler.reset(); battery = nil; info = [:]; pendingControl = nil
+        store.resetSession(); battery = nil; info = [:]; pendingControl = nil
     }
     func sync() {
         guard ready, !syncing, !measuring, pendingControl == nil else { return }
-        failures = 0; issue = nil; syncing = true; syncSummary = "Syncing…"
+        incompleteIDs = []; issue = nil; syncing = true; syncSummary = "Syncing…"
         pending = X6Command.sync; sendNext()
     }
     private func sendNext() {
         guard active == nil, let peripheral, peripheral.canSendWriteWithoutResponse else { return }
         guard !pending.isEmpty else {
             syncing = false
-            if failures == 0 { store.synced(); syncSummary = "Synced now" }
-            else { syncSummary = "Partial sync — \(failures) request(s) incomplete" }
+            if incompleteIDs.isEmpty { store.synced(); syncSummary = "Synced now" }
+            else { syncSummary = "Partial sync — incomplete: " + incompleteIDs.joined(separator: ", "); store.flush() }
             return
         }
-        let command = pending.removeFirst(); active = command; pages = []
-        write(command)
+        let command = pending.removeFirst()
+        active = SyncProgress(command: command, deviceID: peripheral.identifier.uuidString, startedAt: Date())
+        writeSync(command.bytes)
+        requestDeadline = Task { [weak self] in
+            try? await Task.sleep(for: .seconds(40))
+            guard !Task.isCancelled else { return }
+            self?.finishRequest()
+        }
+    }
+    private func writeSync(_ bytes: Data) {
+        guard peripheral?.canSendWriteWithoutResponse == true else { return }
+        active?.wrote(bytes, at: Date())
+        if let active { store.diagnostic(active.diagnostic) }
+        writeBytes(bytes)
         armTimeout()
+    }
+    private func finishRequest() {
+        guard var progress = active else { return }
+        timeout?.cancel(); continuationTask?.cancel(); requestDeadline?.cancel()
+        progress.finish(at: Date())
+        store.diagnostic(progress.diagnostic)
+        if !progress.isComplete { incompleteIDs.append(progress.diagnostic.featureID) }
+        active = nil
+        sendNext()
     }
     private func armTimeout() {
         timeout?.cancel()
         timeout = Task { [weak self] in
             try? await Task.sleep(for: .seconds(8))
             guard !Task.isCancelled, let self else { return }
-            self.failures += 1; self.active = nil; self.sendNext()
+            // Probe each documented day/page variant at most once, only after a valid page.
+            if let next = self.active?.continuation, self.peripheral?.canSendWriteWithoutResponse == true {
+                self.writeSync(next)
+            } else { self.finishRequest() }
         }
     }
-    private func write(_ command: X6Command) {
+    private func scheduleContinuation() {
+        continuationTask?.cancel()
+        continuationTask = Task { [weak self] in
+            // Give automatic multi-notification responses a quiet window before an explicit
+            // page request. Empty pages count as received and never terminate the sequence.
+            try? await Task.sleep(for: .milliseconds(800))
+            guard !Task.isCancelled, let self, let next = self.active?.continuation,
+                  self.peripheral?.canSendWriteWithoutResponse == true else { return }
+            self.writeSync(next)
+        }
+    }
+    private func write(_ command: X6Command) { writeBytes(command.bytes) }
+    private func writeBytes(_ bytes: Data) {
         guard let peripheral, let writer else { return }
-        store.record(RawPacket(deviceID: peripheral.identifier.uuidString, characteristic: "FDD2", direction: .tx, bytes: command.bytes))
-        peripheral.writeValue(command.bytes, for: writer, type: .withoutResponse)
+        store.receive(RawPacket(deviceID: peripheral.identifier.uuidString, characteristic: "FDD2", direction: .tx, bytes: bytes))
+        peripheral.writeValue(bytes, for: writer, type: .withoutResponse)
     }
     func measureHeartRate() {
         guard ready, !syncing, !measuring, pendingControl == nil, peripheral?.canSendWriteWithoutResponse == true else { return }
@@ -145,22 +187,21 @@ final class X6CentralManager: NSObject, ObservableObject {
         if let peripheral { UserDefaults.standard.set(peripheral.identifier.uuidString, forKey: rememberedKey) }
         sync()
     }
-    private func receiveFrame(_ data: Data, packet: RawPacket) {
-        do {
-            let frame = try X6Frame(data)
-            let samples = try X6Decoder.decode(frame, packet: packet)
-            store.ingest(samples)
-            guard let active, frame.group == 2, frame.feature == Array(active.bytes)[5] else { return }
-            if [.periodicHeartRate, .hrv, .temperature].contains(active) {
-                // Only requested day zero counts toward completion; preserve other days if received.
-                guard frame.payload[0] == 0 else { return }
-                pages.insert(frame.payload[1])
-                if pages.count < (active == .periodicHeartRate ? 2 : 4) { armTimeout(); return }
+    private func receive(_ result: PacketProcessingResult) {
+        if let error = result.error { issue = error }
+        if result.measuredHeartRate { stopMeasurement() }
+        for receipt in result.receipts {
+            guard active != nil else { continue }
+            active?.received(receipt)
+            if let active { store.diagnostic(active.diagnostic) }
+            if active?.isComplete == true { finishRequest() }
+            else if receipt.frame.group == 2 && String(format: "02%02X", receipt.frame.feature) == active?.diagnostic.featureID {
+                if receipt.error == nil { armTimeout() }
+                scheduleContinuation()
             }
-            timeout?.cancel(); self.active = nil; sendNext()
-        } catch ProtocolError.unsupportedFeature { /* Evidence is retained; unknown frames are not interpreted. */ }
-        catch { issue = "A device packet could not be decoded. Raw data was saved for diagnostics." }
+        }
     }
+
 }
 
 // CoreBluetooth delegates are delivered on the .main queue configured above.
@@ -236,25 +277,18 @@ extension X6CentralManager: @preconcurrency CBPeripheralDelegate {
         guard let data = characteristic.value else { return }
         let id = characteristic.uuid.uuidString
         let packet = RawPacket(deviceID: peripheral.identifier.uuidString, characteristic: id, direction: .rx, bytes: data)
-        store.record(packet)
-        do {
-            switch id {
-            case "FDD3":
-                for frame in assembler.append(data) {
-                    let evidence = frame == data ? packet : RawPacket(deviceID: packet.deviceID, characteristic: "FDD3/reassembled", direction: .rx, bytes: frame, timestamp: packet.timestamp)
-                    if evidence.id != packet.id { store.record(evidence) }
-                    receiveFrame(frame, packet: evidence)
-                }
-            case "FDD1": store.ingest(try X6Decoder.compactActivity(packet))
-            case "2A37":
-                let samples = try X6Decoder.heartRate(packet)
-                store.ingest(samples)
-                if !samples.isEmpty { stopMeasurement() }
-            case "2A19": if let level = data.first, level <= 100 { battery = Int(level) }
-            case "2A25", "2A28", "2A29": info[id] = String(data: data, encoding: .utf8)?.trimmingCharacters(in: .controlCharacters)
-            case "FDD4": info[id] = data.hex
-            default: break
-            }
-        } catch { issue = "A device packet could not be decoded. Raw data was saved." }
+        let session = sessionID
+        store.receive(packet) { [weak self] result in
+            guard let self, self.sessionID == session else { return }
+            self.receive(result)
+        }
+        // Small standard device-information values only; all frame parsing and archive I/O
+        // are handled by ArchiveWorker, off MainActor.
+        switch id {
+        case "2A19": if let level = data.first, level <= 100 { battery = Int(level) }
+        case "2A25", "2A28", "2A29": info[id] = String(data: data, encoding: .utf8)?.trimmingCharacters(in: .controlCharacters)
+        case "FDD4": info[id] = data.hex
+        default: break
+        }
     }
 }

@@ -3,49 +3,62 @@ import Combine
 
 @MainActor
 final class AppStore: ObservableObject {
-    @Published private(set) var archive: LocalArchive
-    @Published var storageError: String?
-    private let url: URL
-    private var writable = true
+    @Published private(set) var archive = LocalArchive()
+    @Published private(set) var storageError: String?
+    @Published private(set) var loading = true
+    private let worker: ArchiveWorker
+    private var queue: Task<Void, Never>?
+    private var refresh: Task<Void, Never>?
+    private var snapshot: ArchiveSnapshot?
 
-    init(url: URL? = nil) {
-        self.url = url ?? URL.applicationSupportDirectory.appending(path: "VitaEpoch/archive.json")
-        do {
-            archive = FileManager.default.fileExists(atPath: self.url.path) ? try LocalArchive.read(from: self.url) : LocalArchive()
-        } catch {
-            archive = LocalArchive()
-            storageError = "Saved data could not be read. The original file has been preserved. \(error.localizedDescription)"
-            writable = false
+    init(url: URL? = nil, fixture: Data? = nil) {
+        worker = ArchiveWorker(url: url ?? URL.applicationSupportDirectory.appending(path: "VitaEpoch/archive.json"))
+        queue = Task { [weak self, worker] in
+            let error = await worker.load(fixture: fixture)
+            guard let self else { return }
+            self.storageError = error
+            self.apply(await worker.snapshot()); self.loading = false
         }
     }
-    func record(_ packet: RawPacket) { archive.packets.append(packet); save() }
-    func ingest(_ samples: [MetricSample]) { archive.ingest(samples); save() }
-    func synced() { archive.lastSync = Date(); save() }
-    private func save() {
-        guard writable else { return }
-        do { try archive.write(to: url); storageError = nil }
-        catch { storageError = "Unable to save device data: \(error.localizedDescription)" }
-    }
-    func samples(_ kind: MetricKind) -> [MetricSample] { archive.samples.filter { $0.metric == kind } }
-    func latest(_ kind: MetricKind) -> MetricSample? {
-        samples(kind).max { a, b in
-            if a.timestamp != b.timestamp { return a.timestamp < b.timestamp }
-            let dates = Dictionary(archive.packets.map { ($0.id, $0.timestamp) }, uniquingKeysWith: { _, new in new })
-            return (dates[a.packetID] ?? a.timestamp) < (dates[b.packetID] ?? b.timestamp)
+    // A task chain maintains callback order across actor hops (including reset/flush).
+    func receive(_ packet: RawPacket, completion: @escaping @MainActor (PacketProcessingResult) -> Void = { _ in }) {
+        enqueue { [weak self, worker] in
+            let result = await worker.process(packet)
+            completion(result)
+            self?.scheduleRefresh()
         }
     }
-    var observedDays: Int { Set(archive.samples.filter { [.heartRate, .hrv].contains($0.metric) }.map { Calendar.current.startOfDay(for: $0.timestamp) }).count }
-}
-
-extension AppStore {
-    func chartSamples(_ kind: MetricKind, days: Int) -> [MetricSample] {
-        let start = Calendar.current.date(byAdding: .day, value: -(days-1), to: Calendar.current.startOfDay(for: Date()))!
-        let values = samples(kind).filter { $0.timestamp >= start && $0.timestamp <= Date() }
-        guard [.steps, .distance, .calories].contains(kind) else { return values }
-        let dates = Dictionary(archive.packets.map { ($0.id, $0.timestamp) }, uniquingKeysWith: { _, new in new })
-        // FDD1 and 020D are alternative cumulative snapshots, never additive totals.
-        return Dictionary(grouping: values, by: { Calendar.current.startOfDay(for: $0.timestamp) }).values.compactMap {
-            $0.max { (dates[$0.packetID] ?? $0.timestamp) < (dates[$1.packetID] ?? $1.timestamp) }
-        }.sorted { $0.timestamp < $1.timestamp }
+    func diagnostic(_ value: SyncDiagnostic) {
+        enqueue { [weak self, worker] in await worker.diagnostic(value); self?.scheduleRefresh() }
+    }
+    func resetSession() { enqueue { [worker] in await worker.resetSession() } }
+    func synced() { enqueue { [weak self, worker] in await worker.synced(at: Date()); self?.scheduleRefresh() } }
+    func flush() {
+        enqueue { [weak self, worker] in
+            await worker.flush()
+            self?.apply(await worker.snapshot())
+            self?.storageError = await worker.error()
+        }
+    }
+    private func enqueue(_ operation: @escaping @MainActor () async -> Void) {
+        let previous = queue
+        queue = Task { await previous?.value; await operation() }
+    }
+    private func scheduleRefresh() {
+        guard refresh == nil else { return }
+        refresh = Task { [weak self, worker] in
+            try? await Task.sleep(for: .milliseconds(120))
+            guard let self else { return }
+            self.apply(await worker.snapshot())
+            self.storageError = await worker.error()
+            self.refresh = nil
+        }
+    }
+    private func apply(_ value: ArchiveSnapshot) { snapshot = value; archive = value.archive }
+    func samples(_ kind: MetricKind) -> [MetricSample] { snapshot?.samples[kind] ?? [] }
+    func latest(_ kind: MetricKind) -> MetricSample? { snapshot?.latest[kind] }
+    var observedDays: Int { snapshot?.observedDays ?? 0 }
+    func chartSeries(_ kind: MetricKind, range: ChartRange) -> MetricSeries {
+        snapshot?.charts[kind]?[range] ?? MetricQueries.series(kind, samples: [], packetDates: [:], range: range, now: Date(), calendar: .current)
     }
 }

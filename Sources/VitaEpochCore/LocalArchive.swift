@@ -6,6 +6,10 @@ public struct LocalArchive: Codable, Sendable {
     public var samples: [MetricSample] = []
     public var packets: [RawPacket] = []
     public var lastSync: Date?
+    public var schemaVersion: Int? = 2
+    public var previousDecodes: [MetricSample]?
+    public var timestampReferences: [ManualTimestampReference]?
+    public var syncDiagnostics: [SyncDiagnostic]?
     public init() {}
     public mutating func ingest(_ incoming: [MetricSample]) {
         var byID = Dictionary(samples.map { ($0.id, $0) }, uniquingKeysWith: { _, new in new })
@@ -13,7 +17,9 @@ public struct LocalArchive: Codable, Sendable {
         samples = byID.values.sorted { $0.timestamp < $1.timestamp }
     }
     public static func read(from url: URL) throws -> Self {
-        try JSONDecoder().decode(Self.self, from: Data(contentsOf: url))
+        try FileManager.default.createDirectory(at: url.deletingLastPathComponent(), withIntermediateDirectories: true)
+        guard FileManager.default.fileExists(atPath: url.path) else { return Self() }
+        return try JSONDecoder().decode(Self.self, from: Data(contentsOf: url))
     }
     public func write(to url: URL) throws {
         try FileManager.default.createDirectory(at: url.deletingLastPathComponent(), withIntermediateDirectories: true)

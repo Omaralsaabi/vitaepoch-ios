@@ -43,6 +43,9 @@ struct Page<Content: View>: View {
     @ViewBuilder var content: Content
     var body: some View {
         ScrollView { VStack(alignment: .leading, spacing: 24) { content }.padding(20) }
+            // Native TabView supplies its own safe area; reserve additional breathing room
+            // for its floating presentation without overlaying content or ignoring safe areas.
+            .safeAreaInset(edge: .bottom, spacing: 0) { Color.clear.frame(height: 24) }
             .background(Color(uiColor: .systemGroupedBackground))
     }
 }
@@ -85,41 +88,78 @@ struct MetricCard: View {
 }
 struct MetricChartView: View {
     let kind: MetricKind
-    let samples: [MetricSample]
+    let series: MetricSeries
     @State private var selection: Date?
-    private var points: [(sample: MetricSample, segment: Int)] {
-        let sorted = samples.sorted { $0.timestamp < $1.timestamp }
+    private var points: [(point: ChartPoint, segment: Int)] {
         var segment = 0
-        var previous: MetricSample?
-        return sorted.map { sample in
-            if let previous, sample.method != previous.method || sample.timestamp.timeIntervalSince(previous.timestamp) > (kind == .heartRate ? 1800 : 300) { segment += 1 }
-            previous = sample
-            return (sample, segment)
+        var previous: ChartPoint?
+        return series.points.map { point in
+            if let previous {
+                let gap: Bool
+                if series.range.aggregatesByDay {
+                    gap = (series.calendar.dateComponents([.day], from: previous.timestamp, to: point.timestamp).day ?? 0) > 1
+                } else { gap = point.timestamp.timeIntervalSince(previous.timestamp) > (kind == .heartRate ? 1800 : 300) }
+                if gap || point.method != previous.method { segment += 1 }
+            }
+            previous = point
+            return (point, segment)
         }
+    }
+    private var yDomain: ClosedRange<Double> {
+        let low = series.points.map(\.value).min() ?? 0
+        let high = series.points.map(\.value).max() ?? 1
+        let margin = max(1, (high-low) * 0.1)
+        return max(0, low-margin)...(high+margin)
     }
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Chart {
-                ForEach(points, id: \.sample.id) { point in
-                    if point.sample.method == .dailySummary {
-                        BarMark(x: .value("Date", point.sample.timestamp, unit: .day), y: .value(kind.unit, point.sample.value)).foregroundStyle(.teal)
-                    } else if point.sample.method == .manual {
-                        PointMark(x: .value("Time", point.sample.timestamp), y: .value(kind.unit, point.sample.value)).symbol(.diamond).foregroundStyle(.teal)
-                    } else {
-                        LineMark(x: .value("Time", point.sample.timestamp), y: .value(kind.unit, point.sample.value), series: .value("Segment", point.segment)).foregroundStyle(.teal)
-                        PointMark(x: .value("Time", point.sample.timestamp), y: .value(kind.unit, point.sample.value)).symbolSize(12).foregroundStyle(.teal)
-                    }
+            // Avoid constructing a render surface during transient zero-width layout passes.
+            // The outer frame supplies a nonzero height even before data/layout settle.
+            GeometryReader { geometry in
+                if geometry.size.width > 1 && geometry.size.height > 1 && !series.points.isEmpty {
+                    chart.frame(width: geometry.size.width, height: geometry.size.height)
                 }
-                if let selection { RuleMark(x: .value("Selected", selection)).foregroundStyle(.secondary).lineStyle(StrokeStyle(dash: [4])) }
+            }.frame(height: 230)
+            .accessibilityLabel("\(kind.title) chart, \(series.points.count) \(series.range.aggregatesByDay ? "daily summaries" : "readings")")
+            .accessibilityIdentifier("metric-chart")
+            Text(series.range.aggregatesByDay ? ([MetricKind.steps,.distance,.calories].contains(kind) ? "Daily totals" : "Daily median") : "Intraday readings")
+                .font(.caption).foregroundStyle(.secondary).accessibilityIdentifier("chart-granularity")
+            if let selection, let nearest = series.points.min(by: { abs($0.timestamp.timeIntervalSince(selection)) < abs($1.timestamp.timeIntervalSince(selection)) }) {
+                Text("\(kind.formatted(nearest.value)) \(kind.unit) · \(nearest.timestamp.formatted(date: .abbreviated, time: series.range.aggregatesByDay ? .omitted : .shortened))")
+                    .font(.caption)
             }
-            .frame(height: 210).chartXSelection(value: $selection)
-            .accessibilityLabel("\(kind.title) chart, \(samples.count) readings")
-            if let selection, let nearest = samples.min(by: { abs($0.timestamp.timeIntervalSince(selection)) < abs($1.timestamp.timeIntervalSince(selection)) }) {
-                Text("\(kind.formatted(nearest.value)) \(kind.unit) · \(nearest.timestamp.formatted(date: .abbreviated, time: .shortened))").font(.caption)
+            if let low = series.points.map(\.value).min(), let high = series.points.map(\.value).max() {
+                Text("\(series.records.count) readings · \(kind.formatted(low))–\(kind.formatted(high)) \(kind.unit)").font(.caption).foregroundStyle(.secondary)
             }
-            if let low = samples.map(\.value).min(), let high = samples.map(\.value).max() {
-                Text("\(samples.count) readings · \(kind.formatted(low))–\(kind.formatted(high)) \(kind.unit)").font(.caption).foregroundStyle(.secondary)
+        }.onChange(of: series.range) { _, _ in selection = nil }
+    }
+    private var chart: some View {
+        Chart {
+            ForEach(points, id: \.point.id) { item in
+                if [MetricKind.steps,.distance,.calories].contains(kind) {
+                    BarMark(x: .value("Date", item.point.timestamp, unit: .day), y: .value(kind.unit, item.point.value)).foregroundStyle(.teal)
+                } else if !series.range.aggregatesByDay && item.point.method == .manual {
+                    PointMark(x: .value("Time", item.point.timestamp), y: .value(kind.unit, item.point.value)).symbol(.diamond).foregroundStyle(.teal)
+                } else {
+                    LineMark(x: .value("Date", item.point.timestamp), y: .value(kind.unit, item.point.value), series: .value("Segment", item.segment)).foregroundStyle(.teal)
+                    PointMark(x: .value("Date", item.point.timestamp), y: .value(kind.unit, item.point.value)).symbolSize(18).foregroundStyle(.teal)
+                }
+            }
+            if let selection { RuleMark(x: .value("Selected", selection)).foregroundStyle(.secondary).lineStyle(StrokeStyle(dash: [4])) }
+        }
+        .chartXScale(domain: series.start...series.end)
+        .chartYScale(domain: yDomain)
+        .chartXAxis {
+            if series.range.aggregatesByDay {
+                AxisMarks(values: .stride(by: .day, count: max(1, series.range.rawValue/6))) { _ in
+                    AxisGridLine(); AxisTick(); AxisValueLabel(format: .dateTime.month(.abbreviated).day())
+                }
+            } else {
+                AxisMarks(values: .stride(by: .hour, count: 4)) { _ in
+                    AxisGridLine(); AxisTick(); AxisValueLabel(format: .dateTime.hour().minute())
+                }
             }
         }
+        .chartXSelection(value: $selection)
     }
 }

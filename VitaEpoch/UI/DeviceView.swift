@@ -24,7 +24,7 @@ struct DeviceView: View {
                     Text("Nearby bands").font(.headline)
                     ForEach(ble.devices) { device in
                         Button { ble.connect(device.id) } label: {
-                            HStack { Label(device.name, systemImage: "radiowaves.left.and.right"); Spacer(); Text("\(device.rssi) dBm").font(.caption) }.frame(minHeight: 44)
+                            HStack { Label(device.name, systemImage: "antenna.radiowaves.left.and.right"); Spacer(); Text("\(device.rssi) dBm").font(.caption) }.frame(minHeight: 44)
                         }
                     }
                 }
@@ -63,7 +63,29 @@ struct DiagnosticsView: View {
             Section("Archive") {
                 LabeledContent("Packets", value: "\(store.archive.packets.count)")
                 LabeledContent("Decoded records", value: "\(store.archive.samples.count)")
-                Text("x6-v0.1 · Unknown frames are saved without decoding. FDD5 is never written.").font(.caption)
+                Text("x6-v0.2 · Unknown frames are saved without decoding. FDD5 is never written.").font(.caption)
+            }
+            Section("Sync request history") {
+                ForEach(Array((store.archive.syncDiagnostics ?? []).reversed())) { request in
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text(request.featureID).font(.headline.monospaced())
+                        Text(request.reason).font(.caption)
+                        Text(request.elapsed.map { String(format: "Elapsed %.3f s", $0) } ?? "Elapsed: not recorded").font(.caption)
+                        ForEach(Array(request.writes.enumerated()), id: \.offset) { _, write in
+                            Text("TX \(write.bytesHex) · variant \(write.variantHex)").font(.system(.caption2, design: .monospaced))
+                        }
+                        ForEach(Array(request.responses.enumerated()), id: \.offset) { index, response in
+                            Text("#\(index+1) +\(String(format: "%.3f", response.elapsed))s · \(response.featureID) \(response.prefixHex) · \(response.byteCount) bytes · \(response.sampleCount) records · \(response.status)")
+                                .font(.system(.caption2, design: .monospaced))
+                        }
+                    }.textSelection(.enabled)
+                }
+            }
+            Section("Timestamp references") {
+                Text("Manual 0209: captured 26 Sep reference. 020B/0219: shared correction remains provisional. Live 2A37: receipt time. Page histories: local day/slot; no manual correction.").font(.caption)
+                ForEach(store.archive.timestampReferences ?? [], id: \.id) { reference in
+                    Text("\(reference.id) · \(reference.timeZoneID) · adjustment \(Int(reference.adjustment))s; capture day only").font(.caption)
+                }
             }
             Section("Latest 100 packets") {
                 ForEach(Array(store.archive.packets.suffix(100).reversed())) { packet in
