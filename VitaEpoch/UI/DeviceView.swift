@@ -70,19 +70,23 @@ struct DiagnosticsView: View {
                 Button("Capture current-day movement burst") { ble.captureMovement() }
                     .disabled(!ble.ready || ble.syncing || ble.measuring)
                 LabeledContent("Minute positions", value: "\((store.archive.movementSamples ?? []).count)")
-                Text("One 0000 request; waits for pages 0000–0007. Raw movement-like bytes only. No sleep-stage inference.").font(.caption)
+                Text("Starts with 0000; allows an automatic burst, then requests each missing 0001–0007 once. Raw movement-like bytes only. No sleep-stage inference.").font(.caption)
             }
             Section("Sync request history") {
                 ForEach(Array((store.archive.syncDiagnostics ?? []).reversed())) { request in
                     VStack(alignment: .leading, spacing: 8) {
                         Text(request.featureID).font(.headline.monospaced())
                         Text(request.reason).font(.caption)
+                        if request.featureID == "0213" {
+                            Text("Received pages: " + request.receivedPages.sorted().map { String(format: "00%02X", $0) }.joined(separator: ", ")).font(.caption)
+                            Text("Positions represented in this capture: \(request.receivedPages.count * 180)").font(.caption)
+                        }
                         Text(request.elapsed.map { String(format: "Elapsed %.3f s", $0) } ?? "Elapsed: not recorded").font(.caption)
                         ForEach(Array(request.writes.enumerated()), id: \.offset) { _, write in
                             Text("TX \(write.bytesHex) · variant \(write.variantHex)").font(.system(.caption2, design: .monospaced))
                         }
                         ForEach(Array(request.responses.enumerated()), id: \.offset) { index, response in
-                            Text("#\(index+1) +\(String(format: "%.3f", response.elapsed))s · \(response.featureID) \(response.prefixHex) · \(response.byteCount) bytes · \(response.sampleCount) records · \(response.status)")
+                            Text("#\(index+1) +\(String(format: "%.3f", response.elapsed))s · \(response.featureID) \(response.prefixHex) · \(response.byteCount) bytes · \(response.sampleCount) records · \(response.status) \(request.acquisition(for: response))")
                                 .font(.system(.caption2, design: .monospaced))
                         }
                     }.textSelection(.enabled)

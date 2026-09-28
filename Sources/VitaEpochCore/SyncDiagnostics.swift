@@ -27,6 +27,19 @@ public struct SyncDiagnostic: Codable, Identifiable, Sendable {
     public var reason = "Awaiting response"
     public var complete = false
     public var elapsed: Double? { endedAt.map { $0.timeIntervalSince(startedAt) } }
+    /// Derived from persisted TX/RX timing; does not claim causal attribution of a late burst.
+    public func acquisition(for response: SyncResponse) -> String {
+        guard featureID == "0213", response.featureID == featureID else { return "" }
+        let receivedAt = startedAt.addingTimeInterval(response.elapsed)
+        let explicit = writes.dropFirst().contains { $0.variantHex == response.prefixHex && $0.timestamp <= receivedAt }
+        return explicit ? "after explicit fallback" : "automatic after initial request"
+    }
+}
+
+public enum MovementAcquisitionAction: Equatable, Sendable {
+    case wait(until: Date)
+    case write(Data)
+    case finish
 }
 
 public struct FrameReceipt: Sendable {
@@ -50,7 +63,7 @@ public struct SyncProgress: Sendable {
     }
     public mutating func received(_ receipt: FrameReceipt) {
         let frame = receipt.frame
-        let matches = frame.group == 2 && frame.feature == Array(command.bytes)[5]
+        let matches = receipt.packet.deviceID == diagnostic.deviceID && frame.group == 2 && frame.feature == Array(command.bytes)[5]
         diagnostic.responses.append(SyncResponse(packetID: receipt.packet.id,
             elapsed: receipt.packet.timestamp.timeIntervalSince(diagnostic.startedAt),
             featureID: String(format: "%02X%02X", frame.group, frame.feature),
@@ -79,6 +92,33 @@ public struct SyncProgress: Sendable {
             }
         }
         return nil
+    }
+    /// Current-day selectors 0001...0007 observed in nRF on 28 Sep. Wait for the
+    /// initial burst, then serialize missing selectors with an 8-second reply bound.
+    /// All decisions use injected time so the exact live policy is regression-tested.
+    public func movementAction(at now: Date) -> MovementAcquisitionAction {
+        precondition(command == .movement)
+        let deadline = diagnostic.startedAt.addingTimeInterval(72)
+        guard !isComplete, now < deadline, let lastWrite = diagnostic.writes.last else { return .finish }
+        let page = UInt8(lastWrite.variantHex.suffix(2), radix: 16)
+        let replyDeadline = lastWrite.timestamp.addingTimeInterval(8)
+        if let page, !diagnostic.receivedPages.contains(page), now < replyDeadline {
+            return .wait(until: min(replyDeadline, deadline))
+        }
+        let latestResponse = diagnostic.responses.filter {
+            $0.featureID == "0213" && ["Decoded", "Valid empty response"].contains($0.status)
+        }.map { diagnostic.startedAt.addingTimeInterval($0.elapsed) }.max()
+        // Duplicate notifications cannot postpone progress beyond a per-write bound.
+        let quietUntil = min((latestResponse ?? lastWrite.timestamp).addingTimeInterval(0.8), replyDeadline)
+        if now < quietUntil { return .wait(until: min(quietUntil, deadline)) }
+        for page in missingPages where page > 0 {
+            let variant = String(format: "00%02X", page)
+            if !diagnostic.writes.contains(where: { $0.variantHex == variant }) {
+                var bytes = Array(command.bytes); bytes[7] = page
+                return .write(Data(bytes))
+            }
+        }
+        return .finish
     }
     public mutating func finish(at date: Date, interrupted: String? = nil) {
         diagnostic.endedAt = date

@@ -1,0 +1,19 @@
+{
+  "labeledTransitions" : 46,
+  "method" : "Absolute raw-byte change across adjacent observed minutes at a vendor stage boundary versus within-stage pairs. Missing\/zero\/future pairs excluded; no spike threshold, lag search, classifier or causal claim.",
+  "nontransitionAbsoluteChange" : {
+    "count" : 485,
+    "maximum" : 44,
+    "mean" : 2.7402061855670103,
+    "median" : 0,
+    "minimum" : 0
+  },
+  "observedTransitions" : 45,
+  "transitionAbsoluteChange" : {
+    "count" : 45,
+    "maximum" : 138,
+    "mean" : 6.088888888888889,
+    "median" : 0,
+    "minimum" : 0
+  }
+}

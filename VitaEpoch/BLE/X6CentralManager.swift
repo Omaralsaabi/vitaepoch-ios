@@ -120,6 +120,7 @@ final class X6CentralManager: NSObject, ObservableObject {
         let command = pending.removeFirst()
         active = SyncProgress(command: command, deviceID: peripheral.identifier.uuidString, startedAt: Date())
         writeSync(command.bytes)
+        if command == .movement { advanceMovement(); return }
         requestDeadline = Task { [weak self] in
             try? await Task.sleep(for: .seconds(40))
             guard !Task.isCancelled else { return }
@@ -131,7 +132,31 @@ final class X6CentralManager: NSObject, ObservableObject {
         active?.wrote(bytes, at: Date())
         if let active { store.diagnostic(active.diagnostic) }
         writeBytes(bytes)
-        armTimeout()
+        if active?.command != .movement { armTimeout() }
+    }
+    private func advanceMovement() {
+        continuationTask?.cancel()
+        guard let progress = active, progress.command == .movement else { return }
+        let now = Date()
+        switch progress.movementAction(at: now) {
+        case .finish: finishRequest()
+        case .write(let bytes):
+            if peripheral?.canSendWriteWithoutResponse == true {
+                writeSync(bytes)
+                advanceMovement()
+            } else {
+                // Wait for CoreBluetooth capacity; retain the original capture deadline.
+                waitForMovement(until: now.addingTimeInterval(0.2))
+            }
+        case .wait(let until): waitForMovement(until: until)
+        }
+    }
+    private func waitForMovement(until date: Date) {
+        continuationTask = Task { [weak self] in
+            try? await Task.sleep(for: .seconds(max(0.01, date.timeIntervalSinceNow)))
+            guard !Task.isCancelled else { return }
+            self?.advanceMovement()
+        }
     }
     private func finishRequest() {
         guard var progress = active else { return }
@@ -201,6 +226,7 @@ final class X6CentralManager: NSObject, ObservableObject {
             guard active != nil else { continue }
             active?.received(receipt)
             if let active { store.diagnostic(active.diagnostic) }
+            if active?.command == .movement { advanceMovement(); continue }
             if active?.isComplete == true { finishRequest() }
             else if receipt.frame.group == 2 && String(format: "02%02X", receipt.frame.feature) == active?.diagnostic.featureID {
                 if receipt.error == nil { armTimeout() }

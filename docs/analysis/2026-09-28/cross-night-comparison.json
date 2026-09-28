@@ -1,0 +1,385 @@
+{
+  "conclusion": "insufficient evidence for production sleep staging",
+  "nights": [
+    {
+      "missingMovementMinutes": 0,
+      "source": "Da Halo -> Apple Health; export.zip; night ending 2026-09-27",
+      "stages": [
+        {
+          "futureMinutes": 0,
+          "heartRate": {
+            "count": 0
+          },
+          "labeledMinutes": 260,
+          "missingMovementMinutes": 0,
+          "movementRaw": {
+            "count": 260,
+            "maximum": 183,
+            "mean": 129.5730769230769,
+            "median": 128,
+            "minimum": 128
+          },
+          "raw80FractionObserved": 0.8153846153846154,
+          "raw80Minutes": 212,
+          "sdnn": {
+            "count": 6,
+            "maximum": 14,
+            "mean": 11.333333333333334,
+            "median": 11,
+            "minimum": 10
+          },
+          "spo2Candidates": {
+            "count": 0
+          },
+          "stage": "Core",
+          "vendorHeartRate": {
+            "count": 10,
+            "maximum": 77,
+            "mean": 70.3,
+            "median": 71.5,
+            "minimum": 60
+          },
+          "vendorOxygen": {
+            "count": 0
+          },
+          "vendorSDNN": {
+            "count": 10,
+            "maximum": 14,
+            "mean": 11.2,
+            "median": 11,
+            "minimum": 10
+          },
+          "zeroUninterpretedMinutes": 0
+        },
+        {
+          "futureMinutes": 0,
+          "heartRate": {
+            "count": 0
+          },
+          "labeledMinutes": 218,
+          "missingMovementMinutes": 0,
+          "movementRaw": {
+            "count": 218,
+            "maximum": 148,
+            "mean": 129.55963302752295,
+            "median": 128,
+            "minimum": 128
+          },
+          "raw80FractionObserved": 0.8256880733944955,
+          "raw80Minutes": 180,
+          "sdnn": {
+            "count": 3,
+            "maximum": 11,
+            "mean": 10.333333333333334,
+            "median": 10,
+            "minimum": 10
+          },
+          "spo2Candidates": {
+            "count": 0
+          },
+          "stage": "REM",
+          "vendorHeartRate": {
+            "count": 5,
+            "maximum": 77,
+            "mean": 68.8,
+            "median": 66,
+            "minimum": 64
+          },
+          "vendorOxygen": {
+            "count": 0
+          },
+          "vendorSDNN": {
+            "count": 5,
+            "maximum": 14,
+            "mean": 11.2,
+            "median": 11,
+            "minimum": 10
+          },
+          "zeroUninterpretedMinutes": 0
+        },
+        {
+          "futureMinutes": 0,
+          "heartRate": {
+            "count": 0
+          },
+          "labeledMinutes": 11,
+          "missingMovementMinutes": 0,
+          "movementRaw": {
+            "count": 11,
+            "maximum": 154,
+            "mean": 134.36363636363637,
+            "median": 128,
+            "minimum": 128
+          },
+          "raw80FractionObserved": 0.6363636363636364,
+          "raw80Minutes": 7,
+          "sdnn": {
+            "count": 0
+          },
+          "spo2Candidates": {
+            "count": 0
+          },
+          "stage": "Deep",
+          "vendorHeartRate": {
+            "count": 0
+          },
+          "vendorOxygen": {
+            "count": 0
+          },
+          "vendorSDNN": {
+            "count": 0
+          },
+          "zeroUninterpretedMinutes": 0
+        },
+        {
+          "futureMinutes": 0,
+          "heartRate": {
+            "count": 0
+          },
+          "labeledMinutes": 63,
+          "missingMovementMinutes": 0,
+          "movementRaw": {
+            "count": 44,
+            "maximum": 161,
+            "mean": 128.0681818181818,
+            "median": 128,
+            "minimum": 2
+          },
+          "raw80FractionObserved": 0.6590909090909091,
+          "raw80Minutes": 29,
+          "sdnn": {
+            "count": 1,
+            "maximum": 13,
+            "mean": 13,
+            "median": 13,
+            "minimum": 13
+          },
+          "spo2Candidates": {
+            "count": 0
+          },
+          "stage": "Awake",
+          "vendorHeartRate": {
+            "count": 3,
+            "maximum": 72,
+            "mean": 69.66666666666667,
+            "median": 71,
+            "minimum": 66
+          },
+          "vendorOxygen": {
+            "count": 0
+          },
+          "vendorSDNN": {
+            "count": 3,
+            "maximum": 14,
+            "mean": 12.333333333333334,
+            "median": 13,
+            "minimum": 10
+          },
+          "zeroUninterpretedMinutes": 19
+        }
+      ],
+      "transitions": {
+        "labeledTransitions": 46,
+        "method": "Absolute raw-byte change across adjacent observed minutes at a vendor stage boundary versus within-stage pairs. Missing/zero/future pairs excluded; no spike threshold, lag search, classifier or causal claim.",
+        "nontransitionAbsoluteChange": {
+          "count": 485,
+          "maximum": 44,
+          "mean": 2.7402061855670103,
+          "median": 0,
+          "minimum": 0
+        },
+        "observedTransitions": 45,
+        "transitionAbsoluteChange": {
+          "count": 45,
+          "maximum": 138,
+          "mean": 6.088888888888889,
+          "median": 0,
+          "minimum": 0
+        }
+      },
+      "windowMinutes": 552
+    },
+    {
+      "missingMovementMinutes": 30,
+      "source": "Da Halo -> Apple Health; export 28 sep.zip; night ending 2026-09-28",
+      "stages": [
+        {
+          "futureMinutes": 0,
+          "heartRate": {
+            "count": 0
+          },
+          "labeledMinutes": 273,
+          "missingMovementMinutes": 19,
+          "movementRaw": {
+            "count": 254,
+            "maximum": 162,
+            "mean": 129.61023622047244,
+            "median": 128,
+            "minimum": 128
+          },
+          "raw80FractionObserved": 0.8267716535433071,
+          "raw80Minutes": 210,
+          "sdnn": {
+            "count": 0
+          },
+          "spo2Candidates": {
+            "count": 0
+          },
+          "stage": "Core",
+          "vendorHeartRate": {
+            "count": 4,
+            "maximum": 79,
+            "mean": 69.75,
+            "median": 67,
+            "minimum": 66
+          },
+          "vendorOxygen": {
+            "count": 0
+          },
+          "vendorSDNN": {
+            "count": 4,
+            "maximum": 14,
+            "mean": 12,
+            "median": 12,
+            "minimum": 10
+          },
+          "zeroUninterpretedMinutes": 0
+        },
+        {
+          "futureMinutes": 0,
+          "heartRate": {
+            "count": 0
+          },
+          "labeledMinutes": 221,
+          "missingMovementMinutes": 8,
+          "movementRaw": {
+            "count": 213,
+            "maximum": 164,
+            "mean": 129.7605633802817,
+            "median": 128,
+            "minimum": 128
+          },
+          "raw80FractionObserved": 0.8262910798122066,
+          "raw80Minutes": 176,
+          "sdnn": {
+            "count": 0
+          },
+          "spo2Candidates": {
+            "count": 0
+          },
+          "stage": "REM",
+          "vendorHeartRate": {
+            "count": 12,
+            "maximum": 81,
+            "mean": 64,
+            "median": 63,
+            "minimum": 57
+          },
+          "vendorOxygen": {
+            "count": 0
+          },
+          "vendorSDNN": {
+            "count": 12,
+            "maximum": 14,
+            "mean": 12.083333333333334,
+            "median": 12,
+            "minimum": 10
+          },
+          "zeroUninterpretedMinutes": 0
+        },
+        {
+          "futureMinutes": 0,
+          "heartRate": {
+            "count": 0
+          },
+          "labeledMinutes": 48,
+          "missingMovementMinutes": 0,
+          "movementRaw": {
+            "count": 48,
+            "maximum": 149,
+            "mean": 129.20833333333334,
+            "median": 128,
+            "minimum": 128
+          },
+          "raw80FractionObserved": 0.8958333333333334,
+          "raw80Minutes": 43,
+          "sdnn": {
+            "count": 0
+          },
+          "spo2Candidates": {
+            "count": 0
+          },
+          "stage": "Deep",
+          "vendorHeartRate": {
+            "count": 2,
+            "maximum": 61,
+            "mean": 59,
+            "median": 59,
+            "minimum": 57
+          },
+          "vendorOxygen": {
+            "count": 0
+          },
+          "vendorSDNN": {
+            "count": 2,
+            "maximum": 14,
+            "mean": 12.5,
+            "median": 12.5,
+            "minimum": 11
+          },
+          "zeroUninterpretedMinutes": 0
+        },
+        {
+          "futureMinutes": 0,
+          "heartRate": {
+            "count": 0
+          },
+          "labeledMinutes": 3,
+          "missingMovementMinutes": 3,
+          "movementRaw": {
+            "count": 0
+          },
+          "raw80FractionObserved": null,
+          "raw80Minutes": 0,
+          "sdnn": {
+            "count": 0
+          },
+          "spo2Candidates": {
+            "count": 0
+          },
+          "stage": "Awake",
+          "vendorHeartRate": {
+            "count": 0
+          },
+          "vendorOxygen": {
+            "count": 0
+          },
+          "vendorSDNN": {
+            "count": 0
+          },
+          "zeroUninterpretedMinutes": 0
+        }
+      ],
+      "transitions": {
+        "labeledTransitions": 45,
+        "method": "Absolute raw-byte change across adjacent observed minutes at a vendor stage boundary versus within-stage pairs. Missing/zero/future pairs excluded; no spike threshold, lag search, classifier or causal claim.",
+        "nontransitionAbsoluteChange": {
+          "count": 472,
+          "maximum": 36,
+          "mean": 2.9110169491525424,
+          "median": 0,
+          "minimum": 0
+        },
+        "observedTransitions": 42,
+        "transitionAbsoluteChange": {
+          "count": 42,
+          "maximum": 15,
+          "mean": 2.619047619047619,
+          "median": 0,
+          "minimum": 0
+        }
+      },
+      "windowMinutes": 545
+    }
+  ]
+}

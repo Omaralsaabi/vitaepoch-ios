@@ -1,0 +1,694 @@
+[
+  {
+    "endDate": "2026-09-27 23:33:00 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-27 23:30:00 +0300",
+    "type": "HKCategoryTypeIdentifierSleepAnalysis",
+    "value": "HKCategoryValueSleepAnalysisAwake"
+  },
+  {
+    "endDate": "2026-09-27 23:46:00 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-27 23:33:00 +0300",
+    "type": "HKCategoryTypeIdentifierSleepAnalysis",
+    "value": "HKCategoryValueSleepAnalysisAsleepCore"
+  },
+  {
+    "endDate": "2026-09-27 23:39:59 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-27 23:35:00 +0300",
+    "type": "HKQuantityTypeIdentifierHeartRate",
+    "unit": "count/min",
+    "value": "79"
+  },
+  {
+    "endDate": "2026-09-27 23:39:59 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-27 23:35:00 +0300",
+    "type": "HKQuantityTypeIdentifierHeartRateVariabilitySDNN",
+    "unit": "ms",
+    "value": "14"
+  },
+  {
+    "endDate": "2026-09-27 23:54:00 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-27 23:46:00 +0300",
+    "type": "HKCategoryTypeIdentifierSleepAnalysis",
+    "value": "HKCategoryValueSleepAnalysisAsleepREM"
+  },
+  {
+    "endDate": "2026-09-28 00:16:00 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-27 23:54:00 +0300",
+    "type": "HKCategoryTypeIdentifierSleepAnalysis",
+    "value": "HKCategoryValueSleepAnalysisAsleepCore"
+  },
+  {
+    "endDate": "2026-09-28 00:09:59 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-28 00:05:00 +0300",
+    "type": "HKQuantityTypeIdentifierHeartRate",
+    "unit": "count/min",
+    "value": "68"
+  },
+  {
+    "endDate": "2026-09-28 00:09:59 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-28 00:05:00 +0300",
+    "type": "HKQuantityTypeIdentifierHeartRateVariabilitySDNN",
+    "unit": "ms",
+    "value": "10"
+  },
+  {
+    "endDate": "2026-09-28 00:22:00 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-28 00:16:00 +0300",
+    "type": "HKCategoryTypeIdentifierSleepAnalysis",
+    "value": "HKCategoryValueSleepAnalysisAsleepREM"
+  },
+  {
+    "endDate": "2026-09-28 00:23:00 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-28 00:22:00 +0300",
+    "type": "HKCategoryTypeIdentifierSleepAnalysis",
+    "value": "HKCategoryValueSleepAnalysisAsleepCore"
+  },
+  {
+    "endDate": "2026-09-28 00:28:00 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-28 00:23:00 +0300",
+    "type": "HKCategoryTypeIdentifierSleepAnalysis",
+    "value": "HKCategoryValueSleepAnalysisAsleepDeep"
+  },
+  {
+    "endDate": "2026-09-28 00:42:00 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-28 00:28:00 +0300",
+    "type": "HKCategoryTypeIdentifierSleepAnalysis",
+    "value": "HKCategoryValueSleepAnalysisAsleepCore"
+  },
+  {
+    "endDate": "2026-09-28 00:39:59 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-28 00:35:00 +0300",
+    "type": "HKQuantityTypeIdentifierHeartRate",
+    "unit": "count/min",
+    "value": "66"
+  },
+  {
+    "endDate": "2026-09-28 00:39:59 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-28 00:35:00 +0300",
+    "type": "HKQuantityTypeIdentifierHeartRateVariabilitySDNN",
+    "unit": "ms",
+    "value": "10"
+  },
+  {
+    "endDate": "2026-09-28 00:47:00 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-28 00:42:00 +0300",
+    "type": "HKCategoryTypeIdentifierSleepAnalysis",
+    "value": "HKCategoryValueSleepAnalysisAsleepDeep"
+  },
+  {
+    "endDate": "2026-09-28 00:57:00 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-28 00:47:00 +0300",
+    "type": "HKCategoryTypeIdentifierSleepAnalysis",
+    "value": "HKCategoryValueSleepAnalysisAsleepCore"
+  },
+  {
+    "endDate": "2026-09-28 01:10:00 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-28 00:57:00 +0300",
+    "type": "HKCategoryTypeIdentifierSleepAnalysis",
+    "value": "HKCategoryValueSleepAnalysisAsleepREM"
+  },
+  {
+    "endDate": "2026-09-28 01:09:59 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-28 01:05:00 +0300",
+    "type": "HKQuantityTypeIdentifierHeartRate",
+    "unit": "count/min",
+    "value": "62"
+  },
+  {
+    "endDate": "2026-09-28 01:09:59 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-28 01:05:00 +0300",
+    "type": "HKQuantityTypeIdentifierHeartRateVariabilitySDNN",
+    "unit": "ms",
+    "value": "14"
+  },
+  {
+    "endDate": "2026-09-28 01:25:00 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-28 01:10:00 +0300",
+    "type": "HKCategoryTypeIdentifierSleepAnalysis",
+    "value": "HKCategoryValueSleepAnalysisAsleepCore"
+  },
+  {
+    "endDate": "2026-09-28 01:54:00 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-28 01:25:00 +0300",
+    "type": "HKCategoryTypeIdentifierSleepAnalysis",
+    "value": "HKCategoryValueSleepAnalysisAsleepREM"
+  },
+  {
+    "endDate": "2026-09-28 01:39:59 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-28 01:35:00 +0300",
+    "type": "HKQuantityTypeIdentifierHeartRate",
+    "unit": "count/min",
+    "value": "64"
+  },
+  {
+    "endDate": "2026-09-28 01:39:59 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-28 01:35:00 +0300",
+    "type": "HKQuantityTypeIdentifierHeartRateVariabilitySDNN",
+    "unit": "ms",
+    "value": "12"
+  },
+  {
+    "endDate": "2026-09-28 01:59:00 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-28 01:54:00 +0300",
+    "type": "HKCategoryTypeIdentifierSleepAnalysis",
+    "value": "HKCategoryValueSleepAnalysisAsleepCore"
+  },
+  {
+    "endDate": "2026-09-28 02:15:00 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-28 01:59:00 +0300",
+    "type": "HKCategoryTypeIdentifierSleepAnalysis",
+    "value": "HKCategoryValueSleepAnalysisAsleepREM"
+  },
+  {
+    "endDate": "2026-09-28 02:09:59 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-28 02:05:00 +0300",
+    "type": "HKQuantityTypeIdentifierHeartRate",
+    "unit": "count/min",
+    "value": "61"
+  },
+  {
+    "endDate": "2026-09-28 02:09:59 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-28 02:05:00 +0300",
+    "type": "HKQuantityTypeIdentifierHeartRateVariabilitySDNN",
+    "unit": "ms",
+    "value": "13"
+  },
+  {
+    "endDate": "2026-09-28 02:29:00 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-28 02:15:00 +0300",
+    "type": "HKCategoryTypeIdentifierSleepAnalysis",
+    "value": "HKCategoryValueSleepAnalysisAsleepCore"
+  },
+  {
+    "endDate": "2026-09-28 02:40:00 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-28 02:29:00 +0300",
+    "type": "HKCategoryTypeIdentifierSleepAnalysis",
+    "value": "HKCategoryValueSleepAnalysisAsleepREM"
+  },
+  {
+    "endDate": "2026-09-28 02:39:59 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-28 02:35:00 +0300",
+    "type": "HKQuantityTypeIdentifierHeartRate",
+    "unit": "count/min",
+    "value": "61"
+  },
+  {
+    "endDate": "2026-09-28 02:39:59 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-28 02:35:00 +0300",
+    "type": "HKQuantityTypeIdentifierHeartRateVariabilitySDNN",
+    "unit": "ms",
+    "value": "13"
+  },
+  {
+    "endDate": "2026-09-28 02:59:00 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-28 02:40:00 +0300",
+    "type": "HKCategoryTypeIdentifierSleepAnalysis",
+    "value": "HKCategoryValueSleepAnalysisAsleepCore"
+  },
+  {
+    "endDate": "2026-09-28 03:14:00 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-28 02:59:00 +0300",
+    "type": "HKCategoryTypeIdentifierSleepAnalysis",
+    "value": "HKCategoryValueSleepAnalysisAsleepREM"
+  },
+  {
+    "endDate": "2026-09-28 03:09:59 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-28 03:05:00 +0300",
+    "type": "HKQuantityTypeIdentifierHeartRate",
+    "unit": "count/min",
+    "value": "59"
+  },
+  {
+    "endDate": "2026-09-28 03:09:59 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-28 03:05:00 +0300",
+    "type": "HKQuantityTypeIdentifierHeartRateVariabilitySDNN",
+    "unit": "ms",
+    "value": "11"
+  },
+  {
+    "endDate": "2026-09-28 03:17:00 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-28 03:14:00 +0300",
+    "type": "HKCategoryTypeIdentifierSleepAnalysis",
+    "value": "HKCategoryValueSleepAnalysisAsleepDeep"
+  },
+  {
+    "endDate": "2026-09-28 03:29:00 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-28 03:17:00 +0300",
+    "type": "HKCategoryTypeIdentifierSleepAnalysis",
+    "value": "HKCategoryValueSleepAnalysisAsleepCore"
+  },
+  {
+    "endDate": "2026-09-28 03:34:00 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-28 03:29:00 +0300",
+    "type": "HKCategoryTypeIdentifierSleepAnalysis",
+    "value": "HKCategoryValueSleepAnalysisAsleepREM"
+  },
+  {
+    "endDate": "2026-09-28 03:43:00 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-28 03:34:00 +0300",
+    "type": "HKCategoryTypeIdentifierSleepAnalysis",
+    "value": "HKCategoryValueSleepAnalysisAsleepDeep"
+  },
+  {
+    "endDate": "2026-09-28 03:39:59 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-28 03:35:00 +0300",
+    "type": "HKQuantityTypeIdentifierHeartRate",
+    "unit": "count/min",
+    "value": "61"
+  },
+  {
+    "endDate": "2026-09-28 03:39:59 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-28 03:35:00 +0300",
+    "type": "HKQuantityTypeIdentifierHeartRateVariabilitySDNN",
+    "unit": "ms",
+    "value": "14"
+  },
+  {
+    "endDate": "2026-09-28 03:54:00 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-28 03:43:00 +0300",
+    "type": "HKCategoryTypeIdentifierSleepAnalysis",
+    "value": "HKCategoryValueSleepAnalysisAsleepCore"
+  },
+  {
+    "endDate": "2026-09-28 03:55:00 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-28 03:54:00 +0300",
+    "type": "HKCategoryTypeIdentifierSleepAnalysis",
+    "value": "HKCategoryValueSleepAnalysisAsleepDeep"
+  },
+  {
+    "endDate": "2026-09-28 04:00:00 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-28 03:55:00 +0300",
+    "type": "HKCategoryTypeIdentifierSleepAnalysis",
+    "value": "HKCategoryValueSleepAnalysisAsleepCore"
+  },
+  {
+    "endDate": "2026-09-28 04:08:00 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-28 04:00:00 +0300",
+    "type": "HKCategoryTypeIdentifierSleepAnalysis",
+    "value": "HKCategoryValueSleepAnalysisAsleepREM"
+  },
+  {
+    "endDate": "2026-09-28 04:09:59 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-28 04:05:00 +0300",
+    "type": "HKQuantityTypeIdentifierHeartRate",
+    "unit": "count/min",
+    "value": "61"
+  },
+  {
+    "endDate": "2026-09-28 04:09:59 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-28 04:05:00 +0300",
+    "type": "HKQuantityTypeIdentifierHeartRateVariabilitySDNN",
+    "unit": "ms",
+    "value": "12"
+  },
+  {
+    "endDate": "2026-09-28 04:23:00 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-28 04:08:00 +0300",
+    "type": "HKCategoryTypeIdentifierSleepAnalysis",
+    "value": "HKCategoryValueSleepAnalysisAsleepCore"
+  },
+  {
+    "endDate": "2026-09-28 04:48:00 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-28 04:23:00 +0300",
+    "type": "HKCategoryTypeIdentifierSleepAnalysis",
+    "value": "HKCategoryValueSleepAnalysisAsleepDeep"
+  },
+  {
+    "endDate": "2026-09-28 04:39:59 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-28 04:35:00 +0300",
+    "type": "HKQuantityTypeIdentifierHeartRate",
+    "unit": "count/min",
+    "value": "57"
+  },
+  {
+    "endDate": "2026-09-28 04:39:59 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-28 04:35:00 +0300",
+    "type": "HKQuantityTypeIdentifierHeartRateVariabilitySDNN",
+    "unit": "ms",
+    "value": "11"
+  },
+  {
+    "endDate": "2026-09-28 04:58:00 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-28 04:48:00 +0300",
+    "type": "HKCategoryTypeIdentifierSleepAnalysis",
+    "value": "HKCategoryValueSleepAnalysisAsleepCore"
+  },
+  {
+    "endDate": "2026-09-28 05:12:00 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-28 04:58:00 +0300",
+    "type": "HKCategoryTypeIdentifierSleepAnalysis",
+    "value": "HKCategoryValueSleepAnalysisAsleepREM"
+  },
+  {
+    "endDate": "2026-09-28 05:09:59 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-28 05:05:00 +0300",
+    "type": "HKQuantityTypeIdentifierHeartRate",
+    "unit": "count/min",
+    "value": "68"
+  },
+  {
+    "endDate": "2026-09-28 05:09:59 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-28 05:05:00 +0300",
+    "type": "HKQuantityTypeIdentifierHeartRateVariabilitySDNN",
+    "unit": "ms",
+    "value": "13"
+  },
+  {
+    "endDate": "2026-09-28 05:27:00 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-28 05:12:00 +0300",
+    "type": "HKCategoryTypeIdentifierSleepAnalysis",
+    "value": "HKCategoryValueSleepAnalysisAsleepCore"
+  },
+  {
+    "endDate": "2026-09-28 05:37:00 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-28 05:27:00 +0300",
+    "type": "HKCategoryTypeIdentifierSleepAnalysis",
+    "value": "HKCategoryValueSleepAnalysisAsleepREM"
+  },
+  {
+    "endDate": "2026-09-28 05:39:59 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-28 05:35:00 +0300",
+    "type": "HKQuantityTypeIdentifierHeartRate",
+    "unit": "count/min",
+    "value": "65"
+  },
+  {
+    "endDate": "2026-09-28 05:39:59 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-28 05:35:00 +0300",
+    "type": "HKQuantityTypeIdentifierHeartRateVariabilitySDNN",
+    "unit": "ms",
+    "value": "12"
+  },
+  {
+    "endDate": "2026-09-28 05:59:00 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-28 05:37:00 +0300",
+    "type": "HKCategoryTypeIdentifierSleepAnalysis",
+    "value": "HKCategoryValueSleepAnalysisAsleepCore"
+  },
+  {
+    "endDate": "2026-09-28 06:08:00 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-28 05:59:00 +0300",
+    "type": "HKCategoryTypeIdentifierSleepAnalysis",
+    "value": "HKCategoryValueSleepAnalysisAsleepREM"
+  },
+  {
+    "endDate": "2026-09-28 06:09:59 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-28 06:05:00 +0300",
+    "type": "HKQuantityTypeIdentifierHeartRate",
+    "unit": "count/min",
+    "value": "57"
+  },
+  {
+    "endDate": "2026-09-28 06:09:59 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-28 06:05:00 +0300",
+    "type": "HKQuantityTypeIdentifierHeartRateVariabilitySDNN",
+    "unit": "ms",
+    "value": "11"
+  },
+  {
+    "endDate": "2026-09-28 06:13:00 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-28 06:08:00 +0300",
+    "type": "HKCategoryTypeIdentifierSleepAnalysis",
+    "value": "HKCategoryValueSleepAnalysisAsleepCore"
+  },
+  {
+    "endDate": "2026-09-28 06:28:00 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-28 06:13:00 +0300",
+    "type": "HKCategoryTypeIdentifierSleepAnalysis",
+    "value": "HKCategoryValueSleepAnalysisAsleepREM"
+  },
+  {
+    "endDate": "2026-09-28 06:51:00 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-28 06:28:00 +0300",
+    "type": "HKCategoryTypeIdentifierSleepAnalysis",
+    "value": "HKCategoryValueSleepAnalysisAsleepCore"
+  },
+  {
+    "endDate": "2026-09-28 06:39:59 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-28 06:35:00 +0300",
+    "type": "HKQuantityTypeIdentifierHeartRate",
+    "unit": "count/min",
+    "value": "66"
+  },
+  {
+    "endDate": "2026-09-28 06:39:59 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-28 06:35:00 +0300",
+    "type": "HKQuantityTypeIdentifierHeartRateVariabilitySDNN",
+    "unit": "ms",
+    "value": "14"
+  },
+  {
+    "endDate": "2026-09-28 07:11:00 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-28 06:51:00 +0300",
+    "type": "HKCategoryTypeIdentifierSleepAnalysis",
+    "value": "HKCategoryValueSleepAnalysisAsleepREM"
+  },
+  {
+    "endDate": "2026-09-28 07:09:59 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-28 07:05:00 +0300",
+    "type": "HKQuantityTypeIdentifierHeartRate",
+    "unit": "count/min",
+    "value": "64"
+  },
+  {
+    "endDate": "2026-09-28 07:09:59 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-28 07:05:00 +0300",
+    "type": "HKQuantityTypeIdentifierHeartRateVariabilitySDNN",
+    "unit": "ms",
+    "value": "12"
+  },
+  {
+    "endDate": "2026-09-28 07:25:00 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-28 07:11:00 +0300",
+    "type": "HKCategoryTypeIdentifierSleepAnalysis",
+    "value": "HKCategoryValueSleepAnalysisAsleepCore"
+  },
+  {
+    "endDate": "2026-09-28 07:37:00 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-28 07:25:00 +0300",
+    "type": "HKCategoryTypeIdentifierSleepAnalysis",
+    "value": "HKCategoryValueSleepAnalysisAsleepREM"
+  },
+  {
+    "endDate": "2026-09-28 07:39:59 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-28 07:35:00 +0300",
+    "type": "HKQuantityTypeIdentifierHeartRate",
+    "unit": "count/min",
+    "value": "81"
+  },
+  {
+    "endDate": "2026-09-28 07:39:59 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-28 07:35:00 +0300",
+    "type": "HKQuantityTypeIdentifierHeartRateVariabilitySDNN",
+    "unit": "ms",
+    "value": "10"
+  },
+  {
+    "endDate": "2026-09-28 07:42:00 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-28 07:37:00 +0300",
+    "type": "HKCategoryTypeIdentifierSleepAnalysis",
+    "value": "HKCategoryValueSleepAnalysisAsleepCore"
+  },
+  {
+    "endDate": "2026-09-28 08:07:00 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-28 07:42:00 +0300",
+    "type": "HKCategoryTypeIdentifierSleepAnalysis",
+    "value": "HKCategoryValueSleepAnalysisAsleepREM"
+  },
+  {
+    "endDate": "2026-09-28 08:09:59 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-28 08:05:00 +0300",
+    "type": "HKQuantityTypeIdentifierHeartRate",
+    "unit": "count/min",
+    "value": "65"
+  },
+  {
+    "endDate": "2026-09-28 08:09:59 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-28 08:05:00 +0300",
+    "type": "HKQuantityTypeIdentifierHeartRateVariabilitySDNN",
+    "unit": "ms",
+    "value": "12"
+  },
+  {
+    "endDate": "2026-09-28 08:12:00 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-28 08:07:00 +0300",
+    "type": "HKCategoryTypeIdentifierSleepAnalysis",
+    "value": "HKCategoryValueSleepAnalysisAsleepCore"
+  },
+  {
+    "endDate": "2026-09-28 08:17:00 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-28 08:12:00 +0300",
+    "type": "HKCategoryTypeIdentifierSleepAnalysis",
+    "value": "HKCategoryValueSleepAnalysisAsleepREM"
+  },
+  {
+    "endDate": "2026-09-28 08:35:00 +0300",
+    "sourceName": "Da Halo",
+    "sourceVersion": "1",
+    "startDate": "2026-09-28 08:17:00 +0300",
+    "type": "HKCategoryTypeIdentifierSleepAnalysis",
+    "value": "HKCategoryValueSleepAnalysisAsleepCore"
+  }
+]

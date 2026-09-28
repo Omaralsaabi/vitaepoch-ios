@@ -1,0 +1,59 @@
+{
+  "source": "prompts/CODEX_X6_REVALIDATION_ADDENDUM_2026-09-28.md",
+  "sourceSHA256": "69e5aab83fc9f0a8dd5a703ebadc3d707331aba778fd5d98f31e36be4da43334",
+  "frames": [
+    {
+      "page": "0000",
+      "actualBytes": 188,
+      "declaredBytes": 188,
+      "sha256": "fbe37468a18244cb2e2bd0b70c1f5650ca3c9afbd75a5492aec620d0146aaa23"
+    },
+    {
+      "page": "0001",
+      "actualBytes": 188,
+      "declaredBytes": 188,
+      "sha256": "cae74a777288a5906f44bb3b67351c133f6e95fc3bdab9c79931fb21100f745d"
+    },
+    {
+      "page": "0002",
+      "actualBytes": 188,
+      "declaredBytes": 188,
+      "sha256": "ce7cdf60d3173e942b8b891b4ebab1372edc137d7f9bb575f2a68b62d782ce28"
+    },
+    {
+      "page": "0003",
+      "actualBytes": 188,
+      "declaredBytes": 188,
+      "sha256": "79bb0ec37e4a4d6c46881c53c167728af1efb5d684ea3a742f3a416c8127f6c3"
+    },
+    {
+      "page": "0004",
+      "actualBytes": 186,
+      "declaredBytes": 188,
+      "sha256": "da4b2a04b09664baa3a5ff7e77ca6e792e0f2eacba8e43e2ede5cbbc1f327941"
+    },
+    {
+      "page": "0005",
+      "actualBytes": 184,
+      "declaredBytes": 188,
+      "sha256": "ea8737123c94c80e902b174cb8bcee4c751e97e6f37df7a9e4f058135f631dda"
+    },
+    {
+      "page": "0006",
+      "actualBytes": 188,
+      "declaredBytes": 188,
+      "sha256": "cf7e93270c3494ecbd677d94e508aa4fc58e89c7496d7422f5ac3ddeeb16990e"
+    },
+    {
+      "page": "0007",
+      "actualBytes": 182,
+      "declaredBytes": 188,
+      "sha256": "4f93320116cfc74cccf94a5b199c9d648673b468de0175d16b4e35cb85de7139"
+    }
+  ],
+  "limitations": [
+    "Pages 4/5/7 are short; no padding or shifting.",
+    "Approximate receipt anchor; no original per-packet timing supplied.",
+    "HRV/temperature evidence below is diagnostic metadata, not raw response payload."
+  ]
+}

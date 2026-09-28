@@ -71,3 +71,17 @@ swift run x6-sleep-analysis \
 ```
 
 It writes CSV, JSON, and Markdown descriptive statistics, preserving sparse data without interpolation or stage inference. Optional arguments are a JSON array of explicitly annotated `0211` candidates and a device ID. `Sources/X6Research` and `Sources/X6SleepAnalysis` are Swift package tooling only; they are not linked into the iOS app. See the [fixture provenance](Tests/VitaEpochCoreTests/Fixtures/physical-2026-09-27/README.md) before interpreting the output.
+
+The [28 Sep revalidation report](docs/X6_PHYSICAL_REVALIDATION_2026-09-28.md) adds bounded, missing-page-only movement fallback after the automatic-burst window. Archive schema remains 3. Reported HRV/temperature continuation is physically validated for the matched X6; the new movement fallback still requires a run in VitaEpoch.
+
+For offline vendor references, extract only Da Halo sleep and corresponding HR/SDNN/oxygen observations for the requested night:
+
+```sh
+python3 scripts/extract_sleep_reference.py '/path/to/export 28 sep.zip' 2026-09-28 /path/to/research-inputs
+swift run x6-sleep-analysis \
+  Tests/VitaEpochCoreTests/Fixtures/physical-2026-09-28/capture.json \
+  /path/to/research-inputs/sleep-reference.json /path/to/research-output \
+  --vendor-observations /path/to/research-inputs/vendor-observations.json
+```
+
+Vendor observations occupy separate columns and retain source/record/interval provenance; they never become packet-decoded records or app sleep results. The [two-night comparison](docs/analysis/2026-09-28/cross-night-comparison.md) preserves the missing pre-midnight window and supports no production classifier. `scripts/compare_sleep_nights.py` regenerates that specific 27/28 Sep comparison from the two analysis directories; its narrative is scoped to those nights.

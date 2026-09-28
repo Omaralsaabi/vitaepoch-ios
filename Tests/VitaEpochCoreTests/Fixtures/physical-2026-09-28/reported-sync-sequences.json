@@ -1,0 +1,81 @@
+{
+  "source": "CODEX_X6_REVALIDATION_ADDENDUM_2026-09-28.md",
+  "kind": "user-reported physical VitaEpoch diagnostics; response payload bytes unavailable",
+  "profile": {
+    "serial": "EDA75689",
+    "firmware": "MOY-I4E3-1.1.6"
+  },
+  "sequences": [
+    {
+      "feature": "0210",
+      "variants": [
+        "0000",
+        "0001",
+        "0002",
+        "0003"
+      ],
+      "byteCounts": [
+        152,
+        152,
+        152,
+        152
+      ],
+      "sampleCounts": [
+        12,
+        5,
+        0,
+        0
+      ],
+      "complete": true
+    },
+    {
+      "feature": "0216",
+      "variants": [
+        "0000",
+        "0001",
+        "0002",
+        "0003"
+      ],
+      "byteCounts": [
+        152,
+        152,
+        152,
+        152
+      ],
+      "sampleCounts": [
+        72,
+        30,
+        0,
+        0
+      ],
+      "complete": true
+    }
+  ],
+  "periodicHR": {
+    "feature": "020F",
+    "tx": "FDDA1007020F00",
+    "received": [
+      "0000"
+    ],
+    "sampleCounts": [
+      17
+    ],
+    "missing": [
+      "0001"
+    ]
+  },
+  "movementInitialOnlyAttempts": [
+    {
+      "received": [
+        "0000"
+      ],
+      "elapsed": 9.38
+    },
+    {
+      "received": [
+        "0000"
+      ],
+      "elapsed": 9.494
+    }
+  ]
+}

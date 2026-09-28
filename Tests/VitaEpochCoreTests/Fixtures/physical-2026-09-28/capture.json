@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 3,
+  "packets": [
+    {
+      "id": "48039CED-8E78-5011-88DA-FC702B0527EA",
+      "deviceID": "captured-X6-EDA75689",
+      "characteristic": "FDD3",
+      "direction": "rx",
+      "bytes": "/doQvAITAACAgICAgIKAgICAgICEgICAgICAgICAgICAgICKgICAioCAgICAgICAgICAgICAj4CAgICAgICAgICAgICAgICApICCgIaIgICLmJWAgICAjICAgICAiYCAgICAgICAgICAgICAgICAgICAgICOgICAgICAgICAh4CAjICAgICAgICAgICAgICAgJCYgICAgICAgIKGgICLgICAgIGAgICAgIuAgICAgICEgICAgICAgICAgIA=",
+      "timestamp": 812278980.0,
+      "timeZoneID": "Asia/Amman",
+      "captureEvidence": {
+        "kind": "physicalTranscription",
+        "sourceID": "CODEX_X6_REVALIDATION_ADDENDUM_2026-09-28.md",
+        "note": "Exact document response. Approximate noon anchor 12:03, not actual per-notification timing. Page 0000 reported from VitaEpoch; later selectors returned through nRF. Not one VitaEpoch capture. No TX timestamps fabricated.",
+        "deviceProfile": {
+          "serial": "EDA75689",
+          "firmware": "MOY-I4E3-1.1.6"
+        }
+      }
+    },
+    {
+      "id": "D1597089-5341-5159-B276-DFA4ADFBE739",
+      "deviceID": "captured-X6-EDA75689",
+      "characteristic": "FDD3",
+      "direction": "rx",
+      "bytes": "/doQvAITAAGAgICJgICAgICAgICAgICAhImAgICAhImAgICAgICAgICAgICAgICAgICIgICAgICAgICAgIiAgICAgICJhICAgoCAgICAgIaAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAlYCAgICAgYCHgICAgICSgICAgJKAgICAgICAgICdgICAgIWAgICAgICAgICfgICAgIiDgJCAgICAgIKAgJKAgICAgICAgICAgYA=",
+      "timestamp": 812278980.0,
+      "timeZoneID": "Asia/Amman",
+      "captureEvidence": {
+        "kind": "physicalTranscription",
+        "sourceID": "CODEX_X6_REVALIDATION_ADDENDUM_2026-09-28.md",
+        "note": "Exact document response. Approximate noon anchor 12:03, not actual per-notification timing. Page 0000 reported from VitaEpoch; later selectors returned through nRF. Not one VitaEpoch capture. No TX timestamps fabricated.",
+        "deviceProfile": {
+          "serial": "EDA75689",
+          "firmware": "MOY-I4E3-1.1.6"
+        }
+      }
+    },
+    {
+      "id": "98DB5C16-AC29-5FDB-BDD5-E996907D2BEF",
+      "deviceID": "captured-X6-EDA75689",
+      "characteristic": "FDD3",
+      "direction": "rx",
+      "bytes": "/doQvAITAAKAn4WAgICAgICAgICAgICAgICDhoCAgICAgISHgICHgImBgYCAgICNgICAgIGAgICAgICJgICAgICAgICJgICAgoCAgYiAhYCAooCAgICAgICAgICAgJCAgICZgICAgISAgICAgICAgICAgICAgISGgICAgICAgICcgICAgYCAgIWAgoaAgICAgICAgICGgI+AgICAgICZgoiBhIGChYeRmo2QjZSTkpqUgAAAAAAABAIAAAA=",
+      "timestamp": 812278980.0,
+      "timeZoneID": "Asia/Amman",
+      "captureEvidence": {
+        "kind": "physicalTranscription",
+        "sourceID": "CODEX_X6_REVALIDATION_ADDENDUM_2026-09-28.md",
+        "note": "Exact document response. Approximate noon anchor 12:03, not actual per-notification timing. Page 0000 reported from VitaEpoch; later selectors returned through nRF. Not one VitaEpoch capture. No TX timestamps fabricated.",
+        "deviceProfile": {
+          "serial": "EDA75689",
+          "firmware": "MOY-I4E3-1.1.6"
+        }
+      }
+    },
+    {
+      "id": "D01F63F5-2AA2-50B1-BB3E-33C8AB02C621",
+      "deviceID": "captured-X6-EDA75689",
+      "characteristic": "FDD3",
+      "direction": "rx",
+      "bytes": "/doQvAITAAMABAACAAQIHi41N6+dq7WZsq+ZmKi8qbKrvJKFsKyZmqGzuby8qbG2uLC0tqarr7u7vLuysLW5tZ68tri5sp66vLm1ubO1ur26r766vrK2uLC1rquYsaGps720uKulrZq0rbqrtry8urGxtaqulJqUk5CUjpOWlYyahoqEh6eqmaCwtbi5tZm6nZKNgYmJipaIhJ6jnYyNiqGKlZCXoJafnq+urZenrJqTnaCOlYWKh4aHhIM=",
+      "timestamp": 812278980.0,
+      "timeZoneID": "Asia/Amman",
+      "captureEvidence": {
+        "kind": "physicalTranscription",
+        "sourceID": "CODEX_X6_REVALIDATION_ADDENDUM_2026-09-28.md",
+        "note": "Exact document response. Approximate noon anchor 12:03, not actual per-notification timing. Page 0000 reported from VitaEpoch; later selectors returned through nRF. Not one VitaEpoch capture. No TX timestamps fabricated.",
+        "deviceProfile": {
+          "serial": "EDA75689",
+          "firmware": "MOY-I4E3-1.1.6"
+        }
+      }
+    },
+    {
+      "id": "CD355D63-1507-5709-AD80-6C386031D1CD",
+      "deviceID": "captured-X6-EDA75689",
+      "characteristic": "FDD3",
+      "direction": "rx",
+      "bytes": "/doQvAITAASclZEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "timestamp": 812278980.0,
+      "timeZoneID": "Asia/Amman",
+      "captureEvidence": {
+        "kind": "physicalTranscription",
+        "sourceID": "CODEX_X6_REVALIDATION_ADDENDUM_2026-09-28.md",
+        "note": "Exact document response. Approximate noon anchor 12:03, not actual per-notification timing. Page 0000 reported from VitaEpoch; later selectors returned through nRF. Not one VitaEpoch capture. No TX timestamps fabricated.",
+        "deviceProfile": {
+          "serial": "EDA75689",
+          "firmware": "MOY-I4E3-1.1.6"
+        }
+      }
+    },
+    {
+      "id": "913CFEEF-5808-568B-83EF-ABE46F15178B",
+      "deviceID": "captured-X6-EDA75689",
+      "characteristic": "FDD3",
+      "direction": "rx",
+      "bytes": "/doQvAITAAUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+      "timestamp": 812278980.0,
+      "timeZoneID": "Asia/Amman",
+      "captureEvidence": {
+        "kind": "physicalTranscription",
+        "sourceID": "CODEX_X6_REVALIDATION_ADDENDUM_2026-09-28.md",
+        "note": "Exact document response. Approximate noon anchor 12:03, not actual per-notification timing. Page 0000 reported from VitaEpoch; later selectors returned through nRF. Not one VitaEpoch capture. No TX timestamps fabricated.",
+        "deviceProfile": {
+          "serial": "EDA75689",
+          "firmware": "MOY-I4E3-1.1.6"
+        }
+      }
+    },
+    {
+      "id": "8F61019C-644B-5E14-9EEA-06AF6B4ECA32",
+      "deviceID": "captured-X6-EDA75689",
+      "characteristic": "FDD3",
+      "direction": "rx",
+      "bytes": "/doQvAITAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
+      "timestamp": 812278980.0,
+      "timeZoneID": "Asia/Amman",
+      "captureEvidence": {
+        "kind": "physicalTranscription",
+        "sourceID": "CODEX_X6_REVALIDATION_ADDENDUM_2026-09-28.md",
+        "note": "Exact document response. Approximate noon anchor 12:03, not actual per-notification timing. Page 0000 reported from VitaEpoch; later selectors returned through nRF. Not one VitaEpoch capture. No TX timestamps fabricated.",
+        "deviceProfile": {
+          "serial": "EDA75689",
+          "firmware": "MOY-I4E3-1.1.6"
+        }
+      }
+    },
+    {
+      "id": "951C0FBE-D5DA-50D3-BCF4-88DC124102CB",
+      "deviceID": "captured-X6-EDA75689",
+      "characteristic": "FDD3",
+      "direction": "rx",
+      "bytes": "/doQvAITAAcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
+      "timestamp": 812278980.0,
+      "timeZoneID": "Asia/Amman",
+      "captureEvidence": {
+        "kind": "physicalTranscription",
+        "sourceID": "CODEX_X6_REVALIDATION_ADDENDUM_2026-09-28.md",
+        "note": "Exact document response. Approximate noon anchor 12:03, not actual per-notification timing. Page 0000 reported from VitaEpoch; later selectors returned through nRF. Not one VitaEpoch capture. No TX timestamps fabricated.",
+        "deviceProfile": {
+          "serial": "EDA75689",
+          "firmware": "MOY-I4E3-1.1.6"
+        }
+      }
+    }
+  ],
+  "samples": []
+}
