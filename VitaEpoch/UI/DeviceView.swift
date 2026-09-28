@@ -57,13 +57,20 @@ struct DeviceView: View {
 
 #if DEBUG
 struct DiagnosticsView: View {
+    @EnvironmentObject private var ble: X6CentralManager
     @EnvironmentObject private var store: AppStore
     var body: some View {
         List {
             Section("Archive") {
                 LabeledContent("Packets", value: "\(store.archive.packets.count)")
                 LabeledContent("Decoded records", value: "\(store.archive.samples.count)")
-                Text("x6-v0.2 · Unknown frames are saved without decoding. FDD5 is never written.").font(.caption)
+                Text("x6-v0.3 · Unknown frames are saved without decoding. FDD5 is never written.").font(.caption)
+            }
+            Section("0213 raw movement capture") {
+                Button("Capture current-day movement burst") { ble.captureMovement() }
+                    .disabled(!ble.ready || ble.syncing || ble.measuring)
+                LabeledContent("Minute positions", value: "\((store.archive.movementSamples ?? []).count)")
+                Text("One 0000 request; waits for pages 0000–0007. Raw movement-like bytes only. No sleep-stage inference.").font(.caption)
             }
             Section("Sync request history") {
                 ForEach(Array((store.archive.syncDiagnostics ?? []).reversed())) { request in
@@ -82,7 +89,7 @@ struct DiagnosticsView: View {
                 }
             }
             Section("Timestamp references") {
-                Text("Manual 0209: captured 26 Sep reference. 020B/0219: shared correction remains provisional. Live 2A37: receipt time. Page histories: local day/slot; no manual correction.").font(.caption)
+                Text("Manual 0209: captured 26 Sep reference. Four captured 020B times: independently confirmed by Da Halo export. 0219: provisional. Live 2A37: receipt time. Page histories: local day/slot; no manual correction.").font(.caption)
                 ForEach(store.archive.timestampReferences ?? [], id: \.id) { reference in
                     Text("\(reference.id) · \(reference.timeZoneID) · adjustment \(Int(reference.adjustment))s; capture day only").font(.caption)
                 }

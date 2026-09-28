@@ -37,7 +37,7 @@ final class ArchiveWorkerTests: XCTestCase {
         XCTAssertEqual(migrated.packets.count, 35)
         XCTAssertEqual(migrated.previousDecodes?.count, 16)
         XCTAssertEqual(migrated.samples.count, 16)
-        XCTAssertEqual(migrated.schemaVersion, 2)
+        XCTAssertEqual(migrated.schemaVersion, 3)
         XCTAssertEqual(migrated.syncDiagnostics?.filter { !$0.complete }.count, 6)
         let next = ArchiveWorker(url: url)
         let secondError = await next.load()
@@ -58,4 +58,49 @@ final class ArchiveWorkerTests: XCTestCase {
         await worker.flush()
         XCTAssertEqual(try Data(contentsOf: url), evidence)
     }
+    func testV2MigrationKeepsHistoricalBackupAndPromotesEvidenceLosslessly() async throws {
+        let directory = directory(); defer { try? FileManager.default.removeItem(at: directory) }
+        try FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)
+        var v2 = try JSONDecoder().decode(LocalArchive.self, from: fixture())
+        v2.schemaVersion = 2
+        let oldBytes = try JSONEncoder().encode(v2)
+        let url = directory.appending(path: "archive.json")
+        try oldBytes.write(to: url)
+        let historicalBackup = Data("unchanged prior backup".utf8)
+        try historicalBackup.write(to: directory.appending(path: "archive.before-v2.json"))
+        let worker = ArchiveWorker(url: url)
+        let error = await worker.load(); XCTAssertNil(error)
+        XCTAssertEqual(try Data(contentsOf: directory.appending(path: "archive.before-v2.json")), historicalBackup)
+        XCTAssertEqual(try Data(contentsOf: directory.appending(path: "archive.before-v3.json")), oldBytes)
+        let snapshot = await worker.snapshot()
+        XCTAssertEqual(snapshot.archive.schemaVersion, 3)
+        XCTAssertEqual(Set(snapshot.archive.packets.map(\.id)), Set(v2.packets.map(\.id)))
+        XCTAssertEqual(snapshot.archive.samples.count, v2.samples.count)
+        XCTAssertTrue(snapshot.archive.samples.filter { $0.metric == .oxygen }.allSatisfy { $0.timestampEvidence?.basis == .independentlyConfirmedVendorExport })
+        let reloaded = ArchiveWorker(url: url); _ = await reloaded.load()
+        let next = await reloaded.snapshot()
+        XCTAssertEqual(next.archive.previousDecodes?.count, snapshot.archive.previousDecodes?.count)
+    }
+
+    func testPhysicalMovementRelaunchAndReplayKeepRawAndDeduplicatePositions() async throws {
+        let directory = directory(); defer { try? FileManager.default.removeItem(at: directory) }
+        let fixtureURL = try XCTUnwrap(Bundle.module.url(forResource: "capture", withExtension: "json", subdirectory: "Fixtures/physical-2026-09-27"))
+        let data = try Data(contentsOf: fixtureURL)
+        let original = try JSONDecoder().decode(LocalArchive.self, from: data)
+        let url = directory.appending(path: "archive.json")
+        let worker = ArchiveWorker(url: url)
+        let error = await worker.load(fixture: data); XCTAssertNil(error)
+        let initial = await worker.snapshot()
+        XCTAssertEqual(initial.archive.movementSamples?.count, 1080)
+        XCTAssertEqual(initial.latest[.hrv]?.resolvedHRVStatistic, .sdnn)
+        for packet in original.packets { _ = await worker.process(packet) }
+        await worker.flush()
+        let next = ArchiveWorker(url: url); _ = await next.load()
+        let saved = await next.snapshot()
+        XCTAssertEqual(saved.archive.movementSamples?.count, 1080)
+        XCTAssertEqual(saved.archive.samples.filter { $0.metric == .hrv }.count, 12)
+        XCTAssertEqual(Set(saved.archive.packets.map(\.id)), Set(original.packets.map(\.id)))
+        XCTAssertTrue(saved.archive.packets.contains { $0.bytes.count == 186 })
+    }
+
 }

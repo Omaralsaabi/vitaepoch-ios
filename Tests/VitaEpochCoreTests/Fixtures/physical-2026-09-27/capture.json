@@ -1,0 +1,311 @@
+{
+  "packets": [
+    {
+      "id": "01a04870-1533-51da-97cf-abd3f92204f6",
+      "timestamp": 812217477.0,
+      "deviceID": "captured-X6-EDA75689",
+      "characteristic": "FDD2",
+      "direction": "tx",
+      "bytes": "/doQCAITAAA=",
+      "timeZoneID": "Asia/Amman",
+      "captureEvidence": {
+        "kind": "physicalTranscription",
+        "sourceID": "CODEX_X6_PHYSICAL_EVIDENCE_SLEEP_PASS-2026-09-27",
+        "note": "Observed single request at 18:57:57 local; response times only approximate.",
+        "deviceProfile": {
+          "serial": "EDA75689",
+          "firmware": "MOY-I4E3-1.1.6"
+        }
+      }
+    },
+    {
+      "id": "2420c3c8-4e88-53e8-86e8-7d80f6d1eed9",
+      "timestamp": 812217480.0,
+      "deviceID": "captured-X6-EDA75689",
+      "characteristic": "FDD3",
+      "direction": "rx",
+      "bytes": "/doQGwILBGLLcbdqYStyt2pjTnO3amM+oLdq",
+      "timeZoneID": "Asia/Amman",
+      "captureEvidence": {
+        "kind": "physicalTranscription",
+        "sourceID": "CODEX_X6_PHYSICAL_EVIDENCE_SLEEP_PASS-2026-09-27",
+        "note": "Verbatim handoff frame. Date/context from document; timestamp is the 18:58 analysis anchor, not an exact notification time.",
+        "deviceProfile": {
+          "serial": "EDA75689",
+          "firmware": "MOY-I4E3-1.1.6"
+        }
+      }
+    },
+    {
+      "id": "8c27a41f-1de8-50f4-8514-30ca79543b39",
+      "timestamp": 812217480.0,
+      "deviceID": "captured-X6-EDA75689",
+      "characteristic": "FDD3",
+      "direction": "rx",
+      "bytes": "/doQmAIQAAAAAA0AAAAAAAAAAAAAAAwAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAAsAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAAsAAAAAAAAAAAAAAAoAAAAAAAAAAAA=",
+      "timeZoneID": "Asia/Amman",
+      "captureEvidence": {
+        "kind": "physicalTranscription",
+        "sourceID": "CODEX_X6_PHYSICAL_EVIDENCE_SLEEP_PASS-2026-09-27",
+        "note": "Verbatim handoff frame. Date/context from document; timestamp is the 18:58 analysis anchor, not an exact notification time.",
+        "deviceProfile": {
+          "serial": "EDA75689",
+          "firmware": "MOY-I4E3-1.1.6"
+        }
+      }
+    },
+    {
+      "id": "6210951e-9800-5b3a-8611-fe16e658b0ea",
+      "timestamp": 812217480.0,
+      "deviceID": "captured-X6-EDA75689",
+      "characteristic": "FDD3",
+      "direction": "rx",
+      "bytes": "/doQvAITAACQnaGVj4ONgoKch4GFioCAgIaRlbmNhaq1t5+Tg4CAgICAgICIgICAgICAgICAgICAgICAgICAgICAgIKAhpCAgICAgYCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIiIgICAgICAgICAgIeAgICAgICAgICAgICalbeLh4CAgICAgICAgICAgICAgICAgICAgICAgIWEgICCgICAgICAgICAgICAgIA=",
+      "timeZoneID": "Asia/Amman",
+      "captureEvidence": {
+        "kind": "physicalTranscription",
+        "sourceID": "CODEX_X6_PHYSICAL_EVIDENCE_SLEEP_PASS-2026-09-27",
+        "note": "Verbatim handoff frame. Date/context from document; timestamp is the 18:58 analysis anchor, not an exact notification time.",
+        "deviceProfile": {
+          "serial": "EDA75689",
+          "firmware": "MOY-I4E3-1.1.6"
+        }
+      }
+    },
+    {
+      "id": "f8fdd703-ac97-5bdf-b378-814f06a209d0",
+      "timestamp": 812217480.0,
+      "deviceID": "captured-X6-EDA75689",
+      "characteristic": "FDD3",
+      "direction": "rx",
+      "bytes": "/doQvAITAAGAgIKAgIyAgICAgICAgICAgICAiICAgICAioCAgICRioCAgICAhoGAgIaEgICAgICQgoCAgICAgIKGgICAgI6AgICAgICAi4CAgICAgIuAiYCAjIePgICAgIAAAAAAAAAAAAAAi4SAhIaAgIuAgICAgICAgICAgIWAgICAgICIgICAgICEgICAgICAgJOAgICRhICAgICJgoCAgJCAgICEjYKAgICAgICAgIGBgICAgIqAgII=",
+      "timeZoneID": "Asia/Amman",
+      "captureEvidence": {
+        "kind": "physicalTranscription",
+        "sourceID": "CODEX_X6_PHYSICAL_EVIDENCE_SLEEP_PASS-2026-09-27",
+        "note": "Verbatim handoff frame. Date/context from document; timestamp is the 18:58 analysis anchor, not an exact notification time.",
+        "deviceProfile": {
+          "serial": "EDA75689",
+          "firmware": "MOY-I4E3-1.1.6"
+        }
+      }
+    },
+    {
+      "id": "5f7aa24d-8872-518f-83cd-1d375020a9d9",
+      "timestamp": 812217480.0,
+      "deviceID": "captured-X6-EDA75689",
+      "characteristic": "FDD3",
+      "direction": "rx",
+      "bytes": "/doQvAITAAKhgICAgICEgICAgICAgICAgICAgICAjICAiICAgICAi4SAgomCgICAhoCAhoCAgICAgICAgICAgI+AgIOAgICAgICAgICAgICAgICAgICAgICAgICAgICAgISSgICAhYCAgICAgICAiYWAgIWAioCAgIuAgICAgICIh46hgICAgICAjoCAgIGAgICAgICAgI+AgICAgICHgICAgIaAgIaPgICAgICFgICAgICJgICAgICFgIE=",
+      "timeZoneID": "Asia/Amman",
+      "captureEvidence": {
+        "kind": "physicalTranscription",
+        "sourceID": "CODEX_X6_PHYSICAL_EVIDENCE_SLEEP_PASS-2026-09-27",
+        "note": "Verbatim handoff frame. Date/context from document; timestamp is the 18:58 analysis anchor, not an exact notification time.",
+        "deviceProfile": {
+          "serial": "EDA75689",
+          "firmware": "MOY-I4E3-1.1.6"
+        }
+      }
+    },
+    {
+      "id": "f6143797-e09b-5245-978b-be31778bf898",
+      "timestamp": 812217480.0,
+      "deviceID": "captured-X6-EDA75689",
+      "characteristic": "FDD3",
+      "direction": "rx",
+      "bytes": "/doQvAITAAOUgICAgICAgICAgICAgICAgImAjAIAAAAAAAAAAACIhICEgICAkYCAgICAgICIioCAgICCjYCAgICOi4WAi5SImp+LkYuXkIyAgIGEgICAgbCojpqslJilmJeelZacnBsAAAAACLeej7a8ubi8q7iuoq+5t66JraWiprKvs7KusayuuKuuqLKtt7u7r7q1ppObkZ+VgpaVmZ6Nlp+NkpSVlqesrrOwkp+srYSAgYaDrK66uJk=",
+      "timeZoneID": "Asia/Amman",
+      "captureEvidence": {
+        "kind": "physicalTranscription",
+        "sourceID": "CODEX_X6_PHYSICAL_EVIDENCE_SLEEP_PASS-2026-09-27",
+        "note": "Verbatim handoff frame. Date/context from document; timestamp is the 18:58 analysis anchor, not an exact notification time.",
+        "deviceProfile": {
+          "serial": "EDA75689",
+          "firmware": "MOY-I4E3-1.1.6"
+        }
+      }
+    },
+    {
+      "id": "bf926691-9602-55a8-a7c5-d1c533017b19",
+      "timestamp": 812217480.0,
+      "deviceID": "captured-X6-EDA75689",
+      "characteristic": "FDD3",
+      "direction": "rx",
+      "bytes": "/doQvAITAASYkKKOl4qXlISrsK2xtqumi5aWi4qKi4uIi42JgpOChISCl5+phoCAgIGfo6WEnYajgYCIm5CajYmUoKu5hICAgAA0HSMcnq2jmJaapKusmKCUlKmIiqCejIOEoIGXi56btaitqq2zuZuNg46XhpeWmJWdmIqZoZKLgI2KiYWYsY2Yh56FoZGLq5GalZmVlpGVlZ+vjLixio6FjY6Kj5qcroqBmaCGm5GGkIaFh4WNk5edt5k=",
+      "timeZoneID": "Asia/Amman",
+      "captureEvidence": {
+        "kind": "physicalTranscription",
+        "sourceID": "CODEX_X6_PHYSICAL_EVIDENCE_SLEEP_PASS-2026-09-27",
+        "note": "Verbatim handoff frame. Date/context from document; timestamp is the 18:58 analysis anchor, not an exact notification time.",
+        "deviceProfile": {
+          "serial": "EDA75689",
+          "firmware": "MOY-I4E3-1.1.6"
+        }
+      }
+    },
+    {
+      "id": "57b3abb4-224b-5ec7-bf72-da06efe935d0",
+      "timestamp": 812217480.0,
+      "deviceID": "captured-X6-EDA75689",
+      "characteristic": "FDD3",
+      "direction": "rx",
+      "bytes": "/doQvAITAAWwnIKKoKeJloqDjImCgIqBhIWSlaaerKGQnamOkIaJhYiau5+CiZqWkpacrK6mo6mbnrCmq5eEgYyHqZeatLm6vK28uLyymZacobSopY+LkBgvLgkGiqGnpZ24mZCgnYSMhIGBi5SDpp6Th5mBgoeKgoqZqZGalJqorrCHmJqPmZmUm5WamoeSi5WRipaWj4SOoZimnZGbpZeZjo+LnqewtpGIiISBgYeAhoSFhYKEqqu8pJQ=",
+      "timeZoneID": "Asia/Amman",
+      "captureEvidence": {
+        "kind": "physicalTranscription",
+        "sourceID": "CODEX_X6_PHYSICAL_EVIDENCE_SLEEP_PASS-2026-09-27",
+        "note": "Verbatim handoff frame. Date/context from document; timestamp is the 18:58 analysis anchor, not an exact notification time.",
+        "deviceProfile": {
+          "serial": "EDA75689",
+          "firmware": "MOY-I4E3-1.1.6"
+        }
+      }
+    },
+    {
+      "id": "6398c0b4-4cd9-5bb5-a841-e6941bd8c583",
+      "timestamp": 812217480.0,
+      "deviceID": "captured-X6-EDA75689",
+      "characteristic": "FDD3",
+      "direction": "rx",
+      "bytes": "/doQvAITAAaWgpWOhJmOiZGKkYiKjoSAgKG6urqopK28u7a5tLOXrryroK2hsZiXg4aDgICChIKWh5GEjYCAACkcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "timeZoneID": "Asia/Amman",
+      "captureEvidence": {
+        "kind": "physicalTranscription",
+        "sourceID": "CODEX_X6_PHYSICAL_EVIDENCE_SLEEP_PASS-2026-09-27",
+        "note": "Verbatim handoff frame. Date/context from document; timestamp is the 18:58 analysis anchor, not an exact notification time.",
+        "deviceProfile": {
+          "serial": "EDA75689",
+          "firmware": "MOY-I4E3-1.1.6"
+        }
+      }
+    },
+    {
+      "id": "7aeb3d38-5153-5a8b-b67f-4a119c0eaa76",
+      "timestamp": 812217480.0,
+      "deviceID": "captured-X6-EDA75689",
+      "characteristic": "FDD3",
+      "direction": "rx",
+      "bytes": "/doQvAITAAcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "timeZoneID": "Asia/Amman",
+      "captureEvidence": {
+        "kind": "physicalTranscription",
+        "sourceID": "CODEX_X6_PHYSICAL_EVIDENCE_SLEEP_PASS-2026-09-27",
+        "note": "Verbatim handoff frame. Date/context from document; timestamp is the 18:58 analysis anchor, not an exact notification time.",
+        "deviceProfile": {
+          "serial": "EDA75689",
+          "firmware": "MOY-I4E3-1.1.6"
+        }
+      }
+    },
+    {
+      "id": "aebcd37d-61d2-5e3d-80c0-d014efd49df0",
+      "timestamp": 812217480.0,
+      "deviceID": "captured-X6-EDA75689",
+      "characteristic": "FDD3/excerpt",
+      "direction": "rx",
+      "bytes": "awFqAWwBaQE=",
+      "timeZoneID": "Asia/Amman",
+      "captureEvidence": {
+        "kind": "physicalTranscription",
+        "sourceID": "CODEX_X6_PHYSICAL_EVIDENCE_SLEEP_PASS-2026-09-27",
+        "note": "Physical 0216 value excerpt only; no frame header, page, positions or exact receipt time supplied. Not decoded as a full packet.",
+        "deviceProfile": {
+          "serial": "EDA75689",
+          "firmware": "MOY-I4E3-1.1.6"
+        }
+      }
+    },
+    {
+      "id": "252a2042-b1f2-5699-9a4b-179b14b8bdf9",
+      "timestamp": 812217480.0,
+      "deviceID": "captured-X6-EDA75689",
+      "characteristic": "FDD2",
+      "direction": "tx",
+      "bytes": "/doQBwIOAA==",
+      "timeZoneID": "Asia/Amman",
+      "captureEvidence": {
+        "kind": "physicalTranscription",
+        "sourceID": "CODEX_X6_PHYSICAL_EVIDENCE_SLEEP_PASS-2026-09-27",
+        "note": "Negative evidence: no response observed with FDD1/FDD3 enabled. Exact attempt time not supplied; analysis anchor only.",
+        "deviceProfile": {
+          "serial": "EDA75689",
+          "firmware": "MOY-I4E3-1.1.6"
+        }
+      }
+    },
+    {
+      "id": "9974fd3a-afd1-58ae-9644-721404ca4527",
+      "timestamp": 812217480.0,
+      "deviceID": "captured-X6-EDA75689",
+      "characteristic": "FDD2",
+      "direction": "tx",
+      "bytes": "/doQCAIOAAA=",
+      "timeZoneID": "Asia/Amman",
+      "captureEvidence": {
+        "kind": "physicalTranscription",
+        "sourceID": "CODEX_X6_PHYSICAL_EVIDENCE_SLEEP_PASS-2026-09-27",
+        "note": "Negative evidence: no response observed with FDD1/FDD3 enabled. Exact attempt time not supplied; analysis anchor only.",
+        "deviceProfile": {
+          "serial": "EDA75689",
+          "firmware": "MOY-I4E3-1.1.6"
+        }
+      }
+    },
+    {
+      "id": "6bdda11b-008b-573c-ab8d-0eb7db9caf23",
+      "timestamp": 812217480.0,
+      "deviceID": "captured-X6-EDA75689",
+      "characteristic": "FDD2",
+      "direction": "tx",
+      "bytes": "/doQBgIO",
+      "timeZoneID": "Asia/Amman",
+      "captureEvidence": {
+        "kind": "physicalTranscription",
+        "sourceID": "CODEX_X6_PHYSICAL_EVIDENCE_SLEEP_PASS-2026-09-27",
+        "note": "Negative evidence: no response observed with FDD1/FDD3 enabled. Exact attempt time not supplied; analysis anchor only.",
+        "deviceProfile": {
+          "serial": "EDA75689",
+          "firmware": "MOY-I4E3-1.1.6"
+        }
+      }
+    },
+    {
+      "id": "96f05141-9332-5434-b54e-160fa46c0a4a",
+      "timestamp": 812217480.0,
+      "deviceID": "captured-X6-EDA75689",
+      "characteristic": "FDD3/excerpt",
+      "direction": "rx",
+      "bytes": "/doQZwISABc=",
+      "timeZoneID": "Asia/Amman",
+      "captureEvidence": {
+        "kind": "physicalTranscription",
+        "sourceID": "CODEX_X6_PHYSICAL_EVIDENCE_SLEEP_PASS-2026-09-27",
+        "note": "0212 incomplete header excerpt; unknown feature, not sleep duration.",
+        "deviceProfile": {
+          "serial": "EDA75689",
+          "firmware": "MOY-I4E3-1.1.6"
+        }
+      }
+    },
+    {
+      "id": "06657b6d-c59f-5ee1-9fbf-fcc10d11b6f3",
+      "timestamp": 812217480.0,
+      "deviceID": "captured-X6-EDA75689",
+      "characteristic": "FDD3/excerpt",
+      "direction": "rx",
+      "bytes": "/doQZwISAQA=",
+      "timeZoneID": "Asia/Amman",
+      "captureEvidence": {
+        "kind": "physicalTranscription",
+        "sourceID": "CODEX_X6_PHYSICAL_EVIDENCE_SLEEP_PASS-2026-09-27",
+        "note": "0212 incomplete header excerpt; unknown feature, not sleep duration.",
+        "deviceProfile": {
+          "serial": "EDA75689",
+          "firmware": "MOY-I4E3-1.1.6"
+        }
+      }
+    }
+  ],
+  "samples": []
+}

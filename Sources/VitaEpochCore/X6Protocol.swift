@@ -39,7 +39,7 @@ public struct X6FrameAssembler: Sendable {
 }
 
 public enum X6Command: CaseIterable, Sendable {
-    case activity, manualHeartRate, oxygen, stress, periodicHeartRate, hrv, temperature, startHeartRate, stopHeartRate
+    case activity, manualHeartRate, oxygen, stress, periodicHeartRate, hrv, temperature, movement, startHeartRate, stopHeartRate
     public var bytes: Data {
         switch self {
         case .activity: Data([0xFD,0xDA,0x10,7,2,0x0D,0])
@@ -49,6 +49,7 @@ public enum X6Command: CaseIterable, Sendable {
         case .periodicHeartRate: Data([0xFD,0xDA,0x10,7,2,0x0F,0])
         case .hrv: Data([0xFD,0xDA,0x10,8,2,0x10,0,0])
         case .temperature: Data([0xFD,0xDA,0x10,8,2,0x16,0,0])
+        case .movement: Data([0xFD,0xDA,0x10,8,2,0x13,0,0])
         case .startHeartRate: Data([0xFD,0xDA,0x10,7,1,9,1])
         case .stopHeartRate: Data([0xFD,0xDA,0x10,7,1,9,0])
         }
@@ -57,14 +58,19 @@ public enum X6Command: CaseIterable, Sendable {
 }
 
 public enum X6Decoder {
-    public static func decode(_ frame: X6Frame, packet: RawPacket, calendar: Calendar = .current, reference: ManualTimestampReference? = nil) throws -> [MetricSample] {
+    public static func decode(_ frame: X6Frame, packet: RawPacket, calendar: Calendar = .current, reference: ManualTimestampReference? = nil, profile: VerifiedX6Profile? = nil) throws -> [MetricSample] {
         guard frame.group == 2 else { throw ProtocolError.unsupportedFeature(frame.feature) }
         let b = frame.payload
         let feature = String(format: "02%02X", frame.feature)
         func sample(_ metric: MetricKind, _ value: Double, _ date: Date, _ method: SampleMethod,
                     _ confidence: MetricConfidence = .deviceReported, _ evidence: TimestampEvidence? = nil) -> MetricSample {
             MetricSample(metric: metric, value: value, timestamp: date, method: method, feature: feature,
-                         deviceID: packet.deviceID, packetID: packet.id, confidence: confidence, timestampEvidence: evidence)
+                         deviceID: packet.deviceID, packetID: packet.id, confidence: confidence, timestampEvidence: evidence,
+                         hrvStatistic: metric == .hrv ? (profile?.confirmsSDNN == true ? .sdnn : .unknown) : nil,
+                         semanticEvidence: metric == .hrv ? profile?.sdnnEvidence : metric == .wristTemperature ?
+                            SemanticEvidence(status: .provisional, sourceID: "x6-0216-physical-captures",
+                                description: "Little-endian tenths interpreted as wrist temperature; no independent temperature ground truth.",
+                                firmware: profile?.firmware, serial: profile?.serial) : nil)
         }
         switch frame.feature {
         case 9, 0x0B, 0x19:

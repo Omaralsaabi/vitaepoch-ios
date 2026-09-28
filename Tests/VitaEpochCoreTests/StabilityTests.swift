@@ -29,7 +29,7 @@ final class StabilityTests: XCTestCase {
         XCTAssertEqual(replay.previousDecodes?.count, original.samples.count)
         for metric in [MetricKind.oxygen,.stress] {
             let sample = try XCTUnwrap(replay.samples.first { $0.metric == metric })
-            XCTAssertEqual(sample.timestampEvidence?.basis, .sharedManualReferenceProvisional)
+            XCTAssertEqual(sample.timestampEvidence?.basis, metric == .oxygen ? .independentlyConfirmedVendorExport : .sharedManualReferenceProvisional)
             XCTAssertNotNil(sample.timestampEvidence?.rawSeconds)
         }
         // The same instant renders differently when traveling; it is not corrected a second time.

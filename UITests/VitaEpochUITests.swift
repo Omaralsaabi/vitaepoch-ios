@@ -41,6 +41,7 @@ final class VitaEpochUITests: XCTestCase {
         }
         let app = XCUIApplication()
         app.launchArguments = ["--ui-testing"]
+        app.launchEnvironment["VITAEPOCH_TEST_NOW"] = "2026-09-26T20:00:00+03:00"
         app.launchEnvironment["VITAEPOCH_TEST_ARCHIVE"] = try JSONSerialization.data(withJSONObject: archive).base64EncodedString()
         app.launch()
         XCTAssertTrue(app.staticTexts.matching(NSPredicate(format: "label CONTAINS %@", "1 day with heart data")).firstMatch.waitForExistence(timeout: 10))
@@ -86,4 +87,21 @@ final class VitaEpochUITests: XCTestCase {
         XCTAssertTrue(app.staticTexts["Intraday readings"].exists)
         XCTAssertTrue(app.staticTexts["36.4"].exists)
     }
+    func testPhysicalSeptember27HRVUsesScopedSDNNCopy() throws {
+        let url = try XCTUnwrap(Bundle(for: Self.self).url(forResource: "capture", withExtension: "json", subdirectory: "physical-2026-09-27"))
+        let app = XCUIApplication()
+        app.launchArguments = ["--ui-testing"]
+        app.launchEnvironment["VITAEPOCH_TEST_ARCHIVE"] = try Data(contentsOf: url).base64EncodedString()
+        app.launchEnvironment["VITAEPOCH_TEST_NOW"] = "2026-09-27T18:58:00+03:00"
+        app.launch()
+        XCTAssertTrue(app.staticTexts.matching(NSPredicate(format: "label CONTAINS %@", "1 day with heart data")).firstMatch.waitForExistence(timeout: 10))
+        let hrv = app.buttons["metric-hrv"]
+        reveal(hrv, in: app); hrv.tap()
+        XCTAssertTrue(app.navigationBars["HRV · SDNN"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.staticTexts["Intraday readings"].exists)
+        let explanation = app.staticTexts.matching(NSPredicate(format: "label CONTAINS %@", "confirmed by Da Halo HealthKit export")).firstMatch
+        reveal(explanation, in: app)
+        XCTAssertTrue(explanation.exists)
+    }
+
 }

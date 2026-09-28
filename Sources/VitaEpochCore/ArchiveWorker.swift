@@ -22,8 +22,8 @@ public actor ArchiveWorker {
                 try fixture.write(to: url, options: .atomic)
             }
             let loaded = try LocalArchive.read(from: url)
-            if loaded.schemaVersion != 2 {
-                let backup = url.deletingLastPathComponent().appending(path: "archive.before-v2.json")
+            if loaded.schemaVersion != 3 {
+                let backup = url.deletingLastPathComponent().appending(path: (loaded.schemaVersion ?? 1) < 2 ? "archive.before-v2.json" : "archive.before-v3.json")
                 if !FileManager.default.fileExists(atPath: backup.path) {
                     try FileManager.default.copyItem(at: url, to: backup)
                 }

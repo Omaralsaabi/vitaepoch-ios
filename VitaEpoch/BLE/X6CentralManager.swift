@@ -102,6 +102,13 @@ final class X6CentralManager: NSObject, ObservableObject {
         incompleteIDs = []; issue = nil; syncing = true; syncSummary = "Syncing…"
         pending = X6Command.sync; sendNext()
     }
+    #if DEBUG
+    func captureMovement() {
+        guard ready, !syncing, !measuring, pendingControl == nil else { return }
+        incompleteIDs = []; issue = nil; syncing = true; syncSummary = "Capturing 0213…"
+        pending = [.movement]; sendNext()
+    }
+    #endif
     private func sendNext() {
         guard active == nil, let peripheral, peripheral.canSendWriteWithoutResponse else { return }
         guard !pending.isEmpty else {

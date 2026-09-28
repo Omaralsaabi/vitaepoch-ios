@@ -20,7 +20,7 @@ struct MetricDetailView: View {
                     Text(kind.unit).foregroundStyle(.secondary)
                     Text(sample.timestamp, format: .dateTime.month(.abbreviated).day().hour().minute()).font(.caption).foregroundStyle(.secondary)
                     if let evidence = sample.timestampEvidence {
-                        Text(evidence.basis == .unixUnverified ? "Timestamp convention unverified" : evidence.basis == .sharedManualReferenceProvisional ? "Timestamp correction provisional" : evidence.basis == .capturedManualReference ? "Time aligned to captured device reference" : "Time based on \(evidence.basis == .receiptTime ? "receipt" : "device day/slot")")
+                        Text(evidence.basis == .unixUnverified ? "Timestamp convention unverified" : evidence.basis == .sharedManualReferenceProvisional ? "Timestamp correction provisional" : evidence.basis == .independentlyConfirmedVendorExport ? "Time confirmed against Da Halo export" : evidence.basis == .capturedManualReference ? "Time aligned to captured device reference" : "Time based on \(evidence.basis == .receiptTime ? "receipt" : "device day/slot")")
                             .font(.caption).foregroundStyle(.secondary)
                     }
                     DataConfidenceBadge(text: "X6 · \(sample.method.rawValue)\(sample.confidence == .provisionalLayout ? " · provisional layout" : "")")
@@ -52,7 +52,7 @@ struct MetricDetailView: View {
             }
             Surface {
                 Text("About this metric").font(.headline)
-                Text(kind.explanation).font(.subheadline).foregroundStyle(.secondary)
+                Text(kind.explanation(for: store.latest(kind))).font(.subheadline).foregroundStyle(.secondary)
                 if kind == .wristTemperature { Text("A personal deviation will be shown once the temperature baseline is established.").font(.caption).foregroundStyle(.secondary) }
             }
             if !samples.isEmpty {
@@ -70,7 +70,7 @@ struct MetricDetailView: View {
                     }
                 }
             }
-        }.navigationTitle(kind.title).navigationBarTitleDisplayMode(.inline)
+        }.navigationTitle(kind.title(for: store.latest(kind))).navigationBarTitleDisplayMode(.inline)
             .toolbar(.hidden, for: .tabBar)
             .onChange(of: kind) { _, _ in range = .day }
     }

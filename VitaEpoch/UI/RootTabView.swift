@@ -79,11 +79,11 @@ struct AgeView: View {
                 Text("Model inputs").font(.headline)
                 input("Heart rate & activity", detail: store.archive.samples.isEmpty ? "Waiting for X6 readings" : "Device readings available; quality review required", symbol: "heart")
                 Divider()
-                input("HRV age component", detail: "Excluded — X6 metric type unverified", symbol: "waveform.path.ecg")
+                input("HRV age component", detail: store.latest(.hrv)?.resolvedHRVStatistic == .sdnn ? "SDNN confirmed — age-model compatibility not validated" : "Excluded — X6 metric type unverified", symbol: "waveform.path.ecg")
                 Divider()
                 input("VO₂ max", detail: "Unavailable — HealthKit bridge planned", symbol: "lungs")
                 Divider()
-                input("Sleep", detail: "Awaiting protocol validation", symbol: "moon")
+                input("Sleep", detail: "Awaiting protocol/model validation", symbol: "moon")
             }
             Surface {
                 DisclosureGroup("How this will be calculated") {

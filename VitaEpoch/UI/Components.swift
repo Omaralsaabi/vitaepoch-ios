@@ -14,6 +14,15 @@ extension MetricKind {
         case .calories: "flame"
         }
     }
+    func title(for sample: MetricSample?) -> String {
+        self == .hrv && sample?.resolvedHRVStatistic == .sdnn ? "HRV · SDNN" : title
+    }
+    func explanation(for sample: MetricSample?) -> String {
+        if self == .hrv && sample?.resolvedHRVStatistic == .sdnn {
+            return "HRV SDNN (ms), confirmed by Da Halo HealthKit export for this X6/firmware path. This confirms the vendor statistic label, not clinical accuracy."
+        }
+        return explanation
+    }
     var explanation: String {
         switch self {
         case .heartRate: "Manual measurements and periodic readings are shown separately. The 30-minute history cannot establish your true maximum heart rate."
@@ -74,7 +83,7 @@ struct MetricCard: View {
     let sample: MetricSample?
     var body: some View {
         Surface {
-            Label(kind.title, systemImage: kind.symbol).font(.subheadline).foregroundStyle(.secondary)
+            Label(kind.title(for: sample), systemImage: kind.symbol).font(.subheadline).foregroundStyle(.secondary)
             if let sample {
                 Text(kind.formatted(sample.value)).font(.system(.title, design: .rounded, weight: .semibold)).monospacedDigit()
                 Text(kind.unit).font(.caption).foregroundStyle(.secondary)

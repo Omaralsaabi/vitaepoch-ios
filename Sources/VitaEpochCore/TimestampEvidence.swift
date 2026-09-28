@@ -2,7 +2,7 @@ import Foundation
 
 public struct TimestampEvidence: Codable, Equatable, Sendable {
     public enum Basis: String, Codable, Sendable {
-        case unixUnverified, capturedManualReference, sharedManualReferenceProvisional
+        case unixUnverified, capturedManualReference, sharedManualReferenceProvisional, independentlyConfirmedVendorExport
         case localDaySlotProvisional, receiptTime
     }
     public var basis: Basis
@@ -37,14 +37,16 @@ public struct ManualTimestampReference: Codable, Equatable, Sendable {
 
     public static let capturedHR = "FDDA102A02090740B86DB76A4A356EB76A56A16EB76A4A1370B76A4BBB70B76A4A5C74B76A5BD274B76A"
 
+    public static let capturedSpO2 = "FDDA101B020B0462CB71B76A612B72B76A634E73B76A633EA0B76A"
+    public static let confirmedSpO2Seconds: Set<UInt32> = [0x6AB771CB, 0x6AB7722B, 0x6AB7734E, 0x6AB7A03E]
+
     public static func september26Reference(in packets: [RawPacket]) -> [String: Self] {
         var references: [String: Self] = [:]
         let grouped = Dictionary(grouping: packets, by: \.deviceID)
         for (deviceID, packets) in grouped {
             // Match this device's identity and exact captured history, not a BPM coincidence.
-            guard packets.contains(where: { $0.characteristic == "2A25" && $0.bytes == Data("EDA75689".utf8) }),
-                  packets.contains(where: { $0.characteristic == "2A28" && $0.bytes == Data("MOY-I4E3-1.1.6".utf8) }),
-                  packets.contains(where: { $0.direction == .rx && $0.bytes.hex == capturedHR }) else { continue }
+            guard VerifiedX6Profile.profiles(in: packets)[deviceID]?.confirmsSDNN == true,
+                  packets.contains(where: { $0.direction == .rx && [capturedHR, capturedSpO2].contains($0.bytes.hex) }) else { continue }
             var local = Calendar(identifier: .gregorian)
             local.timeZone = TimeZone(identifier: "Asia/Amman")!
             let expected = local.date(from: DateComponents(year: 2026, month: 9, day: 26, hour: 15, minute: 31, second: 30))!
@@ -61,9 +63,11 @@ public struct ManualTimestampReference: Codable, Equatable, Sendable {
         let instant = Date(timeIntervalSince1970: Double(raw))
         guard self.deviceID == deviceID, [9, 0x0B, 0x19].contains(feature),
               instant >= rawDayStart, instant < rawDayEnd else { return nil }
+        let confirmedOxygen = feature == 0x0B && Self.confirmedSpO2Seconds.contains(raw)
         let evidence = TimestampEvidence(
-            basis: feature == 9 ? .capturedManualReference : .sharedManualReferenceProvisional,
-            rawSeconds: raw, timeZoneID: timeZoneID, adjustmentSeconds: adjustment, referenceID: id)
+            basis: feature == 9 ? .capturedManualReference : confirmedOxygen ? .independentlyConfirmedVendorExport : .sharedManualReferenceProvisional,
+            rawSeconds: raw, timeZoneID: timeZoneID, adjustmentSeconds: adjustment,
+            referenceID: confirmedOxygen ? "da-halo-health-export-2026-09-27-spo2" : id)
         return (instant.addingTimeInterval(adjustment), evidence)
     }
 }

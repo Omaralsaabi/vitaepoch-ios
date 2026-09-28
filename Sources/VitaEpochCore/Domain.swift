@@ -45,14 +45,18 @@ public struct MetricSample: Codable, Identifiable, Equatable, Sendable {
     public let packetID: UUID
     public let decoderVersion: String
     public let timestampEvidence: TimestampEvidence?
+    public let hrvStatistic: HRVStatistic?
+    public let semanticEvidence: SemanticEvidence?
+    public var resolvedHRVStatistic: HRVStatistic { hrvStatistic ?? .unknown }
     // A daily summary is a replaceable snapshot; manual and periodic readings are immutable slots.
     public var id: String { "\(deviceID)|\(source.rawValue)|\(feature)|\(metric.rawValue)|\(method.rawValue)|\(timestamp.timeIntervalSince1970)" }
     public init(metric: MetricKind, value: Double, timestamp: Date, method: SampleMethod,
-                feature: String, deviceID: String, packetID: UUID, confidence: MetricConfidence = .deviceReported, timestampEvidence: TimestampEvidence? = nil) {
+                feature: String, deviceID: String, packetID: UUID, confidence: MetricConfidence = .deviceReported, timestampEvidence: TimestampEvidence? = nil, hrvStatistic: HRVStatistic? = nil, semanticEvidence: SemanticEvidence? = nil) {
         self.metric = metric; self.value = value; self.timestamp = timestamp; self.method = method
         self.feature = feature; self.deviceID = deviceID; self.packetID = packetID
-        self.confidence = confidence; source = .x6; decoderVersion = "x6-v0.2"
+        self.confidence = confidence; source = .x6; decoderVersion = "x6-v0.3"
         self.timestampEvidence = timestampEvidence
+        self.hrvStatistic = hrvStatistic; self.semanticEvidence = semanticEvidence
     }
 }
 
@@ -65,9 +69,11 @@ public struct RawPacket: Codable, Identifiable, Sendable {
     public let direction: Direction
     public let bytes: Data
     public let timeZoneID: String?
-    public init(deviceID: String, characteristic: String, direction: Direction, bytes: Data, timestamp: Date = Date(), timeZoneID: String = TimeZone.current.identifier) {
+    public let captureEvidence: CaptureEvidence?
+    public init(deviceID: String, characteristic: String, direction: Direction, bytes: Data, timestamp: Date = Date(), timeZoneID: String = TimeZone.current.identifier, captureEvidence: CaptureEvidence? = nil) {
         id = UUID(); self.timestamp = timestamp; self.deviceID = deviceID
         self.characteristic = characteristic; self.direction = direction; self.bytes = bytes; self.timeZoneID = timeZoneID
+        self.captureEvidence = captureEvidence
     }
 }
 

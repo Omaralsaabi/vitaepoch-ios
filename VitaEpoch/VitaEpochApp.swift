@@ -10,7 +10,8 @@ struct VitaEpochApp: App {
         #if DEBUG
         if ProcessInfo.processInfo.arguments.contains("--ui-testing") {
             store = AppStore(url: URL.temporaryDirectory.appending(path: "VitaEpochUITests-\(UUID())/archive.json"),
-                fixture: ProcessInfo.processInfo.environment["VITAEPOCH_TEST_ARCHIVE"].flatMap { Data(base64Encoded: $0) })
+                fixture: ProcessInfo.processInfo.environment["VITAEPOCH_TEST_ARCHIVE"].flatMap { Data(base64Encoded: $0) },
+                queryDate: ProcessInfo.processInfo.environment["VITAEPOCH_TEST_NOW"].flatMap { ISO8601DateFormatter().date(from: $0) })
         } else { store = AppStore() }
         #else
         store = AppStore()

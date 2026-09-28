@@ -1,0 +1,75 @@
+{
+  "documentSHA256": "619546968c0f9478a03cac9d680545220ccc30f4e94ffbb296ad232a98c933dd",
+  "profile": {
+    "serial": "EDA75689",
+    "firmware": "MOY-I4E3-1.1.6"
+  },
+  "frames": [
+    {
+      "prefix": "020B0462",
+      "actualLength": 27,
+      "declaredLength": 27,
+      "sha256": "249851dc69ad142d2a1b6024421170b1ce56c0697ca89d8f96585ef0f92a8852"
+    },
+    {
+      "prefix": "02100000",
+      "actualLength": 152,
+      "declaredLength": 152,
+      "sha256": "65baaa9993f31297441fc5c63f398b81c8a8ab6f86eea9f88bb2f2b5d88981a5"
+    },
+    {
+      "prefix": "02130000",
+      "actualLength": 188,
+      "declaredLength": 188,
+      "sha256": "0fd1c893f35c8b5d97ecd37ef64bb216a83e3ead44c79f80e7a94fd6e75e9021"
+    },
+    {
+      "prefix": "02130001",
+      "actualLength": 188,
+      "declaredLength": 188,
+      "sha256": "7ebba2d2992f1e79fceb2a277b7350a0ecece669f95cf7b5eebc9eb811e6260a"
+    },
+    {
+      "prefix": "02130002",
+      "actualLength": 188,
+      "declaredLength": 188,
+      "sha256": "ef7c59f4a5a0d8c7e9be66b8d15d3c950bdf7c350c4b488b46f5a3599327a836"
+    },
+    {
+      "prefix": "02130003",
+      "actualLength": 188,
+      "declaredLength": 188,
+      "sha256": "61aee3a00a08cc0d2257d9a89b8be6f82bbe3a29c9b6f36c1d5428bd8c74d887"
+    },
+    {
+      "prefix": "02130004",
+      "actualLength": 188,
+      "declaredLength": 188,
+      "sha256": "85a25ddcf53ea0d14fed44c3f308090b8b91cdda3399e4384f7aa49825ee99b2"
+    },
+    {
+      "prefix": "02130005",
+      "actualLength": 188,
+      "declaredLength": 188,
+      "sha256": "fa6bc70130e88135612255996033990ef37e56d347fdb50b3a66dff9a4721418"
+    },
+    {
+      "prefix": "02130006",
+      "actualLength": 186,
+      "declaredLength": 188,
+      "sha256": "4212b67c3e0f4eda5c24ff79dc8f6b76cb9ae8d87fed0b00d23f95762144e689"
+    },
+    {
+      "prefix": "02130007",
+      "actualLength": 186,
+      "declaredLength": 188,
+      "sha256": "77341b763878b8c61a8a0deff81a6a796e0e2dcddb0d14ef8454afc3cfc94d46"
+    }
+  ],
+  "limitations": [
+    "0213 pages 0006 and 0007 are each 186 bytes with declared length 188; not padded or decoded.",
+    "0216 supplied as words only, so no actual full temperature-page replay is claimed.",
+    "Exact RX times not supplied; 18:58 local is an analysis anchor for reported capture context.",
+    "020E attempts are negative evidence only. 0212 remains unknown."
+  ]
+}

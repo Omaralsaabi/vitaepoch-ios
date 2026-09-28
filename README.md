@@ -56,3 +56,18 @@ The current Age screen counts days containing heart data, **not validated comple
 ## Protocol boundaries
 
 X6 HRV is not assumed to be RMSSD. Sparse HR buckets are not observed maximum HR. Temperature is wrist temperature. Unknown features are saved without interpretation; FDD5 and unknown writes are never used. Day offsets and several layouts remain provisional as documented in the handoff. No time-setting command is sent, so an incorrect band clock must be corrected externally.
+
+## Physical evidence and offline sleep research
+
+The [27 Sep integration report](docs/X6_PHYSICAL_EVIDENCE_2026-09-27.md) records scoped SDNN semantics, independently confirmed SpO₂ timestamps, raw `0213` minute positions, fixture limitations, and physical revalidation requirements. The two previous validation reports remain historical evidence.
+
+Run the development-only alignment utility with an archive and vendor reference intervals:
+
+```sh
+swift run x6-sleep-analysis \
+  Tests/VitaEpochCoreTests/Fixtures/physical-2026-09-27/capture.json \
+  Tests/VitaEpochCoreTests/Fixtures/physical-2026-09-27/sleep-reference.json \
+  docs/analysis/2026-09-27
+```
+
+It writes CSV, JSON, and Markdown descriptive statistics, preserving sparse data without interpolation or stage inference. Optional arguments are a JSON array of explicitly annotated `0211` candidates and a device ID. `Sources/X6Research` and `Sources/X6SleepAnalysis` are Swift package tooling only; they are not linked into the iOS app. See the [fixture provenance](Tests/VitaEpochCoreTests/Fixtures/physical-2026-09-27/README.md) before interpreting the output.

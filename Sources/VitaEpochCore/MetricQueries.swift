@@ -27,7 +27,11 @@ public enum MetricQueries {
                               range: ChartRange, now: Date, calendar: Calendar) -> MetricSeries {
         let end = calendar.date(byAdding: .day, value: 1, to: calendar.startOfDay(for: now))!
         let start = calendar.date(byAdding: .day, value: -(range.rawValue-1), to: calendar.startOfDay(for: now))!
-        let records = samples.filter { $0.metric == metric && $0.timestamp >= start && $0.timestamp <= now }.sorted { $0.timestamp < $1.timestamp }
+        let scoped: [MetricSample]
+        if metric == .hrv, let latest = samples.filter({ $0.metric == .hrv }).max(by: { $0.timestamp < $1.timestamp }) {
+            scoped = samples.filter { $0.deviceID == latest.deviceID && $0.resolvedHRVStatistic == latest.resolvedHRVStatistic }
+        } else { scoped = samples }
+        let records = scoped.filter { $0.metric == metric && $0.timestamp >= start && $0.timestamp <= now }.sorted { $0.timestamp < $1.timestamp }
         let activity = [.steps, .distance, .calories].contains(metric)
         let points: [ChartPoint]
         if range.aggregatesByDay || activity {

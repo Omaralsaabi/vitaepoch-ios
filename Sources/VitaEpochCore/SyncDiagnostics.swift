@@ -43,7 +43,7 @@ public struct SyncProgress: Sendable {
     public init(command: X6Command, deviceID: String, startedAt: Date) {
         self.command = command
         diagnostic = SyncDiagnostic(deviceID: deviceID, featureID: command.featureID, startedAt: startedAt,
-                                    expectedPages: command == .periodicHeartRate ? [0,1] : [.hrv,.temperature].contains(command) ? [0,1,2,3] : [])
+                                    expectedPages: command == .movement ? Array(0...7) : command == .periodicHeartRate ? [0,1] : [.hrv,.temperature].contains(command) ? [0,1,2,3] : [])
     }
     public mutating func wrote(_ bytes: Data, at date: Date) {
         diagnostic.writes.append(SyncWrite(timestamp: date, bytesHex: bytes.hex, variantHex: Data(bytes.dropFirst(6)).hex))
@@ -94,5 +94,5 @@ public struct SyncProgress: Sendable {
 
 public extension X6Command {
     var featureID: String { String(format: "%02X%02X", Array(bytes)[4], Array(bytes)[5]) }
-    static func matching(_ bytes: Data) -> Self? { sync.first { $0.bytes == bytes } }
+    static func matching(_ bytes: Data) -> Self? { (sync + [.movement]).first { $0.bytes == bytes } }
 }
