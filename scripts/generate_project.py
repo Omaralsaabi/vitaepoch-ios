@@ -24,17 +24,20 @@ for file in files:
     path = file.relative_to(root).as_posix()
     obj(path, f'isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "{path}"; sourceTree = SOURCE_ROOT;')
     obj('build:'+path, f'isa = PBXBuildFile; fileRef = {ref(path)};')
+obj('assets', 'isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "VitaEpoch/Assets.xcassets"; sourceTree = SOURCE_ROOT;')
+obj('assetsbuild', f'isa = PBXBuildFile; fileRef = {ref("assets")};')
 obj('product', 'isa = PBXFileReference; explicitFileType = wrapper.application; path = VitaEpoch.app; sourceTree = BUILT_PRODUCTS_DIR;')
 obj('uitestproduct', 'isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = VitaEpochUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR;')
 obj('products', f'isa = PBXGroup; children = ({ref("product")},{ref("uitestproduct")}); name = Products; sourceTree = "<group>";')
-obj('root', 'isa = PBXGroup; children = (' + ','.join(ref(f.relative_to(root).as_posix()) for f in files) + ',' + ref('products') + ',' + ref('uitestfile') + '); sourceTree = "<group>";')
+obj('root', 'isa = PBXGroup; children = (' + ','.join(ref(f.relative_to(root).as_posix()) for f in files) + ',' + ref('assets') + ',' + ref('products') + ',' + ref('uitestfile') + '); sourceTree = "<group>";')
 obj('sources', 'isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (' + ','.join(ref('build:'+f.relative_to(root).as_posix()) for f in files) + '); runOnlyForDeploymentPostprocessing = 0;')
 obj('frameworks', 'isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0;')
-obj('resources', 'isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0;')
+obj('resources', f'isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = ({ref("assetsbuild")}); runOnlyForDeploymentPostprocessing = 0;')
 for config in ['Debug', 'Release']:
     obj('project'+config, f'isa = XCBuildConfiguration; name = {config}; buildSettings = {{ CLANG_ENABLE_MODULES = YES; SDKROOT = iphoneos; IPHONEOS_DEPLOYMENT_TARGET = 17.0; SWIFT_VERSION = 6.0; }};')
     settings = '''PRODUCT_NAME = VitaEpoch; PRODUCT_BUNDLE_IDENTIFIER = com.example.vitaepoch; GENERATE_INFOPLIST_FILE = YES; CODE_SIGN_STYLE = Automatic; CURRENT_PROJECT_VERSION = 1; MARKETING_VERSION = 0.1.0; TARGETED_DEVICE_FAMILY = "1,2"; SUPPORTED_PLATFORMS = "iphoneos iphonesimulator"; INFOPLIST_KEY_CFBundleDisplayName = VitaEpoch; INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "VitaEpoch connects to your X6 band to sync health readings and activity to this iPhone."; INFOPLIST_KEY_UILaunchScreen_Generation = YES; INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES; INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait; INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"; SWIFT_EMIT_LOC_STRINGS = YES;'''
     import re
+    settings += ' ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon; INFOPLIST_KEY_CFBundleIconName = AppIcon;'
     for key, value in personal_settings.items():
         settings = re.sub(r'\b'+key+r' = [^;]+;', '', settings)
         settings += f' {key} = "{value}";'
