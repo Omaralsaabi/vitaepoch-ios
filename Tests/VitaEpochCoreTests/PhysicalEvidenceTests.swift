@@ -95,7 +95,7 @@ final class PhysicalEvidenceTests: XCTestCase {
         XCTAssertTrue(archive.samples.isEmpty) // no physiological or sleep metric inferred
         XCTAssertTrue((archive.movementSamples ?? []).filter { $0.page == 7 }.allSatisfy { $0.availability == .future })
         XCTAssertEqual(archive.movementSamples?.first { $0.minuteOffset == 0 }?.availability, .zeroUninterpreted)
-        XCTAssertThrowsError(try MovementHistoryDecoder.decode(X6Frame(constructedMovement(0, day: 1).bytes), packet: constructedMovement(0, day: 1), calendar: calendar))
+        XCTAssertThrowsError(try MovementHistoryDecoder.decode(X6Frame(constructedMovement(0, day: 2).bytes), packet: constructedMovement(0, day: 2), calendar: calendar))
     }
     func testPhysicalTemperatureExcerptIsNotFabricatedIntoFullFrame() throws {
         let original = try capture(), replay = PacketProcessor.reprocess(try capture())

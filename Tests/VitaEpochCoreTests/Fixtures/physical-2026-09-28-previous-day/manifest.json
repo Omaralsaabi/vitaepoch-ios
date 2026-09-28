@@ -1,0 +1,38 @@
+{
+  "source": "prompts/CODEX_X6_PREVIOUS_DAY_MOVEMENT_ADDENDUM.md",
+  "sourceSHA256": "32a03f6ad23bb3d04dc0c6758af559d8a2d1e8979d747c9f6be030d889294537",
+  "captureDate": "2026-09-28",
+  "sourceTransport": "nRF physical capture, provided as document transcription",
+  "profile": {
+    "serial": "EDA75689",
+    "firmware": "MOY-I4E3-1.1.6"
+  },
+  "semanticConfidence": "DDPP day/page interpretation strongly supported; raw amplitude unknown",
+  "knownMapping": "0100 -> 27 Sep 00:00\u201302:59; 0107 -> 27 Sep 21:00\u201323:59",
+  "unsupportedExtrapolations": [
+    "Day offsets > 1",
+    "Physical validation of 0101 through 0106",
+    "Long-term retention depth",
+    "Amplitude units or sleep stages"
+  ],
+  "frames": [
+    {
+      "selector": "0100",
+      "dayOffset": 1,
+      "page": 0,
+      "requestHex": "FDDA100802130100",
+      "actualBytes": 188,
+      "declaredBytes": 188,
+      "sha256": "8dffb9aa996b6311dc4afbeca809eab47ab6eaf566882ee83c6d1db46fb03566"
+    },
+    {
+      "selector": "0107",
+      "dayOffset": 1,
+      "page": 7,
+      "requestHex": "FDDA100802130107",
+      "actualBytes": 188,
+      "declaredBytes": 188,
+      "sha256": "0a71cd13cc6b946907bb07e77ac27b72a147cc2b81bc84c9847c45b0b086060e"
+    }
+  ]
+}

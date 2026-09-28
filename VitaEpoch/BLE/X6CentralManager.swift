@@ -108,6 +108,15 @@ final class X6CentralManager: NSObject, ObservableObject {
         incompleteIDs = []; issue = nil; syncing = true; syncSummary = "Capturing 0213…"
         pending = [.movement]; sendNext()
     }
+    func capturePreviousMovement(page: UInt8) {
+        guard ready, !syncing, !measuring, pendingControl == nil,
+              let peripheral, peripheral.canSendWriteWithoutResponse,
+              let selector = try? MovementSelector(dayOffset: 1, page: page) else { return }
+        incompleteIDs = []; issue = nil; syncing = true; pending = []
+        syncSummary = "Capturing 0213 \(selector.hex)…"
+        active = SyncProgress(command: .movement, deviceID: peripheral.identifier.uuidString, startedAt: Date(), movementPage: selector)
+        writeSync(selector.request); advanceMovement()
+    }
     #endif
     private func sendNext() {
         guard active == nil, let peripheral, peripheral.canSendWriteWithoutResponse else { return }

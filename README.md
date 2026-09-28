@@ -85,3 +85,20 @@ swift run x6-sleep-analysis \
 ```
 
 Vendor observations occupy separate columns and retain source/record/interval provenance; they never become packet-decoded records or app sleep results. The [two-night comparison](docs/analysis/2026-09-28/cross-night-comparison.md) preserves the missing pre-midnight window and supports no production classifier. `scripts/compare_sleep_nights.py` regenerates that specific 27/28 Sep comparison from the two analysis directories; its narrative is scoped to those nights.
+
+The [previous-day movement report](docs/X6_PREVIOUS_DAY_MOVEMENT_2026-09-28.md) documents the observed `0100` and `0107` selectors. The decoder accepts only day offsets 0 and 1. DEBUG diagnostics can request either observed previous-day page without starting a full prior-day sync. The research page planner selects only pages intersecting a requested window.
+
+To reproduce the second night with all 545 movement minutes, preserve the current-day and previous-day evidence as separate input archives:
+
+```sh
+swift run x6-sleep-analysis \
+  Tests/VitaEpochCoreTests/Fixtures/physical-2026-09-28/capture.json \
+  docs/analysis/2026-09-28/sleep-reference.json docs/analysis/2026-09-28 \
+  --vendor-observations docs/analysis/2026-09-28/vendor-observations.json \
+  --movement-evidence Tests/VitaEpochCoreTests/Fixtures/physical-2026-09-28-previous-day/capture.json
+python3 scripts/compare_sleep_nights.py \
+  docs/analysis/2026-09-28/comparison-2026-09-27 \
+  docs/analysis/2026-09-28 docs/analysis/2026-09-28
+```
+
+Schema remains 3: represented local day and packet evidence already preserve movement identity and the raw DDPP selector. Full movement coverage does not establish a production sleep algorithm.

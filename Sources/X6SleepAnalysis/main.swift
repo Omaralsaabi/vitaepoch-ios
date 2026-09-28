@@ -6,18 +6,33 @@ import X6Research
 struct X6SleepAnalysisCLI {
     static func main() throws {
         var args = Array(CommandLine.arguments.dropFirst())
+        var movementPath: String?
+        if let index = args.firstIndex(of: "--movement-evidence") {
+            guard index + 1 < args.count else { throw AnalysisError.invalidCandidate }
+            movementPath = args[index+1]; args.removeSubrange(index...index+1)
+        }
         var vendorPath: String?
         if let index = args.firstIndex(of: "--vendor-observations") {
             guard index + 1 < args.count else { throw AnalysisError.invalidCandidate }
             vendorPath = args[index+1]; args.removeSubrange(index...index+1)
         }
         guard args.count >= 3 else {
-            print("Usage: swift run x6-sleep-analysis ARCHIVE.json SLEEP-REFERENCE.json OUTPUT-DIRECTORY [0211-CANDIDATES.json] [DEVICE-ID] [--vendor-observations FILE.json]")
+            print("Usage: swift run x6-sleep-analysis ARCHIVE.json SLEEP-REFERENCE.json OUTPUT-DIRECTORY [0211-CANDIDATES.json] [DEVICE-ID] [--vendor-observations FILE.json] [--movement-evidence ARCHIVE.json]")
             return
         }
         let archiveURL = URL(fileURLWithPath: args[0])
         guard FileManager.default.fileExists(atPath: archiveURL.path) else { throw CocoaError(.fileReadNoSuchFile) }
-        let original = try LocalArchive.read(from: archiveURL)
+        var original = try LocalArchive.read(from: archiveURL)
+        if let movementPath {
+            let url = URL(fileURLWithPath: movementPath)
+            guard FileManager.default.fileExists(atPath: url.path) else { throw CocoaError(.fileReadNoSuchFile) }
+            let additional = try LocalArchive.read(from: url)
+            guard additional.packets.allSatisfy({ packet in
+                guard let frame = try? X6Frame(packet.bytes) else { return false }
+                return packet.direction == .rx && packet.characteristic == "FDD3" && frame.group == 2 && frame.feature == 0x13
+            }) else { throw AnalysisError.invalidCandidate }
+            original.packets.append(contentsOf: additional.packets)
+        }
         let archive = PacketProcessor.reprocess(original)
         let decoder = JSONDecoder(); decoder.dateDecodingStrategy = .iso8601
         let reference = try decoder.decode(SleepReference.self, from: Data(contentsOf: URL(fileURLWithPath: args[1])))

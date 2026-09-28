@@ -7,6 +7,9 @@
 
       ],
       "minute" : "2026-09-27T20:30:00Z",
+      "movementAvailability" : "observedRawSignal",
+      "movementPacketID" : "47A03475-D15D-534A-8EED-0FF3BB6C70D8",
+      "movementRaw" : 128,
       "sdnn" : [
 
       ],
@@ -23,6 +26,9 @@
 
       ],
       "minute" : "2026-09-27T20:31:00Z",
+      "movementAvailability" : "observedRawSignal",
+      "movementPacketID" : "47A03475-D15D-534A-8EED-0FF3BB6C70D8",
+      "movementRaw" : 128,
       "sdnn" : [
 
       ],
@@ -39,6 +45,9 @@
 
       ],
       "minute" : "2026-09-27T20:32:00Z",
+      "movementAvailability" : "observedRawSignal",
+      "movementPacketID" : "47A03475-D15D-534A-8EED-0FF3BB6C70D8",
+      "movementRaw" : 128,
       "sdnn" : [
 
       ],
@@ -55,6 +64,9 @@
 
       ],
       "minute" : "2026-09-27T20:33:00Z",
+      "movementAvailability" : "observedRawSignal",
+      "movementPacketID" : "47A03475-D15D-534A-8EED-0FF3BB6C70D8",
+      "movementRaw" : 128,
       "sdnn" : [
 
       ],
@@ -71,6 +83,9 @@
 
       ],
       "minute" : "2026-09-27T20:34:00Z",
+      "movementAvailability" : "observedRawSignal",
+      "movementPacketID" : "47A03475-D15D-534A-8EED-0FF3BB6C70D8",
+      "movementRaw" : 128,
       "sdnn" : [
 
       ],
@@ -87,6 +102,9 @@
 
       ],
       "minute" : "2026-09-27T20:35:00Z",
+      "movementAvailability" : "observedRawSignal",
+      "movementPacketID" : "47A03475-D15D-534A-8EED-0FF3BB6C70D8",
+      "movementRaw" : 146,
       "sdnn" : [
 
       ],
@@ -122,6 +140,9 @@
 
       ],
       "minute" : "2026-09-27T20:36:00Z",
+      "movementAvailability" : "observedRawSignal",
+      "movementPacketID" : "47A03475-D15D-534A-8EED-0FF3BB6C70D8",
+      "movementRaw" : 128,
       "sdnn" : [
 
       ],
@@ -138,6 +159,9 @@
 
       ],
       "minute" : "2026-09-27T20:37:00Z",
+      "movementAvailability" : "observedRawSignal",
+      "movementPacketID" : "47A03475-D15D-534A-8EED-0FF3BB6C70D8",
+      "movementRaw" : 128,
       "sdnn" : [
 
       ],
@@ -154,6 +178,9 @@
 
       ],
       "minute" : "2026-09-27T20:38:00Z",
+      "movementAvailability" : "observedRawSignal",
+      "movementPacketID" : "47A03475-D15D-534A-8EED-0FF3BB6C70D8",
+      "movementRaw" : 129,
       "sdnn" : [
 
       ],
@@ -170,6 +197,9 @@
 
       ],
       "minute" : "2026-09-27T20:39:00Z",
+      "movementAvailability" : "observedRawSignal",
+      "movementPacketID" : "47A03475-D15D-534A-8EED-0FF3BB6C70D8",
+      "movementRaw" : 128,
       "sdnn" : [
 
       ],
@@ -186,6 +216,9 @@
 
       ],
       "minute" : "2026-09-27T20:40:00Z",
+      "movementAvailability" : "observedRawSignal",
+      "movementPacketID" : "47A03475-D15D-534A-8EED-0FF3BB6C70D8",
+      "movementRaw" : 128,
       "sdnn" : [
 
       ],
@@ -202,6 +235,9 @@
 
       ],
       "minute" : "2026-09-27T20:41:00Z",
+      "movementAvailability" : "observedRawSignal",
+      "movementPacketID" : "47A03475-D15D-534A-8EED-0FF3BB6C70D8",
+      "movementRaw" : 128,
       "sdnn" : [
 
       ],
@@ -218,6 +254,9 @@
 
       ],
       "minute" : "2026-09-27T20:42:00Z",
+      "movementAvailability" : "observedRawSignal",
+      "movementPacketID" : "47A03475-D15D-534A-8EED-0FF3BB6C70D8",
+      "movementRaw" : 128,
       "sdnn" : [
 
       ],
@@ -234,6 +273,9 @@
 
       ],
       "minute" : "2026-09-27T20:43:00Z",
+      "movementAvailability" : "observedRawSignal",
+      "movementPacketID" : "47A03475-D15D-534A-8EED-0FF3BB6C70D8",
+      "movementRaw" : 128,
       "sdnn" : [
 
       ],
@@ -250,6 +292,9 @@
 
       ],
       "minute" : "2026-09-27T20:44:00Z",
+      "movementAvailability" : "observedRawSignal",
+      "movementPacketID" : "47A03475-D15D-534A-8EED-0FF3BB6C70D8",
+      "movementRaw" : 128,
       "sdnn" : [
 
       ],
@@ -266,6 +311,9 @@
 
       ],
       "minute" : "2026-09-27T20:45:00Z",
+      "movementAvailability" : "observedRawSignal",
+      "movementPacketID" : "47A03475-D15D-534A-8EED-0FF3BB6C70D8",
+      "movementRaw" : 128,
       "sdnn" : [
 
       ],
@@ -282,6 +330,9 @@
 
       ],
       "minute" : "2026-09-27T20:46:00Z",
+      "movementAvailability" : "observedRawSignal",
+      "movementPacketID" : "47A03475-D15D-534A-8EED-0FF3BB6C70D8",
+      "movementRaw" : 128,
       "sdnn" : [
 
       ],
@@ -298,6 +349,9 @@
 
       ],
       "minute" : "2026-09-27T20:47:00Z",
+      "movementAvailability" : "observedRawSignal",
+      "movementPacketID" : "47A03475-D15D-534A-8EED-0FF3BB6C70D8",
+      "movementRaw" : 128,
       "sdnn" : [
 
       ],
@@ -314,6 +368,9 @@
 
       ],
       "minute" : "2026-09-27T20:48:00Z",
+      "movementAvailability" : "observedRawSignal",
+      "movementPacketID" : "47A03475-D15D-534A-8EED-0FF3BB6C70D8",
+      "movementRaw" : 128,
       "sdnn" : [
 
       ],
@@ -330,6 +387,9 @@
 
       ],
       "minute" : "2026-09-27T20:49:00Z",
+      "movementAvailability" : "observedRawSignal",
+      "movementPacketID" : "47A03475-D15D-534A-8EED-0FF3BB6C70D8",
+      "movementRaw" : 128,
       "sdnn" : [
 
       ],
@@ -346,6 +406,9 @@
 
       ],
       "minute" : "2026-09-27T20:50:00Z",
+      "movementAvailability" : "observedRawSignal",
+      "movementPacketID" : "47A03475-D15D-534A-8EED-0FF3BB6C70D8",
+      "movementRaw" : 128,
       "sdnn" : [
 
       ],
@@ -362,6 +425,9 @@
 
       ],
       "minute" : "2026-09-27T20:51:00Z",
+      "movementAvailability" : "observedRawSignal",
+      "movementPacketID" : "47A03475-D15D-534A-8EED-0FF3BB6C70D8",
+      "movementRaw" : 128,
       "sdnn" : [
 
       ],
@@ -378,6 +444,9 @@
 
       ],
       "minute" : "2026-09-27T20:52:00Z",
+      "movementAvailability" : "observedRawSignal",
+      "movementPacketID" : "47A03475-D15D-534A-8EED-0FF3BB6C70D8",
+      "movementRaw" : 128,
       "sdnn" : [
 
       ],
@@ -394,6 +463,9 @@
 
       ],
       "minute" : "2026-09-27T20:53:00Z",
+      "movementAvailability" : "observedRawSignal",
+      "movementPacketID" : "47A03475-D15D-534A-8EED-0FF3BB6C70D8",
+      "movementRaw" : 128,
       "sdnn" : [
 
       ],
@@ -410,6 +482,9 @@
 
       ],
       "minute" : "2026-09-27T20:54:00Z",
+      "movementAvailability" : "observedRawSignal",
+      "movementPacketID" : "47A03475-D15D-534A-8EED-0FF3BB6C70D8",
+      "movementRaw" : 128,
       "sdnn" : [
 
       ],
@@ -426,6 +501,9 @@
 
       ],
       "minute" : "2026-09-27T20:55:00Z",
+      "movementAvailability" : "observedRawSignal",
+      "movementPacketID" : "47A03475-D15D-534A-8EED-0FF3BB6C70D8",
+      "movementRaw" : 134,
       "sdnn" : [
 
       ],
@@ -442,6 +520,9 @@
 
       ],
       "minute" : "2026-09-27T20:56:00Z",
+      "movementAvailability" : "observedRawSignal",
+      "movementPacketID" : "47A03475-D15D-534A-8EED-0FF3BB6C70D8",
+      "movementRaw" : 128,
       "sdnn" : [
 
       ],
@@ -458,6 +539,9 @@
 
       ],
       "minute" : "2026-09-27T20:57:00Z",
+      "movementAvailability" : "observedRawSignal",
+      "movementPacketID" : "47A03475-D15D-534A-8EED-0FF3BB6C70D8",
+      "movementRaw" : 128,
       "sdnn" : [
 
       ],
@@ -474,6 +558,9 @@
 
       ],
       "minute" : "2026-09-27T20:58:00Z",
+      "movementAvailability" : "observedRawSignal",
+      "movementPacketID" : "47A03475-D15D-534A-8EED-0FF3BB6C70D8",
+      "movementRaw" : 128,
       "sdnn" : [
 
       ],
@@ -490,6 +577,9 @@
 
       ],
       "minute" : "2026-09-27T20:59:00Z",
+      "movementAvailability" : "observedRawSignal",
+      "movementPacketID" : "47A03475-D15D-534A-8EED-0FF3BB6C70D8",
+      "movementRaw" : 128,
       "sdnn" : [
 
       ],
@@ -10617,15 +10707,15 @@
         "count" : 0
       },
       "labeledMinutes" : 273,
-      "missingMovementMinutes" : 19,
+      "missingMovementMinutes" : 0,
       "movementRaw" : {
-        "count" : 254,
+        "count" : 273,
         "maximum" : 162,
-        "mean" : 129.61023622047244,
+        "mean" : 129.5897435897436,
         "median" : 128,
         "minimum" : 128
       },
-      "raw80Minutes" : 210,
+      "raw80Minutes" : 226,
       "sdnn" : {
         "count" : 0
       },
@@ -10658,15 +10748,15 @@
         "count" : 0
       },
       "labeledMinutes" : 221,
-      "missingMovementMinutes" : 8,
+      "missingMovementMinutes" : 0,
       "movementRaw" : {
-        "count" : 213,
+        "count" : 221,
         "maximum" : 164,
-        "mean" : 129.7605633802817,
+        "mean" : 129.69683257918552,
         "median" : 128,
         "minimum" : 128
       },
-      "raw80Minutes" : 176,
+      "raw80Minutes" : 184,
       "sdnn" : {
         "count" : 0
       },
@@ -10740,11 +10830,15 @@
         "count" : 0
       },
       "labeledMinutes" : 3,
-      "missingMovementMinutes" : 3,
+      "missingMovementMinutes" : 0,
       "movementRaw" : {
-        "count" : 0
+        "count" : 3,
+        "maximum" : 128,
+        "mean" : 128,
+        "median" : 128,
+        "minimum" : 128
       },
-      "raw80Minutes" : 0,
+      "raw80Minutes" : 3,
       "sdnn" : {
         "count" : 0
       },

@@ -8,10 +8,10 @@ Vendor-labeled intervals for reverse engineering only; not an independently vali
 
 | Stage | Minutes | Raw observations | Zero/uninterpreted | Raw 0x80 | Mean raw byte | SDNN points | Mean SDNN |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| Core | 273 | 254 | 0 | 210 | 129.61 | 0 | — |
-| REM | 221 | 213 | 0 | 176 | 129.76 | 0 | — |
+| Core | 273 | 273 | 0 | 226 | 129.59 | 0 | — |
+| REM | 221 | 221 | 0 | 184 | 129.70 | 0 | — |
 | Deep | 48 | 48 | 0 | 43 | 129.21 | 0 | — |
-| Awake | 3 | 0 | 0 | 0 | — | 0 | — |
+| Awake | 3 | 3 | 0 | 3 | 128.00 | 0 | — |
 
 ## Export observations and coverage
 
@@ -19,16 +19,16 @@ Vendor HR/SDNN are separate offline export observations, not raw 020F/0210 packe
 
 | Stage | Missing / future / zero | Raw 0x80 fraction (observed denominator) | Raw count/min/max/mean/median | Vendor HR count/min/max/mean/median | Vendor SDNN count/min/max/mean/median | 0211 / vendor oxygen points |
 |---|---|---|---|---|---|---|
-| Core | 19 / 0 / 0 | 0.8268 | 254 / 128.00 / 162.00 / 129.61 / 128.00 | 4 / 66.00 / 79.00 / 69.75 / 67.00 | 4 / 10.00 / 14.00 / 12.00 / 12.00 | 0 / 0 |
-| REM | 8 / 0 / 0 | 0.8263 | 213 / 128.00 / 164.00 / 129.76 / 128.00 | 12 / 57.00 / 81.00 / 64.00 / 63.00 | 12 / 10.00 / 14.00 / 12.08 / 12.00 | 0 / 0 |
+| Core | 0 / 0 / 0 | 0.8278 | 273 / 128.00 / 162.00 / 129.59 / 128.00 | 4 / 66.00 / 79.00 / 69.75 / 67.00 | 4 / 10.00 / 14.00 / 12.00 / 12.00 | 0 / 0 |
+| REM | 0 / 0 / 0 | 0.8326 | 221 / 128.00 / 164.00 / 129.70 / 128.00 | 12 / 57.00 / 81.00 / 64.00 / 63.00 | 12 / 10.00 / 14.00 / 12.08 / 12.00 | 0 / 0 |
 | Deep | 0 / 0 / 0 | 0.8958 | 48 / 128.00 / 149.00 / 129.21 / 128.00 | 2 / 57.00 / 61.00 / 59.00 / 59.00 | 2 / 11.00 / 14.00 / 12.50 / 12.50 | 0 / 0 |
-| Awake | 3 / 0 / 0 | — | 0 / — / — / — / — | 0 / — / — / — / — | 0 / — / — / — / — | 0 / 0 |
+| Awake | 0 / 0 / 0 | 1.0000 | 3 / 128.00 / 128.00 / 128.00 / 128.00 | 0 / — / — / — / — | 0 / — / — / — / — | 0 / 0 |
 
 ### Stage boundaries
 
 Absolute raw-byte change across adjacent observed minutes at a vendor stage boundary versus within-stage pairs. Missing/zero/future pairs excluded; no spike threshold, lag search, classifier or causal claim.
 
-42 of 45 boundaries have two observed movement positions. Boundary change count/min/max/mean/median: 42 / 0.00 / 15.00 / 2.62 / 0.00; within-stage change: 472 / 0.00 / 36.00 / 2.91 / 0.00. These descriptive comparisons do not establish a sleep-stage rule.
+45 of 45 boundaries have two observed movement positions. Boundary change count/min/max/mean/median: 45 / 0.00 / 15.00 / 2.44 / 0.00; within-stage change: 499 / 0.00 / 36.00 / 2.85 / 0.00. These descriptive comparisons do not establish a sleep-stage rule.
 
 No classifier was trained. Reference labels are copied only into offline alignment rows. They never become VitaEpoch sleep results.
 

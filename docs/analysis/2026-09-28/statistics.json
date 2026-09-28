@@ -5,15 +5,15 @@
       "count" : 0
     },
     "labeledMinutes" : 273,
-    "missingMovementMinutes" : 19,
+    "missingMovementMinutes" : 0,
     "movementRaw" : {
-      "count" : 254,
+      "count" : 273,
       "maximum" : 162,
-      "mean" : 129.61023622047244,
+      "mean" : 129.5897435897436,
       "median" : 128,
       "minimum" : 128
     },
-    "raw80Minutes" : 210,
+    "raw80Minutes" : 226,
     "sdnn" : {
       "count" : 0
     },
@@ -46,15 +46,15 @@
       "count" : 0
     },
     "labeledMinutes" : 221,
-    "missingMovementMinutes" : 8,
+    "missingMovementMinutes" : 0,
     "movementRaw" : {
-      "count" : 213,
+      "count" : 221,
       "maximum" : 164,
-      "mean" : 129.7605633802817,
+      "mean" : 129.69683257918552,
       "median" : 128,
       "minimum" : 128
     },
-    "raw80Minutes" : 176,
+    "raw80Minutes" : 184,
     "sdnn" : {
       "count" : 0
     },
@@ -128,11 +128,15 @@
       "count" : 0
     },
     "labeledMinutes" : 3,
-    "missingMovementMinutes" : 3,
+    "missingMovementMinutes" : 0,
     "movementRaw" : {
-      "count" : 0
+      "count" : 3,
+      "maximum" : 128,
+      "mean" : 128,
+      "median" : 128,
+      "minimum" : 128
     },
-    "raw80Minutes" : 0,
+    "raw80Minutes" : 3,
     "sdnn" : {
       "count" : 0
     },

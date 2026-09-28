@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 3,
+  "packets": [
+    {
+      "id": "40D32357-FC5F-5418-BBA1-03DAD71817DA",
+      "deviceID": "captured-X6-EDA75689",
+      "characteristic": "FDD3",
+      "direction": "rx",
+      "bytes": "/doQvAITAQCQnaGVj4ONgoKch4GFioCAgIaRlbmNhaq1t5+Tg4CAgICAgICIgICAgICAgICAgICAgICAgICAgICAgIKAhpCAgICAgYCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIiIgICAgICAgICAgIeAgICAgICAgICAgICalbeLh4CAgICAgICAgICAgICAgICAgICAgICAgIWEgICCgICAgICAgICAgICAgIA=",
+      "timestamp": 812278980.0,
+      "timeZoneID": "Asia/Amman",
+      "captureEvidence": {
+        "kind": "physicalTranscription",
+        "sourceID": "CODEX_X6_PREVIOUS_DAY_MOVEMENT_ADDENDUM.md",
+        "note": "nRF physical capture on 28 Sep; exact notification time not supplied. 12:03 +03:00 is an explicit analysis anchor only; only the captured local date is used for previous-day mapping. Selector 0100 and response bytes transcribed unchanged. No fabricated TX timing.",
+        "deviceProfile": {
+          "serial": "EDA75689",
+          "firmware": "MOY-I4E3-1.1.6"
+        }
+      }
+    },
+    {
+      "id": "47A03475-D15D-534A-8EED-0FF3BB6C70D8",
+      "deviceID": "captured-X6-EDA75689",
+      "characteristic": "FDD3",
+      "direction": "rx",
+      "bytes": "/doQvAITAQeNgICJgI6OgIiAgoakgJGhjIKYkoGOk46AkI+En4CUgYeAkoCMgICQioCckLO4uKSkuLivubq6vLe3uLe0sLu4r6CWjY2Uh4+PtKW7n4GFkJuno5aciJOHhrWpjYKfm5eRm4ihoayZiY2LkZqeo6GRl6iInZKYl5KBh5WImIWIgYmAn56fo5eCgICAgICOgICAgICAgICAgICAgJKAgIGAgICAgICAgICAgICAgICAhoCAgIA=",
+      "timestamp": 812278980.0,
+      "timeZoneID": "Asia/Amman",
+      "captureEvidence": {
+        "kind": "physicalTranscription",
+        "sourceID": "CODEX_X6_PREVIOUS_DAY_MOVEMENT_ADDENDUM.md",
+        "note": "nRF physical capture on 28 Sep; exact notification time not supplied. 12:03 +03:00 is an explicit analysis anchor only; only the captured local date is used for previous-day mapping. Selector 0107 and response bytes transcribed unchanged. No fabricated TX timing.",
+        "deviceProfile": {
+          "serial": "EDA75689",
+          "firmware": "MOY-I4E3-1.1.6"
+        }
+      }
+    }
+  ],
+  "samples": []
+}

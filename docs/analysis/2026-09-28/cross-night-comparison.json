@@ -200,7 +200,7 @@
       "windowMinutes": 552
     },
     {
-      "missingMovementMinutes": 30,
+      "missingMovementMinutes": 0,
       "source": "Da Halo -> Apple Health; export 28 sep.zip; night ending 2026-09-28",
       "stages": [
         {
@@ -209,16 +209,16 @@
             "count": 0
           },
           "labeledMinutes": 273,
-          "missingMovementMinutes": 19,
+          "missingMovementMinutes": 0,
           "movementRaw": {
-            "count": 254,
+            "count": 273,
             "maximum": 162,
-            "mean": 129.61023622047244,
+            "mean": 129.5897435897436,
             "median": 128,
             "minimum": 128
           },
-          "raw80FractionObserved": 0.8267716535433071,
-          "raw80Minutes": 210,
+          "raw80FractionObserved": 0.8278388278388278,
+          "raw80Minutes": 226,
           "sdnn": {
             "count": 0
           },
@@ -251,16 +251,16 @@
             "count": 0
           },
           "labeledMinutes": 221,
-          "missingMovementMinutes": 8,
+          "missingMovementMinutes": 0,
           "movementRaw": {
-            "count": 213,
+            "count": 221,
             "maximum": 164,
-            "mean": 129.7605633802817,
+            "mean": 129.69683257918552,
             "median": 128,
             "minimum": 128
           },
-          "raw80FractionObserved": 0.8262910798122066,
-          "raw80Minutes": 176,
+          "raw80FractionObserved": 0.832579185520362,
+          "raw80Minutes": 184,
           "sdnn": {
             "count": 0
           },
@@ -335,12 +335,16 @@
             "count": 0
           },
           "labeledMinutes": 3,
-          "missingMovementMinutes": 3,
+          "missingMovementMinutes": 0,
           "movementRaw": {
-            "count": 0
+            "count": 3,
+            "maximum": 128,
+            "mean": 128,
+            "median": 128,
+            "minimum": 128
           },
-          "raw80FractionObserved": null,
-          "raw80Minutes": 0,
+          "raw80FractionObserved": 1.0,
+          "raw80Minutes": 3,
           "sdnn": {
             "count": 0
           },
@@ -364,17 +368,17 @@
         "labeledTransitions": 45,
         "method": "Absolute raw-byte change across adjacent observed minutes at a vendor stage boundary versus within-stage pairs. Missing/zero/future pairs excluded; no spike threshold, lag search, classifier or causal claim.",
         "nontransitionAbsoluteChange": {
-          "count": 472,
+          "count": 499,
           "maximum": 36,
-          "mean": 2.9110169491525424,
+          "mean": 2.8537074148296595,
           "median": 0,
           "minimum": 0
         },
-        "observedTransitions": 42,
+        "observedTransitions": 45,
         "transitionAbsoluteChange": {
-          "count": 42,
+          "count": 45,
           "maximum": 15,
-          "mean": 2.619047619047619,
+          "mean": 2.4444444444444446,
           "median": 0,
           "minimum": 0
         }

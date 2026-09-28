@@ -71,6 +71,11 @@ struct DiagnosticsView: View {
                     .disabled(!ble.ready || ble.syncing || ble.measuring)
                 LabeledContent("Minute positions", value: "\((store.archive.movementSamples ?? []).count)")
                 Text("Starts with 0000; allows an automatic burst, then requests each missing 0001–0007 once. Raw movement-like bytes only. No sleep-stage inference.").font(.caption)
+                Button("Capture previous-day 0100 (00:00–02:59)") { ble.capturePreviousMovement(page: 0) }
+                    .disabled(!ble.ready || ble.syncing || ble.measuring)
+                Button("Capture previous-day 0107 (21:00–23:59)") { ble.capturePreviousMovement(page: 7) }
+                    .disabled(!ble.ready || ble.syncing || ble.measuring)
+                Text("Previous-day requests fetch one page only. Only 0100 and 0107 have been physically observed; other 01PP pages remain unvalidated.").font(.caption)
             }
             Section("Sync request history") {
                 ForEach(Array((store.archive.syncDiagnostics ?? []).reversed())) { request in
@@ -78,7 +83,7 @@ struct DiagnosticsView: View {
                         Text(request.featureID).font(.headline.monospaced())
                         Text(request.reason).font(.caption)
                         if request.featureID == "0213" {
-                            Text("Received pages: " + request.receivedPages.sorted().map { String(format: "00%02X", $0) }.joined(separator: ", ")).font(.caption)
+                            Text("Received pages: " + request.receivedSelectors.joined(separator: ", ")).font(.caption)
                             Text("Positions represented in this capture: \(request.receivedPages.count * 180)").font(.caption)
                         }
                         Text(request.elapsed.map { String(format: "Elapsed %.3f s", $0) } ?? "Elapsed: not recorded").font(.caption)

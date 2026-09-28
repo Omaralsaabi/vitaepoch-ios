@@ -27,9 +27,12 @@ public struct SyncDiagnostic: Codable, Identifiable, Sendable {
     public var reason = "Awaiting response"
     public var complete = false
     public var elapsed: Double? { endedAt.map { $0.timeIntervalSince(startedAt) } }
+    public var selectorDayHex: String { featureID == "0213" ? String(writes.first?.variantHex.prefix(2) ?? "00") : "00" }
+    public var receivedSelectors: [String] { receivedPages.sorted().map { selectorDayHex + String(format: "%02X", $0) } }
     /// Derived from persisted TX/RX timing; does not claim causal attribution of a late burst.
     public func acquisition(for response: SyncResponse) -> String {
         guard featureID == "0213", response.featureID == featureID else { return "" }
+        if selectorDayHex == "01" { return response.prefixHex == writes.first?.variantHex ? "after explicit previous-day request" : "other selector" }
         let receivedAt = startedAt.addingTimeInterval(response.elapsed)
         let explicit = writes.dropFirst().contains { $0.variantHex == response.prefixHex && $0.timestamp <= receivedAt }
         return explicit ? "after explicit fallback" : "automatic after initial request"
@@ -53,10 +56,13 @@ public struct SyncProgress: Sendable {
     public let command: X6Command
     public private(set) var diagnostic: SyncDiagnostic
     private var receivedReply = false
-    public init(command: X6Command, deviceID: String, startedAt: Date) {
+    private let movementPage: MovementSelector?
+    public init(command: X6Command, deviceID: String, startedAt: Date, movementPage: MovementSelector? = nil) {
+        precondition(movementPage == nil || command == .movement)
         self.command = command
+        self.movementPage = movementPage
         diagnostic = SyncDiagnostic(deviceID: deviceID, featureID: command.featureID, startedAt: startedAt,
-                                    expectedPages: command == .movement ? Array(0...7) : command == .periodicHeartRate ? [0,1] : [.hrv,.temperature].contains(command) ? [0,1,2,3] : [])
+                                    expectedPages: movementPage.map { [$0.page] } ?? (command == .movement ? Array(0...7) : command == .periodicHeartRate ? [0,1] : [.hrv,.temperature].contains(command) ? [0,1,2,3] : []))
     }
     public mutating func wrote(_ bytes: Data, at date: Date) {
         diagnostic.writes.append(SyncWrite(timestamp: date, bytesHex: bytes.hex, variantHex: Data(bytes.dropFirst(6)).hex))
@@ -72,7 +78,7 @@ public struct SyncProgress: Sendable {
             status: receipt.error ?? (matches ? (receipt.sampleCount == 0 ? "Valid empty response" : "Decoded") : "Unrelated response")))
         guard matches, receipt.error == nil else { return }
         if diagnostic.expectedPages.isEmpty { receivedReply = true; return }
-        guard frame.payload.count >= 2, frame.payload[0] == 0, diagnostic.expectedPages.contains(frame.payload[1]) else { return }
+        guard frame.payload.count >= 2, frame.payload[0] == (movementPage?.dayOffset ?? 0), diagnostic.expectedPages.contains(frame.payload[1]) else { return }
         // Completion follows protocol pages, never the presence of nonzero samples.
         if !diagnostic.receivedPages.contains(frame.payload[1]) { diagnostic.receivedPages.append(frame.payload[1]) }
     }
@@ -105,6 +111,8 @@ public struct SyncProgress: Sendable {
         if let page, !diagnostic.receivedPages.contains(page), now < replyDeadline {
             return .wait(until: min(replyDeadline, deadline))
         }
+        // A research page request never fans out to a full prior-day sync.
+        if movementPage != nil { return .finish }
         let latestResponse = diagnostic.responses.filter {
             $0.featureID == "0213" && ["Decoded", "Valid empty response"].contains($0.status)
         }.map { diagnostic.startedAt.addingTimeInterval($0.elapsed) }.max()
@@ -126,7 +134,7 @@ public struct SyncProgress: Sendable {
         if let interrupted { diagnostic.reason = interrupted }
         else if isComplete { diagnostic.reason = diagnostic.expectedPages.isEmpty ? "Valid response received" : "All requested pages received (empty pages included)" }
         else if !diagnostic.expectedPages.isEmpty {
-            diagnostic.reason = "Timed out; missing " + missingPages.map { String(format: "00%02X", $0) }.joined(separator: ", ")
+            diagnostic.reason = "Timed out; missing " + missingPages.map { String(format: "%02X%02X", movementPage?.dayOffset ?? 0, $0) }.joined(separator: ", ")
             if command == .periodicHeartRate { diagnostic.reason += "; continuation selector not validated" }
         } else { diagnostic.reason = "Timed out without a valid matching response" }
     }
