@@ -1,0 +1,362 @@
+[
+  {
+    "end": "2026-09-27T01:09:59+03:00",
+    "metric": "heartRate",
+    "recordID": "01bacab48848852420c09c02b462c47ff6bf5d527586db49013ec818bc5658fe",
+    "sourceFile": "export.zip",
+    "sourceName": "Da Halo",
+    "timestamp": "2026-09-27T01:05:00+03:00",
+    "unit": "count/min",
+    "value": 75.0
+  },
+  {
+    "end": "2026-09-27T01:09:59+03:00",
+    "metric": "sdnn",
+    "recordID": "b81be963c1dbf0bd128f64f3c77dcef7c901ed519e6153b147f0576c2aa23902",
+    "sourceFile": "export.zip",
+    "sourceName": "Da Halo",
+    "timestamp": "2026-09-27T01:05:00+03:00",
+    "unit": "ms",
+    "value": 12.0
+  },
+  {
+    "end": "2026-09-27T01:39:59+03:00",
+    "metric": "heartRate",
+    "recordID": "df6d274ce22cc97a47bc154a5466a9e960a39588fa45b9bbca817995cee964f4",
+    "sourceFile": "export.zip",
+    "sourceName": "Da Halo",
+    "timestamp": "2026-09-27T01:35:00+03:00",
+    "unit": "count/min",
+    "value": 75.0
+  },
+  {
+    "end": "2026-09-27T01:39:59+03:00",
+    "metric": "sdnn",
+    "recordID": "6ec9db8a00b9656126fd854ba4549adcd7fc78b27dd8b1a87adb8904a539827d",
+    "sourceFile": "export.zip",
+    "sourceName": "Da Halo",
+    "timestamp": "2026-09-27T01:35:00+03:00",
+    "unit": "ms",
+    "value": 10.0
+  },
+  {
+    "end": "2026-09-27T02:09:59+03:00",
+    "metric": "heartRate",
+    "recordID": "d9920c47bdbe331bbb25f6504d26b08c9509a43cba37453af284b658f6550337",
+    "sourceFile": "export.zip",
+    "sourceName": "Da Halo",
+    "timestamp": "2026-09-27T02:05:00+03:00",
+    "unit": "count/min",
+    "value": 70.0
+  },
+  {
+    "end": "2026-09-27T02:09:59+03:00",
+    "metric": "sdnn",
+    "recordID": "8fc367f8e35fb1303e22f660e84fcb83a928dbe50779303c0e93e75f629743a8",
+    "sourceFile": "export.zip",
+    "sourceName": "Da Halo",
+    "timestamp": "2026-09-27T02:05:00+03:00",
+    "unit": "ms",
+    "value": 14.0
+  },
+  {
+    "end": "2026-09-27T02:39:59+03:00",
+    "metric": "heartRate",
+    "recordID": "c27e8ebc504c12ca1f7d05e65990cf7c4190192dae580b44426d3fd5fd6d5e73",
+    "sourceFile": "export.zip",
+    "sourceName": "Da Halo",
+    "timestamp": "2026-09-27T02:35:00+03:00",
+    "unit": "count/min",
+    "value": 73.0
+  },
+  {
+    "end": "2026-09-27T02:39:59+03:00",
+    "metric": "sdnn",
+    "recordID": "852233a9e555ff86d56dce4b23a7c7e0f81642b1fd85849ce8c4003f5357d2ff",
+    "sourceFile": "export.zip",
+    "sourceName": "Da Halo",
+    "timestamp": "2026-09-27T02:35:00+03:00",
+    "unit": "ms",
+    "value": 11.0
+  },
+  {
+    "end": "2026-09-27T03:09:59+03:00",
+    "metric": "heartRate",
+    "recordID": "66c3fd827439f64239d991bf03b7fd5106c7536517c279e4df5a22a956b3918f",
+    "sourceFile": "export.zip",
+    "sourceName": "Da Halo",
+    "timestamp": "2026-09-27T03:05:00+03:00",
+    "unit": "count/min",
+    "value": 77.0
+  },
+  {
+    "end": "2026-09-27T03:09:59+03:00",
+    "metric": "sdnn",
+    "recordID": "ebb8804c0e97b7e91cac18ab584ffc997c659f874381abe291c9865610cafaef",
+    "sourceFile": "export.zip",
+    "sourceName": "Da Halo",
+    "timestamp": "2026-09-27T03:05:00+03:00",
+    "unit": "ms",
+    "value": 11.0
+  },
+  {
+    "end": "2026-09-27T03:39:59+03:00",
+    "metric": "heartRate",
+    "recordID": "760137b28f39f41d0d6c15bbf9a1d9e8f7afe398e2b2daf3a0f5e1c9237cabb2",
+    "sourceFile": "export.zip",
+    "sourceName": "Da Halo",
+    "timestamp": "2026-09-27T03:35:00+03:00",
+    "unit": "count/min",
+    "value": 66.0
+  },
+  {
+    "end": "2026-09-27T03:39:59+03:00",
+    "metric": "sdnn",
+    "recordID": "173ddd42bc5fa0fdb48af0c9dc033685323e95622a539baa8e343611e135e4d2",
+    "sourceFile": "export.zip",
+    "sourceName": "Da Halo",
+    "timestamp": "2026-09-27T03:35:00+03:00",
+    "unit": "ms",
+    "value": 10.0
+  },
+  {
+    "end": "2026-09-27T04:09:59+03:00",
+    "metric": "heartRate",
+    "recordID": "da0a542ef01b52443422c405470ce64229ffe177fb2addeb52bd1a31ea3f3ae5",
+    "sourceFile": "export.zip",
+    "sourceName": "Da Halo",
+    "timestamp": "2026-09-27T04:05:00+03:00",
+    "unit": "count/min",
+    "value": 71.0
+  },
+  {
+    "end": "2026-09-27T04:09:59+03:00",
+    "metric": "sdnn",
+    "recordID": "ef7f11233545d6313d861cb5e00088feb1acfa711a1775b6d64746054f0994c8",
+    "sourceFile": "export.zip",
+    "sourceName": "Da Halo",
+    "timestamp": "2026-09-27T04:05:00+03:00",
+    "unit": "ms",
+    "value": 10.0
+  },
+  {
+    "end": "2026-09-27T04:39:59+03:00",
+    "metric": "heartRate",
+    "recordID": "7370bfa96d6f96f668fabcfc3b16b6ffc5b698b23670b71338ba2d75fbe0ca2b",
+    "sourceFile": "export.zip",
+    "sourceName": "Da Halo",
+    "timestamp": "2026-09-27T04:35:00+03:00",
+    "unit": "count/min",
+    "value": 66.0
+  },
+  {
+    "end": "2026-09-27T04:39:59+03:00",
+    "metric": "sdnn",
+    "recordID": "0bb4740b524c21f906fa6b0d0dd947791a702d289bb155bc56579d12d8b5fe3b",
+    "sourceFile": "export.zip",
+    "sourceName": "Da Halo",
+    "timestamp": "2026-09-27T04:35:00+03:00",
+    "unit": "ms",
+    "value": 13.0
+  },
+  {
+    "end": "2026-09-27T05:09:59+03:00",
+    "metric": "heartRate",
+    "recordID": "a4336addd73d057e5e48e08a4a55d905dcd91d9377461b494fe0ae0a5c543ecc",
+    "sourceFile": "export.zip",
+    "sourceName": "Da Halo",
+    "timestamp": "2026-09-27T05:05:00+03:00",
+    "unit": "count/min",
+    "value": 74.0
+  },
+  {
+    "end": "2026-09-27T05:09:59+03:00",
+    "metric": "sdnn",
+    "recordID": "5699f16f161535a387c860a281508c5e1b59ace1d7712aead6fc30bbff745012",
+    "sourceFile": "export.zip",
+    "sourceName": "Da Halo",
+    "timestamp": "2026-09-27T05:05:00+03:00",
+    "unit": "ms",
+    "value": 11.0
+  },
+  {
+    "end": "2026-09-27T05:39:59+03:00",
+    "metric": "heartRate",
+    "recordID": "68c70575e06a08a9e69a0c69a3bc8e7d16c4a977aca721f250f98286603ad28d",
+    "sourceFile": "export.zip",
+    "sourceName": "Da Halo",
+    "timestamp": "2026-09-27T05:35:00+03:00",
+    "unit": "count/min",
+    "value": 77.0
+  },
+  {
+    "end": "2026-09-27T05:39:59+03:00",
+    "metric": "sdnn",
+    "recordID": "0c7b4283398217923cb2b83daa6982f60c36af17933a55f4269e57a721464f79",
+    "sourceFile": "export.zip",
+    "sourceName": "Da Halo",
+    "timestamp": "2026-09-27T05:35:00+03:00",
+    "unit": "ms",
+    "value": 10.0
+  },
+  {
+    "end": "2026-09-27T06:09:59+03:00",
+    "metric": "heartRate",
+    "recordID": "57d7839e4d01f5783292e2295d1ec029f2a80de4427c65e157c024257d59de65",
+    "sourceFile": "export.zip",
+    "sourceName": "Da Halo",
+    "timestamp": "2026-09-27T06:05:00+03:00",
+    "unit": "count/min",
+    "value": 63.0
+  },
+  {
+    "end": "2026-09-27T06:09:59+03:00",
+    "metric": "sdnn",
+    "recordID": "8ffb160adc562a90a85c997a514ada808f0f4ae8f0d1d12419a45a07d98f055c",
+    "sourceFile": "export.zip",
+    "sourceName": "Da Halo",
+    "timestamp": "2026-09-27T06:05:00+03:00",
+    "unit": "ms",
+    "value": 10.0
+  },
+  {
+    "end": "2026-09-27T06:39:59+03:00",
+    "metric": "heartRate",
+    "recordID": "859987063124e67ad476ec19476e2c48bed6fd362889fcc5c72cfc5ccdb42f05",
+    "sourceFile": "export.zip",
+    "sourceName": "Da Halo",
+    "timestamp": "2026-09-27T06:35:00+03:00",
+    "unit": "count/min",
+    "value": 67.0
+  },
+  {
+    "end": "2026-09-27T06:39:59+03:00",
+    "metric": "sdnn",
+    "recordID": "26abff890cbbe0fd070465d0ecaaad6c52083ae28c3cdf571991d5e638ab8c8e",
+    "sourceFile": "export.zip",
+    "sourceName": "Da Halo",
+    "timestamp": "2026-09-27T06:35:00+03:00",
+    "unit": "ms",
+    "value": 13.0
+  },
+  {
+    "end": "2026-09-27T07:09:59+03:00",
+    "metric": "heartRate",
+    "recordID": "c90ac1c24d3a499cca0591184b3c37ecd4cafa1db6766cd02e237f4c5bb32d78",
+    "sourceFile": "export.zip",
+    "sourceName": "Da Halo",
+    "timestamp": "2026-09-27T07:05:00+03:00",
+    "unit": "count/min",
+    "value": 69.0
+  },
+  {
+    "end": "2026-09-27T07:09:59+03:00",
+    "metric": "sdnn",
+    "recordID": "fc1be627285c170dd251aaa6215c3947a0e586c891682b5c1fd1d8eb2fbe267b",
+    "sourceFile": "export.zip",
+    "sourceName": "Da Halo",
+    "timestamp": "2026-09-27T07:05:00+03:00",
+    "unit": "ms",
+    "value": 10.0
+  },
+  {
+    "end": "2026-09-27T07:39:59+03:00",
+    "metric": "heartRate",
+    "recordID": "b3e67c6935a3b2776d4534a9b0a7e3fa47aab30c101c4eb10a7c5f0375911244",
+    "sourceFile": "export.zip",
+    "sourceName": "Da Halo",
+    "timestamp": "2026-09-27T07:35:00+03:00",
+    "unit": "count/min",
+    "value": 60.0
+  },
+  {
+    "end": "2026-09-27T07:39:59+03:00",
+    "metric": "sdnn",
+    "recordID": "61c6fdb94683204b77d64ba35420f9c686679b79853a0023f8446c4c74520d23",
+    "sourceFile": "export.zip",
+    "sourceName": "Da Halo",
+    "timestamp": "2026-09-27T07:35:00+03:00",
+    "unit": "ms",
+    "value": 11.0
+  },
+  {
+    "end": "2026-09-27T08:09:59+03:00",
+    "metric": "heartRate",
+    "recordID": "bd1b8fe7188303887d5a62e4ab098866f7cdb173ad5b23a061780ba0dd64d365",
+    "sourceFile": "export.zip",
+    "sourceName": "Da Halo",
+    "timestamp": "2026-09-27T08:05:00+03:00",
+    "unit": "count/min",
+    "value": 72.0
+  },
+  {
+    "end": "2026-09-27T08:09:59+03:00",
+    "metric": "sdnn",
+    "recordID": "50fb5a61b23b836e0d59b93dca30bedd38e838be2f6d35ba7dbc60a5a2d379bf",
+    "sourceFile": "export.zip",
+    "sourceName": "Da Halo",
+    "timestamp": "2026-09-27T08:05:00+03:00",
+    "unit": "ms",
+    "value": 10.0
+  },
+  {
+    "end": "2026-09-27T08:39:59+03:00",
+    "metric": "heartRate",
+    "recordID": "1cb45301151cab91cd67f29d2c01dd3c2dd1ba3a101155a7613a68eeca4b0b49",
+    "sourceFile": "export.zip",
+    "sourceName": "Da Halo",
+    "timestamp": "2026-09-27T08:35:00+03:00",
+    "unit": "count/min",
+    "value": 66.0
+  },
+  {
+    "end": "2026-09-27T08:39:59+03:00",
+    "metric": "sdnn",
+    "recordID": "ee43c0c3ccd5cecc59acca7d0042cb11cb473b93bd94111a07f9ed795477377b",
+    "sourceFile": "export.zip",
+    "sourceName": "Da Halo",
+    "timestamp": "2026-09-27T08:35:00+03:00",
+    "unit": "ms",
+    "value": 11.0
+  },
+  {
+    "end": "2026-09-27T09:09:59+03:00",
+    "metric": "heartRate",
+    "recordID": "e39f8b31da3602cf12501f5f83aa3a6ab504fed68c0fbf8c2f5d1407a56b530c",
+    "sourceFile": "export.zip",
+    "sourceName": "Da Halo",
+    "timestamp": "2026-09-27T09:05:00+03:00",
+    "unit": "count/min",
+    "value": 64.0
+  },
+  {
+    "end": "2026-09-27T09:09:59+03:00",
+    "metric": "sdnn",
+    "recordID": "537cedec37b682ee6a4d96986f58bddd4bd58fa5375ea85774510a251ae6c735",
+    "sourceFile": "export.zip",
+    "sourceName": "Da Halo",
+    "timestamp": "2026-09-27T09:05:00+03:00",
+    "unit": "ms",
+    "value": 14.0
+  },
+  {
+    "end": "2026-09-27T09:39:59+03:00",
+    "metric": "heartRate",
+    "recordID": "e6d709b1859d23df00082687eecaedefc36b16ba9ebb9f8bdff549be5039cb4a",
+    "sourceFile": "export.zip",
+    "sourceName": "Da Halo",
+    "timestamp": "2026-09-27T09:35:00+03:00",
+    "unit": "count/min",
+    "value": 71.0
+  },
+  {
+    "end": "2026-09-27T09:39:59+03:00",
+    "metric": "sdnn",
+    "recordID": "e3f7326b5692958ec10ea7874b3f2d80b6db642e17d450cb197fb7c98219ff83",
+    "sourceFile": "export.zip",
+    "sourceName": "Da Halo",
+    "timestamp": "2026-09-27T09:35:00+03:00",
+    "unit": "ms",
+    "value": 14.0
+  }
+]

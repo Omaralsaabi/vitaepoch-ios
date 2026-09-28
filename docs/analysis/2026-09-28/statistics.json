@@ -1,0 +1,154 @@
+[
+  {
+    "futureMinutes" : 0,
+    "heartRate" : {
+      "count" : 0
+    },
+    "labeledMinutes" : 273,
+    "missingMovementMinutes" : 19,
+    "movementRaw" : {
+      "count" : 254,
+      "maximum" : 162,
+      "mean" : 129.61023622047244,
+      "median" : 128,
+      "minimum" : 128
+    },
+    "raw80Minutes" : 210,
+    "sdnn" : {
+      "count" : 0
+    },
+    "spo2Candidates" : {
+      "count" : 0
+    },
+    "stage" : "Core",
+    "vendorHeartRate" : {
+      "count" : 4,
+      "maximum" : 79,
+      "mean" : 69.75,
+      "median" : 67,
+      "minimum" : 66
+    },
+    "vendorOxygen" : {
+      "count" : 0
+    },
+    "vendorSDNN" : {
+      "count" : 4,
+      "maximum" : 14,
+      "mean" : 12,
+      "median" : 12,
+      "minimum" : 10
+    },
+    "zeroUninterpretedMinutes" : 0
+  },
+  {
+    "futureMinutes" : 0,
+    "heartRate" : {
+      "count" : 0
+    },
+    "labeledMinutes" : 221,
+    "missingMovementMinutes" : 8,
+    "movementRaw" : {
+      "count" : 213,
+      "maximum" : 164,
+      "mean" : 129.7605633802817,
+      "median" : 128,
+      "minimum" : 128
+    },
+    "raw80Minutes" : 176,
+    "sdnn" : {
+      "count" : 0
+    },
+    "spo2Candidates" : {
+      "count" : 0
+    },
+    "stage" : "REM",
+    "vendorHeartRate" : {
+      "count" : 12,
+      "maximum" : 81,
+      "mean" : 64,
+      "median" : 63,
+      "minimum" : 57
+    },
+    "vendorOxygen" : {
+      "count" : 0
+    },
+    "vendorSDNN" : {
+      "count" : 12,
+      "maximum" : 14,
+      "mean" : 12.083333333333334,
+      "median" : 12,
+      "minimum" : 10
+    },
+    "zeroUninterpretedMinutes" : 0
+  },
+  {
+    "futureMinutes" : 0,
+    "heartRate" : {
+      "count" : 0
+    },
+    "labeledMinutes" : 48,
+    "missingMovementMinutes" : 0,
+    "movementRaw" : {
+      "count" : 48,
+      "maximum" : 149,
+      "mean" : 129.20833333333334,
+      "median" : 128,
+      "minimum" : 128
+    },
+    "raw80Minutes" : 43,
+    "sdnn" : {
+      "count" : 0
+    },
+    "spo2Candidates" : {
+      "count" : 0
+    },
+    "stage" : "Deep",
+    "vendorHeartRate" : {
+      "count" : 2,
+      "maximum" : 61,
+      "mean" : 59,
+      "median" : 59,
+      "minimum" : 57
+    },
+    "vendorOxygen" : {
+      "count" : 0
+    },
+    "vendorSDNN" : {
+      "count" : 2,
+      "maximum" : 14,
+      "mean" : 12.5,
+      "median" : 12.5,
+      "minimum" : 11
+    },
+    "zeroUninterpretedMinutes" : 0
+  },
+  {
+    "futureMinutes" : 0,
+    "heartRate" : {
+      "count" : 0
+    },
+    "labeledMinutes" : 3,
+    "missingMovementMinutes" : 3,
+    "movementRaw" : {
+      "count" : 0
+    },
+    "raw80Minutes" : 0,
+    "sdnn" : {
+      "count" : 0
+    },
+    "spo2Candidates" : {
+      "count" : 0
+    },
+    "stage" : "Awake",
+    "vendorHeartRate" : {
+      "count" : 0
+    },
+    "vendorOxygen" : {
+      "count" : 0
+    },
+    "vendorSDNN" : {
+      "count" : 0
+    },
+    "zeroUninterpretedMinutes" : 0
+  }
+]

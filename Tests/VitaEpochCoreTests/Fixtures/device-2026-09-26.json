@@ -1,0 +1,478 @@
+{
+  "samples": [
+    {
+      "method": "dailySummary",
+      "source": "x6",
+      "metric": "calories",
+      "feature": "020D",
+      "timestamp": 812062800,
+      "deviceID": "captured-X6-EDA75689",
+      "value": 102,
+      "confidence": "provisionalLayout",
+      "decoderVersion": "x6-v0.1",
+      "packetID": "6CCDBB89-B236-4BF9-856C-D0C131393F3F"
+    },
+    {
+      "method": "dailySummary",
+      "source": "x6",
+      "metric": "steps",
+      "feature": "020D",
+      "timestamp": 812062800,
+      "deviceID": "captured-X6-EDA75689",
+      "value": 1165,
+      "confidence": "provisionalLayout",
+      "decoderVersion": "x6-v0.1",
+      "packetID": "6CCDBB89-B236-4BF9-856C-D0C131393F3F"
+    },
+    {
+      "method": "dailySummary",
+      "source": "x6",
+      "metric": "distance",
+      "feature": "020D",
+      "timestamp": 812062800,
+      "deviceID": "captured-X6-EDA75689",
+      "value": 780.55,
+      "confidence": "provisionalLayout",
+      "decoderVersion": "x6-v0.1",
+      "packetID": "6CCDBB89-B236-4BF9-856C-D0C131393F3F"
+    },
+    {
+      "method": "manual",
+      "source": "x6",
+      "metric": "heartRate",
+      "feature": "0209",
+      "timestamp": 812098872,
+      "deviceID": "captured-X6-EDA75689",
+      "value": 64,
+      "confidence": "deviceReported",
+      "decoderVersion": "x6-v0.1",
+      "packetID": "7B5B7D1B-F8B7-4D3C-A3A2-24ECDF1ABAB5"
+    },
+    {
+      "method": "manual",
+      "source": "x6",
+      "metric": "heartRate",
+      "feature": "0209",
+      "timestamp": 812098997,
+      "deviceID": "captured-X6-EDA75689",
+      "value": 74,
+      "confidence": "deviceReported",
+      "decoderVersion": "x6-v0.1",
+      "packetID": "7B5B7D1B-F8B7-4D3C-A3A2-24ECDF1ABAB5"
+    },
+    {
+      "method": "manual",
+      "source": "x6",
+      "metric": "heartRate",
+      "feature": "0209",
+      "timestamp": 812099105,
+      "deviceID": "captured-X6-EDA75689",
+      "value": 86,
+      "confidence": "deviceReported",
+      "decoderVersion": "x6-v0.1",
+      "packetID": "7B5B7D1B-F8B7-4D3C-A3A2-24ECDF1ABAB5"
+    },
+    {
+      "method": "manual",
+      "source": "x6",
+      "metric": "heartRate",
+      "feature": "0209",
+      "timestamp": 812099475,
+      "deviceID": "captured-X6-EDA75689",
+      "value": 74,
+      "confidence": "deviceReported",
+      "decoderVersion": "x6-v0.1",
+      "packetID": "7B5B7D1B-F8B7-4D3C-A3A2-24ECDF1ABAB5"
+    },
+    {
+      "method": "manual",
+      "source": "x6",
+      "metric": "heartRate",
+      "feature": "0209",
+      "timestamp": 812099643,
+      "deviceID": "captured-X6-EDA75689",
+      "value": 75,
+      "confidence": "deviceReported",
+      "decoderVersion": "x6-v0.1",
+      "packetID": "7B5B7D1B-F8B7-4D3C-A3A2-24ECDF1ABAB5"
+    },
+    {
+      "method": "manual",
+      "source": "x6",
+      "metric": "oxygen",
+      "feature": "020B",
+      "timestamp": 812099915,
+      "deviceID": "captured-X6-EDA75689",
+      "value": 98,
+      "confidence": "deviceReported",
+      "decoderVersion": "x6-v0.1",
+      "packetID": "10C3957E-2859-4396-92C7-EE1AC15411AF"
+    },
+    {
+      "method": "manual",
+      "source": "x6",
+      "metric": "oxygen",
+      "feature": "020B",
+      "timestamp": 812100011,
+      "deviceID": "captured-X6-EDA75689",
+      "value": 97,
+      "confidence": "deviceReported",
+      "decoderVersion": "x6-v0.1",
+      "packetID": "10C3957E-2859-4396-92C7-EE1AC15411AF"
+    },
+    {
+      "deviceID": "captured-X6-EDA75689",
+      "metric": "oxygen",
+      "source": "x6",
+      "decoderVersion": "x6-v0.1",
+      "value": 99,
+      "confidence": "deviceReported",
+      "timestamp": 812100302,
+      "feature": "020B",
+      "method": "manual",
+      "packetID": "10C3957E-2859-4396-92C7-EE1AC15411AF"
+    },
+    {
+      "deviceID": "captured-X6-EDA75689",
+      "metric": "heartRate",
+      "source": "x6",
+      "decoderVersion": "x6-v0.1",
+      "value": 74,
+      "confidence": "deviceReported",
+      "timestamp": 812100572,
+      "feature": "0209",
+      "method": "manual",
+      "packetID": "7B5B7D1B-F8B7-4D3C-A3A2-24ECDF1ABAB5"
+    },
+    {
+      "deviceID": "captured-X6-EDA75689",
+      "metric": "heartRate",
+      "source": "x6",
+      "decoderVersion": "x6-v0.1",
+      "value": 91,
+      "confidence": "deviceReported",
+      "timestamp": 812100690,
+      "feature": "0209",
+      "method": "manual",
+      "packetID": "7B5B7D1B-F8B7-4D3C-A3A2-24ECDF1ABAB5"
+    },
+    {
+      "deviceID": "captured-X6-EDA75689",
+      "metric": "stress",
+      "source": "x6",
+      "decoderVersion": "x6-v0.1",
+      "value": 22,
+      "confidence": "deviceReported",
+      "timestamp": 812104661,
+      "feature": "0219",
+      "method": "manual",
+      "packetID": "9636A7A0-0DF3-4B6A-AEB7-F3C484428F8D"
+    },
+    {
+      "deviceID": "captured-X6-EDA75689",
+      "metric": "stress",
+      "source": "x6",
+      "decoderVersion": "x6-v0.1",
+      "value": 36,
+      "confidence": "deviceReported",
+      "timestamp": 812104927,
+      "feature": "0219",
+      "method": "manual",
+      "packetID": "9636A7A0-0DF3-4B6A-AEB7-F3C484428F8D"
+    },
+    {
+      "deviceID": "captured-X6-EDA75689",
+      "metric": "oxygen",
+      "source": "x6",
+      "decoderVersion": "x6-v0.1",
+      "value": 99,
+      "confidence": "deviceReported",
+      "timestamp": 812111806,
+      "feature": "020B",
+      "method": "manual",
+      "packetID": "10C3957E-2859-4396-92C7-EE1AC15411AF"
+    }
+  ],
+  "packets": [
+    {
+      "characteristic": "FDD2",
+      "id": "66A52063-9144-4C46-BD0C-8FDC79394879",
+      "deviceID": "captured-X6-EDA75689",
+      "direction": "tx",
+      "bytes": "/doQBwINAA==",
+      "timestamp": 812134921.573664
+    },
+    {
+      "characteristic": "FDD3",
+      "id": "BC45F95C-5086-4204-A447-CEBAE03A84F7",
+      "deviceID": "captured-X6-EDA75689",
+      "direction": "rx",
+      "bytes": "/doQBwIcAQ==",
+      "timestamp": 812134921.685006
+    },
+    {
+      "characteristic": "FDD3",
+      "id": "8D201F52-4563-414D-BFBE-B29005085EEE",
+      "deviceID": "captured-X6-EDA75689",
+      "direction": "rx",
+      "bytes": "/doQBwIcAg==",
+      "timestamp": 812134923.261174
+    },
+    {
+      "characteristic": "FDD4",
+      "id": "78931FB8-7B09-4E1D-BA86-1CAAA15D2D02",
+      "deviceID": "captured-X6-EDA75689",
+      "direction": "rx",
+      "bytes": "40IMMiz3",
+      "timestamp": 812134923.265017
+    },
+    {
+      "characteristic": "2A19",
+      "id": "A776CCE4-442A-4B46-8069-E462694737FD",
+      "deviceID": "captured-X6-EDA75689",
+      "direction": "rx",
+      "bytes": "Pw==",
+      "timestamp": 812134923.561099
+    },
+    {
+      "characteristic": "2A25",
+      "id": "6EF26ABD-F990-423E-91D5-77D13789B6CA",
+      "deviceID": "captured-X6-EDA75689",
+      "direction": "rx",
+      "bytes": "RURBNzU2ODk=",
+      "timestamp": 812134923.623448
+    },
+    {
+      "characteristic": "2A28",
+      "id": "E6A060AA-27D3-4385-B408-42574726BCAD",
+      "deviceID": "captured-X6-EDA75689",
+      "direction": "rx",
+      "bytes": "TU9ZLUk0RTMtMS4xLjY=",
+      "timestamp": 812134923.681687
+    },
+    {
+      "characteristic": "2A29",
+      "id": "DADBEE10-19CB-4FC9-852A-A48D98F82591",
+      "deviceID": "captured-X6-EDA75689",
+      "direction": "rx",
+      "bytes": "TU9ZT1VORy1WMg==",
+      "timestamp": 812134923.741392
+    },
+    {
+      "characteristic": "FDD3",
+      "id": "34A09B86-F9C3-48F6-9DC1-2ED3C1DCA33C",
+      "deviceID": "captured-X6-EDA75689",
+      "direction": "rx",
+      "bytes": "/doQFwINAI0EAABgkA8AAAAAAOcwAQA=",
+      "timestamp": 812134923.800638
+    },
+    {
+      "characteristic": "FDD2",
+      "id": "547A1F90-DADC-4713-B346-FB84D72D2855",
+      "deviceID": "captured-X6-EDA75689",
+      "direction": "tx",
+      "bytes": "/doQBwIJAA==",
+      "timestamp": 812134923.813308
+    },
+    {
+      "characteristic": "FDD3",
+      "id": "100679A3-6484-493E-8882-AA70925FBBA6",
+      "deviceID": "captured-X6-EDA75689",
+      "direction": "rx",
+      "bytes": "/doQKgIJB0C4bbdqSjVut2pWoW63akoTcLdqS7twt2pKXHS3alvSdLdq",
+      "timestamp": 812134923.860572
+    },
+    {
+      "characteristic": "FDD2",
+      "id": "949F08D2-FA5C-4F41-9EBA-2B03F2DE20FA",
+      "deviceID": "captured-X6-EDA75689",
+      "direction": "tx",
+      "bytes": "/doQBwILAA==",
+      "timestamp": 812134923.865974
+    },
+    {
+      "characteristic": "FDD3",
+      "id": "39BEB37B-1C11-4A3B-8E55-CC8B58E91452",
+      "deviceID": "captured-X6-EDA75689",
+      "direction": "rx",
+      "bytes": "/doQGwILBGLLcbdqYStyt2pjTnO3amM+oLdq",
+      "timestamp": 812134923.920468
+    },
+    {
+      "characteristic": "FDD2",
+      "id": "C7A1E5FF-070F-4CDF-9AE9-9E32D458F4BB",
+      "deviceID": "captured-X6-EDA75689",
+      "direction": "tx",
+      "bytes": "/doQCAIZAAA=",
+      "timestamp": 812134923.925328
+    },
+    {
+      "characteristic": "FDD3",
+      "id": "AF847F79-5966-4298-9D80-98B1FCCB9A75",
+      "deviceID": "captured-X6-EDA75689",
+      "direction": "rx",
+      "bytes": "/doQEQIZAhZVhLdqJF+Ft2o=",
+      "timestamp": 812134923.980457
+    },
+    {
+      "characteristic": "FDD2",
+      "id": "3C3F9F0A-6553-4DC9-80B2-91A942F1D5F8",
+      "deviceID": "captured-X6-EDA75689",
+      "direction": "tx",
+      "bytes": "/doQBwIPAA==",
+      "timestamp": 812134923.985021
+    },
+    {
+      "characteristic": "FDD3",
+      "id": "483633EE-0106-4179-ADBC-E364023FAA1C",
+      "deviceID": "captured-X6-EDA75689",
+      "direction": "rx",
+      "bytes": "/doQmAIPAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
+      "timestamp": 812134924.041362
+    },
+    {
+      "characteristic": "FDD2",
+      "id": "4AE7CB61-C305-47A0-B681-6CECC76EA00D",
+      "deviceID": "captured-X6-EDA75689",
+      "direction": "tx",
+      "bytes": "/doQCAIQAAA=",
+      "timestamp": 812134932.441324
+    },
+    {
+      "characteristic": "FDD3",
+      "id": "D79067E0-A1A5-487F-8E80-27713DAD20A8",
+      "deviceID": "captured-X6-EDA75689",
+      "direction": "rx",
+      "bytes": "/doQmAIQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
+      "timestamp": 812134932.920764
+    },
+    {
+      "characteristic": "FDD2",
+      "direction": "tx",
+      "bytes": "/doQCAIWAAA=",
+      "id": "7E30F591-A3CC-4BE6-8B60-AEC3317D6277",
+      "timestamp": 812134941.441227,
+      "deviceID": "captured-X6-EDA75689"
+    },
+    {
+      "characteristic": "FDD3",
+      "direction": "rx",
+      "bytes": "/doQmAIWAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
+      "id": "7D808898-4885-4FB4-B1A8-45E3BD48F1F2",
+      "timestamp": 812134942.640353,
+      "deviceID": "captured-X6-EDA75689"
+    },
+    {
+      "id": "668C0420-786C-477A-B0CD-C5D48CD8C8C8",
+      "timestamp": 812135219.063316,
+      "direction": "tx",
+      "deviceID": "captured-X6-EDA75689",
+      "characteristic": "FDD2",
+      "bytes": "/doQBwINAA=="
+    },
+    {
+      "id": "6CCDBB89-B236-4BF9-856C-D0C131393F3F",
+      "timestamp": 812135220.475763,
+      "direction": "rx",
+      "deviceID": "captured-X6-EDA75689",
+      "characteristic": "FDD3",
+      "bytes": "/doQFwINAI0EAABgkA8AAAAAAOcwAQA="
+    },
+    {
+      "id": "29D057D4-BA04-4660-ABBF-9A7C36D20465",
+      "timestamp": 812135220.496343,
+      "direction": "tx",
+      "deviceID": "captured-X6-EDA75689",
+      "characteristic": "FDD2",
+      "bytes": "/doQBwIJAA=="
+    },
+    {
+      "id": "7B5B7D1B-F8B7-4D3C-A3A2-24ECDF1ABAB5",
+      "timestamp": 812135221.282736,
+      "direction": "rx",
+      "deviceID": "captured-X6-EDA75689",
+      "characteristic": "FDD3",
+      "bytes": "/doQKgIJB0C4bbdqSjVut2pWoW63akoTcLdqS7twt2pKXHS3alvSdLdq"
+    },
+    {
+      "id": "D23F9DDE-3E4F-4881-BA28-E9EE7E5764C9",
+      "timestamp": 812135221.303513,
+      "direction": "tx",
+      "deviceID": "captured-X6-EDA75689",
+      "characteristic": "FDD2",
+      "bytes": "/doQBwILAA=="
+    },
+    {
+      "id": "10C3957E-2859-4396-92C7-EE1AC15411AF",
+      "timestamp": 812135222.093292,
+      "direction": "rx",
+      "deviceID": "captured-X6-EDA75689",
+      "characteristic": "FDD3",
+      "bytes": "/doQGwILBGLLcbdqYStyt2pjTnO3amM+oLdq"
+    },
+    {
+      "id": "566393F9-7770-4224-8086-0BE927023AA9",
+      "timestamp": 812135222.113483,
+      "direction": "tx",
+      "deviceID": "captured-X6-EDA75689",
+      "characteristic": "FDD2",
+      "bytes": "/doQCAIZAAA="
+    },
+    {
+      "id": "9636A7A0-0DF3-4B6A-AEB7-F3C484428F8D",
+      "timestamp": 812135222.90254,
+      "direction": "rx",
+      "deviceID": "captured-X6-EDA75689",
+      "characteristic": "FDD3",
+      "bytes": "/doQEQIZAhZVhLdqJF+Ft2o="
+    },
+    {
+      "id": "D68A883C-4936-45DC-BCBD-5868ABAC2793",
+      "timestamp": 812135222.923361,
+      "direction": "tx",
+      "deviceID": "captured-X6-EDA75689",
+      "characteristic": "FDD2",
+      "bytes": "/doQBwIPAA=="
+    },
+    {
+      "id": "9D4A6897-0B77-48A9-82FE-796CB4BC9FC0",
+      "timestamp": 812135223.713228,
+      "direction": "rx",
+      "deviceID": "captured-X6-EDA75689",
+      "characteristic": "FDD3",
+      "bytes": "/doQmAIPAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
+    },
+    {
+      "id": "11E1B705-1C9A-4A07-A9DE-DFD813CD741D",
+      "timestamp": 812135231.870976,
+      "direction": "tx",
+      "deviceID": "captured-X6-EDA75689",
+      "characteristic": "FDD2",
+      "bytes": "/doQCAIQAAA="
+    },
+    {
+      "id": "B2D4BEC9-7034-4B67-940C-90476A1EC912",
+      "timestamp": 812135232.623261,
+      "direction": "rx",
+      "deviceID": "captured-X6-EDA75689",
+      "characteristic": "FDD3",
+      "bytes": "/doQmAIQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
+    },
+    {
+      "id": "889CA4CF-19F0-43E9-990D-207B461D3268",
+      "timestamp": 812135241.087119,
+      "direction": "tx",
+      "deviceID": "captured-X6-EDA75689",
+      "characteristic": "FDD2",
+      "bytes": "/doQCAIWAAA="
+    },
+    {
+      "id": "C46DD0AA-F05D-4514-B9CE-ED601C65B658",
+      "timestamp": 812135241.938246,
+      "direction": "rx",
+      "deviceID": "captured-X6-EDA75689",
+      "characteristic": "FDD3",
+      "bytes": "/doQmAIWAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
+    }
+  ]
+}

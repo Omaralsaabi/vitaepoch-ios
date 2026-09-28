@@ -1,0 +1,11 @@
+{
+  "archiveName": "export 28 sep.zip",
+  "archiveSHA256": "6997b1a5a3429fdf504dc5fd089407833e28158792e960b8b4cedae57cf005e2",
+  "entry": "apple_health_export/export.xml",
+  "intervalCount": 46,
+  "nightEnding": "2026-09-28",
+  "observationCount": 36,
+  "observationTiming": "One point at export start; end retained; no expansion/interpolation. Not raw 020F/0210/0211 evidence.",
+  "selection": "noon-to-noon, then sleep session overlap; only sleep/HR/SDNN/oxygen; exact duplicate records removed",
+  "sourceNameFilter": "Da Halo"
+}
