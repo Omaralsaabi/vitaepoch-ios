@@ -6,6 +6,8 @@ import X6Research
 struct X6SleepAnalysisCLI {
     static func main() throws {
         var args = Array(CommandLine.arguments.dropFirst())
+        let exportContext = args.contains("--export-movement-context")
+        args.removeAll { $0 == "--export-movement-context" }
         var movementPath: String?
         if let index = args.firstIndex(of: "--movement-evidence") {
             guard index + 1 < args.count else { throw AnalysisError.invalidCandidate }
@@ -17,7 +19,7 @@ struct X6SleepAnalysisCLI {
             vendorPath = args[index+1]; args.removeSubrange(index...index+1)
         }
         guard args.count >= 3 else {
-            print("Usage: swift run x6-sleep-analysis ARCHIVE.json SLEEP-REFERENCE.json OUTPUT-DIRECTORY [0211-CANDIDATES.json] [DEVICE-ID] [--vendor-observations FILE.json] [--movement-evidence ARCHIVE.json]")
+            print("Usage: swift run x6-sleep-analysis ARCHIVE.json SLEEP-REFERENCE.json OUTPUT-DIRECTORY [0211-CANDIDATES.json] [DEVICE-ID] [--vendor-observations FILE.json] [--movement-evidence ARCHIVE.json] [--export-movement-context]")
             return
         }
         let archiveURL = URL(fileURLWithPath: args[0])
@@ -42,6 +44,10 @@ struct X6SleepAnalysisCLI {
         let output = URL(fileURLWithPath: args[2], isDirectory: true)
         try FileManager.default.createDirectory(at: output, withIntermediateDirectories: true)
         let encoder = JSONEncoder(); encoder.outputFormatting = [.prettyPrinted,.sortedKeys]; encoder.dateEncodingStrategy = .iso8601
+        if exportContext {
+            try encoder.encode(MovementContext.points(archive: archive, reference: reference))
+                .write(to: output.appending(path: "movement-context.json"), options: .atomic)
+        }
         try encoder.encode(result).write(to: output.appending(path: "alignment.json"), options: .atomic)
         try encoder.encode(result.stages).write(to: output.appending(path: "statistics.json"), options: .atomic)
         let formatter = ISO8601DateFormatter(); formatter.timeZone = TimeZone(identifier: result.timeZone)

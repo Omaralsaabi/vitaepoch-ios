@@ -1,0 +1,381 @@
+{
+  "caveat": "Outside-session minutes are unlabeled, never assumed Awake. Before/after uses [-30,-1] and [0,+30]; session end is exclusive. Only captured valid bytes produce features.",
+  "groups": {
+    "2026-09-27 vendor_session_end": {
+      "at_and_after": {
+        "features": {
+          "abs_delta_from_previous_raw": {
+            "count": 31,
+            "iqr": 8.5,
+            "max": 47.0,
+            "mean": 10.03225806451613,
+            "median": 7.0,
+            "min": 0.0,
+            "q1": 4.0,
+            "q3": 12.5
+          },
+          "fraction_non_0x80_5m": {
+            "count": 31,
+            "iqr": 0.4,
+            "max": 1.0,
+            "mean": 0.7419354838709679,
+            "median": 0.8,
+            "min": 0.19999999999999996,
+            "q1": 0.6,
+            "q3": 1.0
+          },
+          "raw_range_5m": {
+            "count": 31,
+            "iqr": 11.0,
+            "max": 48.0,
+            "mean": 21.548387096774192,
+            "median": 20.0,
+            "min": 4.0,
+            "q1": 14.0,
+            "q3": 25.0
+          },
+          "raw_u8": {
+            "count": 31,
+            "iqr": 21.0,
+            "max": 176.0,
+            "mean": 143.32258064516128,
+            "median": 140.0,
+            "min": 128.0,
+            "q1": 130.5,
+            "q3": 151.5
+          }
+        },
+        "grid_minutes": 31,
+        "observed_minutes": 31
+      },
+      "before": {
+        "features": {
+          "abs_delta_from_previous_raw": {
+            "count": 26,
+            "iqr": 4.0,
+            "max": 17.0,
+            "mean": 3.6923076923076925,
+            "median": 0.0,
+            "min": 0.0,
+            "q1": 0.0,
+            "q3": 4.0
+          },
+          "fraction_non_0x80_5m": {
+            "count": 23,
+            "iqr": 0.20000000000000007,
+            "max": 0.6,
+            "mean": 0.27826086956521745,
+            "median": 0.19999999999999996,
+            "min": 0.0,
+            "q1": 0.19999999999999996,
+            "q3": 0.4
+          },
+          "raw_range_5m": {
+            "count": 23,
+            "iqr": 7.0,
+            "max": 17.0,
+            "mean": 9.826086956521738,
+            "median": 10.0,
+            "min": 0.0,
+            "q1": 6.0,
+            "q3": 13.0
+          },
+          "raw_u8": {
+            "count": 27,
+            "iqr": 3.0,
+            "max": 145.0,
+            "mean": 130.44444444444446,
+            "median": 128.0,
+            "min": 128.0,
+            "q1": 128.0,
+            "q3": 131.0
+          }
+        },
+        "grid_minutes": 30,
+        "observed_minutes": 27
+      }
+    },
+    "2026-09-27 vendor_session_start": {
+      "at_and_after": {
+        "features": {
+          "abs_delta_from_previous_raw": {
+            "count": 31,
+            "iqr": 0.0,
+            "max": 16.0,
+            "mean": 1.2258064516129032,
+            "median": 0.0,
+            "min": 0.0,
+            "q1": 0.0,
+            "q3": 0.0
+          },
+          "fraction_non_0x80_5m": {
+            "count": 31,
+            "iqr": 0.19999999999999996,
+            "max": 0.6,
+            "mean": 0.12903225806451613,
+            "median": 0.0,
+            "min": 0.0,
+            "q1": 0.0,
+            "q3": 0.19999999999999996
+          },
+          "raw_range_5m": {
+            "count": 31,
+            "iqr": 1.5,
+            "max": 16.0,
+            "mean": 3.064516129032258,
+            "median": 0.0,
+            "min": 0.0,
+            "q1": 0.0,
+            "q3": 1.5
+          },
+          "raw_u8": {
+            "count": 31,
+            "iqr": 0.0,
+            "max": 144.0,
+            "mean": 128.80645161290323,
+            "median": 128.0,
+            "min": 128.0,
+            "q1": 128.0,
+            "q3": 128.0
+          }
+        },
+        "grid_minutes": 31,
+        "observed_minutes": 31
+      },
+      "before": {
+        "features": {
+          "abs_delta_from_previous_raw": {
+            "count": 30,
+            "iqr": 10.25,
+            "max": 44.0,
+            "mean": 7.666666666666667,
+            "median": 1.0,
+            "min": 0.0,
+            "q1": 0.0,
+            "q3": 10.25
+          },
+          "fraction_non_0x80_5m": {
+            "count": 30,
+            "iqr": 0.75,
+            "max": 1.0,
+            "mean": 0.47333333333333333,
+            "median": 0.4,
+            "min": 0.0,
+            "q1": 0.19999999999999996,
+            "q3": 0.95
+          },
+          "raw_range_5m": {
+            "count": 30,
+            "iqr": 45.75,
+            "max": 57.0,
+            "mean": 22.266666666666666,
+            "median": 10.0,
+            "min": 0.0,
+            "q1": 4.25,
+            "q3": 50.0
+          },
+          "raw_u8": {
+            "count": 30,
+            "iqr": 16.0,
+            "max": 185.0,
+            "mean": 139.0,
+            "median": 128.0,
+            "min": 128.0,
+            "q1": 128.0,
+            "q3": 144.0
+          }
+        },
+        "grid_minutes": 30,
+        "observed_minutes": 30
+      }
+    },
+    "2026-09-28 vendor_session_end": {
+      "at_and_after": {
+        "features": {
+          "abs_delta_from_previous_raw": {
+            "count": 16,
+            "iqr": 6.25,
+            "max": 20.0,
+            "mean": 5.75,
+            "median": 3.0,
+            "min": 1.0,
+            "q1": 2.0,
+            "q3": 8.25
+          },
+          "fraction_non_0x80_5m": {
+            "count": 15,
+            "iqr": 0.0,
+            "max": 1.0,
+            "mean": 0.9866666666666667,
+            "median": 1.0,
+            "min": 0.8,
+            "q1": 1.0,
+            "q3": 1.0
+          },
+          "raw_range_5m": {
+            "count": 15,
+            "iqr": 10.5,
+            "max": 26.0,
+            "mean": 12.733333333333333,
+            "median": 13.0,
+            "min": 4.0,
+            "q1": 7.0,
+            "q3": 17.5
+          },
+          "raw_u8": {
+            "count": 20,
+            "iqr": 49.25,
+            "max": 154.0,
+            "mean": 106.95,
+            "median": 138.0,
+            "min": 2.0,
+            "q1": 97.0,
+            "q3": 146.25
+          }
+        },
+        "grid_minutes": 31,
+        "observed_minutes": 20
+      },
+      "before": {
+        "features": {
+          "abs_delta_from_previous_raw": {
+            "count": 30,
+            "iqr": 6.0,
+            "max": 25.0,
+            "mean": 4.3,
+            "median": 0.5,
+            "min": 0.0,
+            "q1": 0.0,
+            "q3": 6.0
+          },
+          "fraction_non_0x80_5m": {
+            "count": 30,
+            "iqr": 0.20000000000000007,
+            "max": 1.0,
+            "mean": 0.29333333333333333,
+            "median": 0.19999999999999996,
+            "min": 0.0,
+            "q1": 0.19999999999999996,
+            "q3": 0.4
+          },
+          "raw_range_5m": {
+            "count": 30,
+            "iqr": 14.0,
+            "max": 25.0,
+            "mean": 8.633333333333333,
+            "median": 6.0,
+            "min": 0.0,
+            "q1": 1.0,
+            "q3": 15.0
+          },
+          "raw_u8": {
+            "count": 30,
+            "iqr": 2.0,
+            "max": 153.0,
+            "mean": 130.46666666666667,
+            "median": 128.0,
+            "min": 128.0,
+            "q1": 128.0,
+            "q3": 130.0
+          }
+        },
+        "grid_minutes": 30,
+        "observed_minutes": 30
+      }
+    },
+    "2026-09-28 vendor_session_start": {
+      "at_and_after": {
+        "features": {
+          "abs_delta_from_previous_raw": {
+            "count": 31,
+            "iqr": 0.0,
+            "max": 18.0,
+            "mean": 1.6129032258064515,
+            "median": 0.0,
+            "min": 0.0,
+            "q1": 0.0,
+            "q3": 0.0
+          },
+          "fraction_non_0x80_5m": {
+            "count": 31,
+            "iqr": 0.19999999999999996,
+            "max": 0.4,
+            "mean": 0.0967741935483871,
+            "median": 0.0,
+            "min": 0.0,
+            "q1": 0.0,
+            "q3": 0.19999999999999996
+          },
+          "raw_range_5m": {
+            "count": 31,
+            "iqr": 6.0,
+            "max": 18.0,
+            "mean": 3.967741935483871,
+            "median": 0.0,
+            "min": 0.0,
+            "q1": 0.0,
+            "q3": 6.0
+          },
+          "raw_u8": {
+            "count": 31,
+            "iqr": 0.0,
+            "max": 146.0,
+            "mean": 128.80645161290323,
+            "median": 128.0,
+            "min": 128.0,
+            "q1": 128.0,
+            "q3": 128.0
+          }
+        },
+        "grid_minutes": 31,
+        "observed_minutes": 31
+      },
+      "before": {
+        "features": {
+          "abs_delta_from_previous_raw": {
+            "count": 30,
+            "iqr": 13.75,
+            "max": 31.0,
+            "mean": 7.066666666666666,
+            "median": 3.5,
+            "min": 0.0,
+            "q1": 0.0,
+            "q3": 13.75
+          },
+          "fraction_non_0x80_5m": {
+            "count": 30,
+            "iqr": 0.8,
+            "max": 1.0,
+            "mean": 0.5999999999999999,
+            "median": 0.8,
+            "min": 0.0,
+            "q1": 0.19999999999999996,
+            "q3": 1.0
+          },
+          "raw_range_5m": {
+            "count": 30,
+            "iqr": 10.5,
+            "max": 35.0,
+            "mean": 18.066666666666666,
+            "median": 19.5,
+            "min": 0.0,
+            "q1": 12.5,
+            "q3": 23.0
+          },
+          "raw_u8": {
+            "count": 30,
+            "iqr": 12.75,
+            "max": 163.0,
+            "mean": 136.33333333333334,
+            "median": 129.0,
+            "min": 128.0,
+            "q1": 128.0,
+            "q3": 140.75
+          }
+        },
+        "grid_minutes": 30,
+        "observed_minutes": 30
+      }
+    }
+  }
+}

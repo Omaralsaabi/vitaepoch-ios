@@ -102,3 +102,18 @@ python3 scripts/compare_sleep_nights.py \
 ```
 
 Schema remains 3: represented local day and packet evidence already preserve movement identity and the raw DDPP selector. Full movement coverage does not establish a production sleep algorithm.
+
+## Sleep Detection V0 benchmark
+
+The [V0 research report](docs/SLEEP_DETECTION_V0_2026-09-28.md) evaluates whole-night Sleep/Awake agreement with the vendor reference. Results are inconsistent across directions and negative controls; they do not justify a production classifier. All [benchmark artifacts](docs/analysis/sleep-detection-v0/summary.md) are isolated from the app.
+
+The runner requires local Python 3.11, NumPy, SciPy and scikit-learn (recorded run: 2.3.5, 1.16.3, 1.8.0 respectively), plus Swift. It performs no installation or network access. Use a Python environment containing those research dependencies:
+
+```sh
+python3 -B -m unittest discover -s scripts -p 'test_sleep_detection_v0.py' -v
+python3 -B scripts/sleep_detection_v0.py
+python3 -B scripts/sleep_detection_v0.py --output /tmp/vitaepoch-sleep-v0-repeat
+diff -qr docs/analysis/sleep-detection-v0 /tmp/vitaepoch-sleep-v0-repeat
+```
+
+The runner replays existing fixtures in temporary directories, checks equality with authoritative alignments, and derives causal features using captured unlabeled context. `x6-sleep-analysis --export-movement-context` enables that optional context export; ordinary alignment output is unchanged. Raw zeros/missingness remain evidence, HR/SDNN remain exact sparse vendor observations, and no app sleep samples are created. Dependency versions are part of the manifest, so byte reproducibility assumes the recorded environment.

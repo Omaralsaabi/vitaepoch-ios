@@ -1,0 +1,119 @@
+{
+  "ablations": "Both native complete-case and common-complete-case cohorts; latter fixes row support across feature families.",
+  "evidence_terms": [
+    "captured fact",
+    "physically validated transport",
+    "vendor reference",
+    "derived feature",
+    "exploratory association",
+    "cross-night evidence",
+    "unsupported / unknown"
+  ],
+  "feature_definitions": {
+    "abs_delta_from_previous_raw": "Absolute signed adjacent-byte change; no bridging gaps.",
+    "clock": "Separate leakage-control predictors only. minute_of_night uses vendor session start (oracle schedule information); sin/cos use local wall clock. Not wearable evidence.",
+    "context": "Captured unlabeled minutes before session allowed for causal rolling features, from same nightly input archive only. Context derived by existing Swift decoder, not other-night joins.",
+    "delta_from_previous_raw": "Current minus immediately previous minute; null if either is missing/zero-uninterpreted/future.",
+    "distance_from_0x80_code": "abs(raw_u8-128); encoding-relative distance, not movement magnitude.",
+    "hr_sdnn": "Exactly one Da Halo export observation starting at this exact minute. No floor/round, interval expansion, carry, interpolation or averaging duplicate records. Explicit has_hr/has_sdnn and source record IDs.",
+    "is_0x80": "1 exactly for byte 128; null when missing.",
+    "missingness": "Raw evidence retained separately. Missing/zeroUninterpreted/future invalidates features; no filling, partial-window averages or imputation. Validity flags and observed counts are metadata, not predictors.",
+    "raw_u8": "Unmodified byte, no physiological units. Null unless observedRawSignal.",
+    "rolling": "Trailing, causal, includes current minute; require all exact N consecutive minute timestamps valid. Population standard deviation (ddof=0). Adjacent changes use N-1 pairs. Longest 0x80 run counted only inside window.",
+    "window_statistics": [
+      "raw_mean",
+      "raw_median",
+      "raw_min",
+      "raw_max",
+      "raw_range",
+      "raw_std",
+      "fraction_0x80",
+      "fraction_non_0x80",
+      "mean_abs_delta",
+      "max_abs_delta",
+      "byte_transitions",
+      "longest_0x80_run"
+    ],
+    "windows_minutes": [
+      3,
+      5,
+      10,
+      30
+    ]
+  },
+  "input_sha256": {
+    "Tests/VitaEpochCoreTests/Fixtures/physical-2026-09-27/capture.json": "c1477cd6ecb4ca0fc0fc924129ba4a984fb801d97ab2b42c4875323443ab28a1",
+    "Tests/VitaEpochCoreTests/Fixtures/physical-2026-09-28-previous-day/capture.json": "2942b21f0801da2db2c4a75806db658d30eb7476b4b671c07546ab3a702d9e05",
+    "Tests/VitaEpochCoreTests/Fixtures/physical-2026-09-28/capture.json": "fa788540e02b70135237bb305a4a4af4986d83ee4f78cc7bd523b0ea2e911117",
+    "docs/analysis/2026-09-28/alignment.json": "e546b61e0d272274c666dd979a8c210d9887a128878c2f68a6a4f7a7f38491d0",
+    "docs/analysis/2026-09-28/comparison-2026-09-27/alignment.json": "59f6664bb4db56a9cf42d4d078f5d4fd7f1e7cb5d1d6d569de14f05cd9460ab8",
+    "docs/analysis/2026-09-28/comparison-2026-09-27/sleep-reference.json": "b0ffbf9af73ca73718693d1394f9cee8354f77102c3d01bba4b97e0c22930ed5",
+    "docs/analysis/2026-09-28/comparison-2026-09-27/vendor-observations.json": "99440a6700ceee0b40ce60930a4e24781a2ca34d62535dc0aa3272418b8f31f0",
+    "docs/analysis/2026-09-28/sleep-reference.json": "e8da81b684b62d0fba8a87fbcce3dade7455929e09174d73ccdeff1d5b988654",
+    "docs/analysis/2026-09-28/vendor-observations.json": "ebb33d22243b49609fb20fe95f6a16a2cb33216db708d9f09d0cd15a476de0bc"
+  },
+  "label_mapping": {
+    "Awake": "Awake",
+    "Core": "Sleep",
+    "Deep": "Sleep",
+    "REM": "Sleep"
+  },
+  "metrics": "Awake is positive; specificity equals Sleep recall. AUROC and AUPRC only with both classes and scores; AUPRC is non-interpolated average precision. Undefined values are null with reasons. No pooled/mean-fold headline metric.",
+  "model": "StandardScaler fitted on training rows; LogisticRegression C=1, class_weight=balanced, solver=liblinear, tol=1e-8, max_iter=1000, fixed seed, probability cutoff 0.5. No hyperparameter search, oversampling or smoothing.",
+  "negative_control": "Labels shuffled within each eligible training fold with fixed Python Random seed. Test labels unchanged. Not a permutation p-value.",
+  "non_goals": [
+    "No production samples",
+    "No four-class classifier",
+    "No oxygen feature",
+    "No sequence model",
+    "No HealthKit runtime dependency"
+  ],
+  "positive_class": "Awake",
+  "predeclared_movement_feature_sets": {
+    "code_0x80_only": [
+      "is_0x80",
+      "distance_from_0x80_code",
+      "fraction_non_0x80_5m",
+      "longest_0x80_run_5m"
+    ],
+    "combined_movement": [
+      "raw_u8",
+      "fraction_non_0x80_5m",
+      "mean_abs_delta_5m",
+      "raw_range_5m",
+      "fraction_non_0x80_30m"
+    ],
+    "delta_only": [
+      "abs_delta_from_previous_raw",
+      "mean_abs_delta_5m",
+      "max_abs_delta_5m",
+      "byte_transitions_5m"
+    ],
+    "raw_byte_only": [
+      "raw_u8"
+    ],
+    "rolling": [
+      "raw_mean_5m",
+      "raw_std_5m",
+      "raw_range_5m",
+      "fraction_non_0x80_5m",
+      "raw_std_30m",
+      "fraction_non_0x80_30m"
+    ]
+  },
+  "seed": 20260928,
+  "task": "Sleep vs Awake agreement with vendor reference; offline research only",
+  "threshold_features": [
+    "fraction_non_0x80_5m",
+    "mean_abs_delta_5m",
+    "max_abs_delta_5m",
+    "raw_range_5m"
+  ],
+  "threshold_selection": "Training-only maximum balanced accuracy; tie-break training Awake F1, then first candidate in >=/<= order and ascending observed thresholds plus two extreme bounds. No held-out selection.",
+  "versions": {
+    "numpy": "2.3.5",
+    "python": "3.11.14",
+    "scikit_learn": "1.8.0",
+    "scipy": "1.16.3"
+  }
+}

@@ -1,0 +1,1559 @@
+[
+  {
+    "cohort": "A",
+    "features": [
+      "raw_u8",
+      "fraction_non_0x80_5m",
+      "mean_abs_delta_5m",
+      "raw_range_5m",
+      "fraction_non_0x80_30m"
+    ],
+    "fit": {
+      "C": 1.0,
+      "class_weight": "balanced",
+      "decision_probability": 0.5,
+      "intercept": -1.011834451886987,
+      "iterations": 8,
+      "original_unit_coefficients": [
+        -0.04356340564134384,
+        -1.0229487955491645,
+        -0.34412826067032865,
+        0.14510838113107064,
+        20.865752382869523
+      ],
+      "original_unit_intercept": 0.9110732042103942,
+      "solver": "liblinear",
+      "standardized_coefficients": [
+        -0.3366681156459924,
+        -0.20063057148015595,
+        -1.4003427733530511,
+        1.5366982667183826,
+        1.7740112753763593
+      ],
+      "training_means": [
+        129.48218029350105,
+        0.1861635220125792,
+        2.788784067085954,
+        6.867924528301887,
+        0.18553459119496848
+      ],
+      "training_scales": [
+        7.728232232754494,
+        0.19612963263957753,
+        4.069246654213515,
+        10.59000351833809,
+        0.08502024000020227
+      ]
+    },
+    "name": "A_movement",
+    "shuffled_training_labels": false,
+    "test_night": "2026-09-28",
+    "train_night": "2026-09-27"
+  },
+  {
+    "cohort": "B",
+    "features": [
+      "raw_u8",
+      "fraction_non_0x80_5m",
+      "mean_abs_delta_5m",
+      "raw_range_5m",
+      "fraction_non_0x80_30m",
+      "hr"
+    ],
+    "fit": {
+      "C": 1.0,
+      "class_weight": "balanced",
+      "decision_probability": 0.5,
+      "intercept": -1.2264988789896671,
+      "iterations": 8,
+      "original_unit_coefficients": [
+        -0.06762783028503609,
+        0.45478893991835995,
+        0.16874204285061892,
+        0.0666597399569778,
+        2.846981980465482,
+        -0.006297454075608522
+      ],
+      "original_unit_intercept": 6.344860203317613,
+      "solver": "liblinear",
+      "standardized_coefficients": [
+        -0.34648219048050544,
+        0.1094857079974213,
+        0.6601938830040971,
+        0.5997895085648288,
+        0.2187952021832268,
+        -0.032000872260185144
+      ],
+      "training_means": [
+        130.86666666666667,
+        0.22666666666666668,
+        3.216666666666667,
+        8.2,
+        0.1844444444444444,
+        69.66666666666667
+      ],
+      "training_scales": [
+        5.123366948490894,
+        0.24073960113690385,
+        3.9124445327981614,
+        8.997777503361595,
+        0.07685162873684706,
+        5.081557066709201
+      ]
+    },
+    "name": "B_exact_vendor",
+    "shuffled_training_labels": false,
+    "test_night": "2026-09-28",
+    "train_night": "2026-09-27"
+  },
+  {
+    "cohort": "B",
+    "features": [
+      "raw_u8",
+      "fraction_non_0x80_5m",
+      "mean_abs_delta_5m",
+      "raw_range_5m",
+      "fraction_non_0x80_30m"
+    ],
+    "fit": {
+      "C": 1.0,
+      "class_weight": "balanced",
+      "decision_probability": 0.5,
+      "intercept": -1.226069218095801,
+      "iterations": 8,
+      "original_unit_coefficients": [
+        -0.06904365011416454,
+        0.4598698861509154,
+        0.16781407131109036,
+        0.06605041011074718,
+        2.869150623291919
+      ],
+      "original_unit_intercept": 6.094591767617682,
+      "solver": "liblinear",
+      "standardized_coefficients": [
+        -0.3537359549980801,
+        0.11070889296684476,
+        0.6565632458276762,
+        0.5943068941822882,
+        0.2204988984913239
+      ],
+      "training_means": [
+        130.86666666666667,
+        0.22666666666666668,
+        3.216666666666667,
+        8.2,
+        0.1844444444444444
+      ],
+      "training_scales": [
+        5.123366948490894,
+        0.24073960113690385,
+        3.9124445327981614,
+        8.997777503361595,
+        0.07685162873684706
+      ]
+    },
+    "name": "A_on_B_same_rows",
+    "shuffled_training_labels": false,
+    "test_night": "2026-09-28",
+    "train_night": "2026-09-27"
+  },
+  {
+    "cohort": "C",
+    "features": [
+      "raw_u8",
+      "fraction_non_0x80_5m",
+      "mean_abs_delta_5m",
+      "raw_range_5m",
+      "fraction_non_0x80_30m",
+      "hr",
+      "sdnn"
+    ],
+    "fit": {
+      "C": 1.0,
+      "class_weight": "balanced",
+      "decision_probability": 0.5,
+      "intercept": -1.2313489703913105,
+      "iterations": 8,
+      "original_unit_coefficients": [
+        -0.06737186615933041,
+        0.571045182836079,
+        0.16507650683394554,
+        0.06418441311664069,
+        2.6521723472304863,
+        -0.007764911443744964,
+        -0.10180238014363026
+      ],
+      "original_unit_intercept": 7.5838142627020435,
+      "solver": "liblinear",
+      "standardized_coefficients": [
+        -0.34517079233886555,
+        0.137473189547108,
+        0.6458526766558885,
+        0.5775170684073765,
+        0.20382376457548956,
+        -0.03945784061933336,
+        -0.1433290103673217
+      ],
+      "training_means": [
+        130.86666666666667,
+        0.22666666666666668,
+        3.216666666666667,
+        8.2,
+        0.1844444444444444,
+        69.66666666666667,
+        11.133333333333333
+      ],
+      "training_scales": [
+        5.123366948490894,
+        0.24073960113690385,
+        3.9124445327981614,
+        8.997777503361595,
+        0.07685162873684706,
+        5.081557066709201,
+        1.4079141387961915
+      ]
+    },
+    "name": "C_exact_vendor",
+    "shuffled_training_labels": false,
+    "test_night": "2026-09-28",
+    "train_night": "2026-09-27"
+  },
+  {
+    "cohort": "C",
+    "features": [
+      "raw_u8",
+      "fraction_non_0x80_5m",
+      "mean_abs_delta_5m",
+      "raw_range_5m",
+      "fraction_non_0x80_30m"
+    ],
+    "fit": {
+      "C": 1.0,
+      "class_weight": "balanced",
+      "decision_probability": 0.5,
+      "intercept": -1.226069218095801,
+      "iterations": 8,
+      "original_unit_coefficients": [
+        -0.06904365011416454,
+        0.4598698861509154,
+        0.16781407131109036,
+        0.06605041011074718,
+        2.869150623291919
+      ],
+      "original_unit_intercept": 6.094591767617682,
+      "solver": "liblinear",
+      "standardized_coefficients": [
+        -0.3537359549980801,
+        0.11070889296684476,
+        0.6565632458276762,
+        0.5943068941822882,
+        0.2204988984913239
+      ],
+      "training_means": [
+        130.86666666666667,
+        0.22666666666666668,
+        3.216666666666667,
+        8.2,
+        0.1844444444444444
+      ],
+      "training_scales": [
+        5.123366948490894,
+        0.24073960113690385,
+        3.9124445327981614,
+        8.997777503361595,
+        0.07685162873684706
+      ]
+    },
+    "name": "A_on_C_same_rows",
+    "shuffled_training_labels": false,
+    "test_night": "2026-09-28",
+    "train_night": "2026-09-27"
+  },
+  {
+    "cohort": "A",
+    "features": [
+      "raw_u8"
+    ],
+    "fit": {
+      "C": 1.0,
+      "class_weight": "balanced",
+      "decision_probability": 0.5,
+      "intercept": -0.004453564449757935,
+      "iterations": 5,
+      "original_unit_coefficients": [
+        -0.007970905627178356
+      ],
+      "original_unit_intercept": 1.0281151971527878,
+      "solver": "liblinear",
+      "standardized_coefficients": [
+        -0.05918969113070758
+      ],
+      "training_means": [
+        129.5422138836773
+      ],
+      "training_scales": [
+        7.425717214476707
+      ]
+    },
+    "name": "ablation_raw_byte_only",
+    "shuffled_training_labels": false,
+    "test_night": "2026-09-28",
+    "train_night": "2026-09-27"
+  },
+  {
+    "cohort": "A",
+    "features": [
+      "raw_u8"
+    ],
+    "fit": {
+      "C": 1.0,
+      "class_weight": "balanced",
+      "decision_probability": 0.5,
+      "intercept": -0.01417376935407002,
+      "iterations": 4,
+      "original_unit_coefficients": [
+        -0.012284824209155422
+      ],
+      "original_unit_intercept": 1.5764920537697587,
+      "solver": "liblinear",
+      "standardized_coefficients": [
+        -0.09493997442691746
+      ],
+      "training_means": [
+        129.48218029350105
+      ],
+      "training_scales": [
+        7.728232232754476
+      ]
+    },
+    "name": "ablation_common_raw_byte_only",
+    "shuffled_training_labels": false,
+    "test_night": "2026-09-28",
+    "train_night": "2026-09-27"
+  },
+  {
+    "cohort": "A",
+    "features": [
+      "is_0x80",
+      "distance_from_0x80_code",
+      "fraction_non_0x80_5m",
+      "longest_0x80_run_5m"
+    ],
+    "fit": {
+      "C": 1.0,
+      "class_weight": "balanced",
+      "decision_probability": 0.5,
+      "intercept": -0.14709181599437818,
+      "iterations": 7,
+      "original_unit_coefficients": [
+        0.7651378519022781,
+        0.028899043372042455,
+        3.688240068212149,
+        0.15475466478736077
+      ],
+      "original_unit_intercept": -2.096499845564761,
+      "solver": "liblinear",
+      "standardized_coefficients": [
+        0.2992972874293052,
+        0.21237410364741216,
+        0.7233915638066114,
+        0.200887969489326
+      ],
+      "training_means": [
+        0.8114285714285714,
+        1.979047619047619,
+        0.19085714285714367,
+        3.6666666666666665
+      ],
+      "training_scales": [
+        0.39116779634571114,
+        7.348828157158564,
+        0.19613461988044367,
+        1.2981060685010966
+      ]
+    },
+    "name": "ablation_code_0x80_only",
+    "shuffled_training_labels": false,
+    "test_night": "2026-09-28",
+    "train_night": "2026-09-27"
+  },
+  {
+    "cohort": "A",
+    "features": [
+      "is_0x80",
+      "distance_from_0x80_code",
+      "fraction_non_0x80_5m",
+      "longest_0x80_run_5m"
+    ],
+    "fit": {
+      "C": 1.0,
+      "class_weight": "balanced",
+      "decision_probability": 0.5,
+      "intercept": -0.0758417239302254,
+      "iterations": 7,
+      "original_unit_coefficients": [
+        0.590330119110201,
+        0.03771437582109907,
+        2.7814508287627238,
+        0.25749213399553533
+      ],
+      "original_unit_intercept": -2.1017322579728415,
+      "solver": "liblinear",
+      "standardized_coefficients": [
+        0.23096879045342694,
+        0.286927821594812,
+        0.5455249292502815,
+        0.3338244616865236
+      ],
+      "training_means": [
+        0.8113207547169812,
+        2.010482180293501,
+        0.1861635220125792,
+        3.70230607966457
+      ],
+      "training_scales": [
+        0.39125361044014495,
+        7.60791648669662,
+        0.19612963263957753,
+        1.296445279731581
+      ]
+    },
+    "name": "ablation_common_code_0x80_only",
+    "shuffled_training_labels": false,
+    "test_night": "2026-09-28",
+    "train_night": "2026-09-27"
+  },
+  {
+    "cohort": "A",
+    "features": [
+      "abs_delta_from_previous_raw",
+      "mean_abs_delta_5m",
+      "max_abs_delta_5m",
+      "byte_transitions_5m"
+    ],
+    "fit": {
+      "C": 1.0,
+      "class_weight": "balanced",
+      "decision_probability": 0.5,
+      "intercept": -0.15952895401031938,
+      "iterations": 8,
+      "original_unit_coefficients": [
+        -0.004936712093553974,
+        -0.21521975086009149,
+        0.08736992087707747,
+        0.5124214206724869
+      ],
+      "original_unit_intercept": -0.7581008404136977,
+      "solver": "liblinear",
+      "standardized_coefficients": [
+        -0.04013901163485165,
+        -0.8506896241615183,
+        0.8431429097611631,
+        0.6275084652799287
+      ],
+      "training_means": [
+        3.001904761904762,
+        2.8133333333333335,
+        6.6,
+        1.2533333333333334
+      ],
+      "training_scales": [
+        8.130717545238758,
+        3.952655928472515,
+        9.650265231982964,
+        1.2245945231103041
+      ]
+    },
+    "name": "ablation_delta_only",
+    "shuffled_training_labels": false,
+    "test_night": "2026-09-28",
+    "train_night": "2026-09-27"
+  },
+  {
+    "cohort": "A",
+    "features": [
+      "abs_delta_from_previous_raw",
+      "mean_abs_delta_5m",
+      "max_abs_delta_5m",
+      "byte_transitions_5m"
+    ],
+    "fit": {
+      "C": 1.0,
+      "class_weight": "balanced",
+      "decision_probability": 0.5,
+      "intercept": -0.10284549998033433,
+      "iterations": 9,
+      "original_unit_coefficients": [
+        -0.0022826434631060873,
+        -0.2144795167629578,
+        0.12148804867314217,
+        0.08704101648907814
+      ],
+      "original_unit_intercept": -0.39951267282751585,
+      "solver": "liblinear",
+      "standardized_coefficients": [
+        -0.019157627734124303,
+        -0.8727700559849975,
+        1.2115150666032344,
+        0.10629156094819382
+      ],
+      "training_means": [
+        3.010482180293501,
+        2.788784067085954,
+        6.549266247379455,
+        1.2180293501048218
+      ],
+      "training_scales": [
+        8.392737649906888,
+        4.069246654213515,
+        9.972298344035126,
+        1.2211663562262194
+      ]
+    },
+    "name": "ablation_common_delta_only",
+    "shuffled_training_labels": false,
+    "test_night": "2026-09-28",
+    "train_night": "2026-09-27"
+  },
+  {
+    "cohort": "A",
+    "features": [
+      "raw_mean_5m",
+      "raw_std_5m",
+      "raw_range_5m",
+      "fraction_non_0x80_5m",
+      "raw_std_30m",
+      "fraction_non_0x80_30m"
+    ],
+    "fit": {
+      "C": 1.0,
+      "class_weight": "balanced",
+      "decision_probability": 0.5,
+      "intercept": -1.7851318749364733,
+      "iterations": 7,
+      "original_unit_coefficients": [
+        0.037217115180375376,
+        -3.8691495037827977e-05,
+        -0.010860091431682522,
+        -0.32490513936646465,
+        0.39086016575931115,
+        21.031163685659838
+      ],
+      "original_unit_intercept": -12.152344291745324,
+      "solver": "liblinear",
+      "standardized_coefficients": [
+        0.10945449451412113,
+        -0.00015623980227073825,
+        -0.11500840647099125,
+        -0.06372352562665545,
+        1.2138062017149114,
+        1.7880745840383379
+      ],
+      "training_means": [
+        129.68134171907758,
+        2.7114905063974493,
+        6.867924528301887,
+        0.1861635220125792,
+        4.538746766618729,
+        0.18553459119496848
+      ],
+      "training_scales": [
+        2.940972022781513,
+        4.038091630162789,
+        10.59000351833809,
+        0.19612963263957753,
+        3.105474305259248,
+        0.08502024000020227
+      ]
+    },
+    "name": "ablation_rolling",
+    "shuffled_training_labels": false,
+    "test_night": "2026-09-28",
+    "train_night": "2026-09-27"
+  },
+  {
+    "cohort": "A",
+    "features": [
+      "raw_mean_5m",
+      "raw_std_5m",
+      "raw_range_5m",
+      "fraction_non_0x80_5m",
+      "raw_std_30m",
+      "fraction_non_0x80_30m"
+    ],
+    "fit": {
+      "C": 1.0,
+      "class_weight": "balanced",
+      "decision_probability": 0.5,
+      "intercept": -1.7851318749364733,
+      "iterations": 7,
+      "original_unit_coefficients": [
+        0.037217115180375376,
+        -3.8691495037827977e-05,
+        -0.010860091431682522,
+        -0.32490513936646465,
+        0.39086016575931115,
+        21.031163685659838
+      ],
+      "original_unit_intercept": -12.152344291745324,
+      "solver": "liblinear",
+      "standardized_coefficients": [
+        0.10945449451412113,
+        -0.00015623980227073825,
+        -0.11500840647099125,
+        -0.06372352562665545,
+        1.2138062017149114,
+        1.7880745840383379
+      ],
+      "training_means": [
+        129.68134171907758,
+        2.7114905063974493,
+        6.867924528301887,
+        0.1861635220125792,
+        4.538746766618729,
+        0.18553459119496848
+      ],
+      "training_scales": [
+        2.940972022781513,
+        4.038091630162789,
+        10.59000351833809,
+        0.19612963263957753,
+        3.105474305259248,
+        0.08502024000020227
+      ]
+    },
+    "name": "ablation_common_rolling",
+    "shuffled_training_labels": false,
+    "test_night": "2026-09-28",
+    "train_night": "2026-09-27"
+  },
+  {
+    "cohort": "A",
+    "features": [
+      "raw_u8",
+      "fraction_non_0x80_5m",
+      "mean_abs_delta_5m",
+      "raw_range_5m",
+      "fraction_non_0x80_30m"
+    ],
+    "fit": {
+      "C": 1.0,
+      "class_weight": "balanced",
+      "decision_probability": 0.5,
+      "intercept": -1.011834451886987,
+      "iterations": 8,
+      "original_unit_coefficients": [
+        -0.04356340564134384,
+        -1.0229487955491645,
+        -0.34412826067032865,
+        0.14510838113107064,
+        20.865752382869523
+      ],
+      "original_unit_intercept": 0.9110732042103942,
+      "solver": "liblinear",
+      "standardized_coefficients": [
+        -0.3366681156459924,
+        -0.20063057148015595,
+        -1.4003427733530511,
+        1.5366982667183826,
+        1.7740112753763593
+      ],
+      "training_means": [
+        129.48218029350105,
+        0.1861635220125792,
+        2.788784067085954,
+        6.867924528301887,
+        0.18553459119496848
+      ],
+      "training_scales": [
+        7.728232232754494,
+        0.19612963263957753,
+        4.069246654213515,
+        10.59000351833809,
+        0.08502024000020227
+      ]
+    },
+    "name": "ablation_combined_movement",
+    "shuffled_training_labels": false,
+    "test_night": "2026-09-28",
+    "train_night": "2026-09-27"
+  },
+  {
+    "cohort": "A",
+    "features": [
+      "raw_u8",
+      "fraction_non_0x80_5m",
+      "mean_abs_delta_5m",
+      "raw_range_5m",
+      "fraction_non_0x80_30m"
+    ],
+    "fit": {
+      "C": 1.0,
+      "class_weight": "balanced",
+      "decision_probability": 0.5,
+      "intercept": -1.011834451886987,
+      "iterations": 8,
+      "original_unit_coefficients": [
+        -0.04356340564134384,
+        -1.0229487955491645,
+        -0.34412826067032865,
+        0.14510838113107064,
+        20.865752382869523
+      ],
+      "original_unit_intercept": 0.9110732042103942,
+      "solver": "liblinear",
+      "standardized_coefficients": [
+        -0.3366681156459924,
+        -0.20063057148015595,
+        -1.4003427733530511,
+        1.5366982667183826,
+        1.7740112753763593
+      ],
+      "training_means": [
+        129.48218029350105,
+        0.1861635220125792,
+        2.788784067085954,
+        6.867924528301887,
+        0.18553459119496848
+      ],
+      "training_scales": [
+        7.728232232754494,
+        0.19612963263957753,
+        4.069246654213515,
+        10.59000351833809,
+        0.08502024000020227
+      ]
+    },
+    "name": "ablation_common_combined_movement",
+    "shuffled_training_labels": false,
+    "test_night": "2026-09-28",
+    "train_night": "2026-09-27"
+  },
+  {
+    "cohort": "A",
+    "features": [
+      "raw_u8",
+      "fraction_non_0x80_5m",
+      "mean_abs_delta_5m",
+      "raw_range_5m",
+      "fraction_non_0x80_30m"
+    ],
+    "fit": {
+      "C": 1.0,
+      "class_weight": "balanced",
+      "decision_probability": 0.5,
+      "intercept": -0.015521145524359816,
+      "iterations": 5,
+      "original_unit_coefficients": [
+        -0.0159425264561587,
+        0.6550444449446536,
+        0.01582610314669322,
+        0.0007635315163293791,
+        -0.6983415789086141
+      ],
+      "original_unit_intercept": 2.0069936166887907,
+      "solver": "liblinear",
+      "standardized_coefficients": [
+        -0.12320754683002695,
+        0.1284736263495909,
+        0.06440031727891937,
+        0.008085801444290141,
+        -0.05937316864093056
+      ],
+      "training_means": [
+        129.48218029350105,
+        0.1861635220125792,
+        2.788784067085954,
+        6.867924528301887,
+        0.18553459119496848
+      ],
+      "training_scales": [
+        7.728232232754494,
+        0.19612963263957753,
+        4.069246654213515,
+        10.59000351833809,
+        0.08502024000020227
+      ]
+    },
+    "name": "shuffle_A_movement",
+    "shuffled_training_labels": true,
+    "test_night": "2026-09-28",
+    "train_night": "2026-09-27"
+  },
+  {
+    "cohort": "A",
+    "features": [
+      "minute_of_night",
+      "clock_sin",
+      "clock_cos"
+    ],
+    "fit": {
+      "C": 1.0,
+      "class_weight": "balanced",
+      "decision_probability": 0.5,
+      "intercept": -0.22046015637156913,
+      "iterations": 7,
+      "original_unit_coefficients": [
+        0.01033420493958251,
+        -0.09800106567096813,
+        1.4769409129706883
+      ],
+      "original_unit_intercept": -3.189045776366415,
+      "solver": "liblinear",
+      "standardized_coefficients": [
+        1.6467391548276333,
+        -0.02134629829957623,
+        0.8757498592953539
+      ],
+      "training_means": [
+        275.5,
+        0.7637356870831208,
+        0.13294984832535117
+      ],
+      "training_scales": [
+        159.348412815022,
+        0.2178170018196023,
+        0.5929484731612511
+      ]
+    },
+    "name": "time_only_oracle_schedule",
+    "shuffled_training_labels": false,
+    "test_night": "2026-09-28",
+    "train_night": "2026-09-27"
+  },
+  {
+    "cohort": "A",
+    "features": [
+      "raw_u8",
+      "fraction_non_0x80_5m",
+      "mean_abs_delta_5m",
+      "raw_range_5m",
+      "fraction_non_0x80_30m",
+      "minute_of_night",
+      "clock_sin",
+      "clock_cos"
+    ],
+    "fit": {
+      "C": 1.0,
+      "class_weight": "balanced",
+      "decision_probability": 0.5,
+      "intercept": -1.441591713672704,
+      "iterations": 9,
+      "original_unit_coefficients": [
+        -0.04825531849682499,
+        -0.19887312210489708,
+        -0.35098154800612563,
+        0.13506621371645278,
+        23.700063407232594,
+        0.004621267023976923,
+        -7.257915599087074,
+        -0.42239198499167496
+      ],
+      "original_unit_intercept": 4.916416296050575,
+      "solver": "liblinear",
+      "standardized_coefficients": [
+        -0.37292830780899705,
+        -0.039004912380319307,
+        -1.428230489914607,
+        1.4303516784658392,
+        2.0149850789029267,
+        0.7155588036838215,
+        -1.61171086185981,
+        -0.2438097939218796
+      ],
+      "training_means": [
+        129.48218029350105,
+        0.1861635220125792,
+        2.788784067085954,
+        6.867924528301887,
+        0.18553459119496848,
+        258.60377358490564,
+        0.7623973184182692,
+        0.1904328961425578
+      ],
+      "training_scales": [
+        7.728232232754494,
+        0.19612963263957753,
+        4.069246654213515,
+        10.59000351833809,
+        0.08502024000020227,
+        154.8403933317909,
+        0.22206249712555717,
+        0.5772121692287435
+      ]
+    },
+    "name": "movement_plus_oracle_schedule",
+    "shuffled_training_labels": false,
+    "test_night": "2026-09-28",
+    "train_night": "2026-09-27"
+  },
+  {
+    "cohort": "A",
+    "features": [
+      "raw_u8",
+      "fraction_non_0x80_5m",
+      "mean_abs_delta_5m",
+      "raw_range_5m",
+      "fraction_non_0x80_30m"
+    ],
+    "fit": {
+      "C": 1.0,
+      "class_weight": "balanced",
+      "decision_probability": 0.5,
+      "intercept": -4.994339423995398,
+      "iterations": 10,
+      "original_unit_coefficients": [
+        -0.026257038619654782,
+        -4.557805877839759,
+        -0.034023837393754953,
+        -0.030851920605154834,
+        27.22653595629618
+      ],
+      "original_unit_intercept": -4.921924849934437,
+      "solver": "liblinear",
+      "standardized_coefficients": [
+        -0.13045755507298995,
+        -0.7923731891364362,
+        -0.13328780181796812,
+        -0.27573126457017677,
+        2.0766005048363163
+      ],
+      "training_means": [
+        129.5908256880734,
+        0.1596330275229364,
+        2.8013761467889906,
+        6.744954128440367,
+        0.16018348623853237
+      ],
+      "training_scales": [
+        4.968479384241586,
+        0.17384970101271477,
+        3.917482918679625,
+        8.93724796258249,
+        0.07627119763489777
+      ]
+    },
+    "name": "A_movement",
+    "shuffled_training_labels": false,
+    "test_night": "2026-09-27",
+    "train_night": "2026-09-28"
+  },
+  {
+    "cohort": "A",
+    "features": [
+      "raw_u8"
+    ],
+    "fit": {
+      "C": 1.0,
+      "class_weight": "balanced",
+      "decision_probability": 0.5,
+      "intercept": -0.6059102768589475,
+      "iterations": 7,
+      "original_unit_coefficients": [
+        -0.47161429637563806
+      ],
+      "original_unit_intercept": 60.51097579675975,
+      "solver": "liblinear",
+      "standardized_coefficients": [
+        -2.3432059088559614
+      ],
+      "training_means": [
+        129.5908256880734
+      ],
+      "training_scales": [
+        4.968479384241591
+      ]
+    },
+    "name": "ablation_raw_byte_only",
+    "shuffled_training_labels": false,
+    "test_night": "2026-09-27",
+    "train_night": "2026-09-28"
+  },
+  {
+    "cohort": "A",
+    "features": [
+      "raw_u8"
+    ],
+    "fit": {
+      "C": 1.0,
+      "class_weight": "balanced",
+      "decision_probability": 0.5,
+      "intercept": -0.6059102768589475,
+      "iterations": 7,
+      "original_unit_coefficients": [
+        -0.47161429637563806
+      ],
+      "original_unit_intercept": 60.51097579675975,
+      "solver": "liblinear",
+      "standardized_coefficients": [
+        -2.3432059088559614
+      ],
+      "training_means": [
+        129.5908256880734
+      ],
+      "training_scales": [
+        4.968479384241591
+      ]
+    },
+    "name": "ablation_common_raw_byte_only",
+    "shuffled_training_labels": false,
+    "test_night": "2026-09-27",
+    "train_night": "2026-09-28"
+  },
+  {
+    "cohort": "A",
+    "features": [
+      "is_0x80",
+      "distance_from_0x80_code",
+      "fraction_non_0x80_5m",
+      "longest_0x80_run_5m"
+    ],
+    "fit": {
+      "C": 1.0,
+      "class_weight": "balanced",
+      "decision_probability": 0.5,
+      "intercept": -2.492693920439186,
+      "iterations": 9,
+      "original_unit_coefficients": [
+        0.996710190150969,
+        -0.028904636264441504,
+        -10.413523082909467,
+        1.1947554104047495
+      ],
+      "original_unit_intercept": -6.143039215723308,
+      "solver": "liblinear",
+      "standardized_coefficients": [
+        0.368425618096694,
+        -0.14361208938887945,
+        -1.8103878744528148,
+        1.512394168491562
+      ],
+      "training_means": [
+        0.8366972477064221,
+        1.5908256880733944,
+        0.1596330275229364,
+        3.7871559633027525
+      ],
+      "training_scales": [
+        0.36964166889965233,
+        4.96847938424159,
+        0.17384970101271477,
+        1.2658609078649876
+      ]
+    },
+    "name": "ablation_code_0x80_only",
+    "shuffled_training_labels": false,
+    "test_night": "2026-09-27",
+    "train_night": "2026-09-28"
+  },
+  {
+    "cohort": "A",
+    "features": [
+      "is_0x80",
+      "distance_from_0x80_code",
+      "fraction_non_0x80_5m",
+      "longest_0x80_run_5m"
+    ],
+    "fit": {
+      "C": 1.0,
+      "class_weight": "balanced",
+      "decision_probability": 0.5,
+      "intercept": -2.492693920439186,
+      "iterations": 9,
+      "original_unit_coefficients": [
+        0.996710190150969,
+        -0.028904636264441504,
+        -10.413523082909467,
+        1.1947554104047495
+      ],
+      "original_unit_intercept": -6.143039215723308,
+      "solver": "liblinear",
+      "standardized_coefficients": [
+        0.368425618096694,
+        -0.14361208938887945,
+        -1.8103878744528148,
+        1.512394168491562
+      ],
+      "training_means": [
+        0.8366972477064221,
+        1.5908256880733944,
+        0.1596330275229364,
+        3.7871559633027525
+      ],
+      "training_scales": [
+        0.36964166889965233,
+        4.96847938424159,
+        0.17384970101271477,
+        1.2658609078649876
+      ]
+    },
+    "name": "ablation_common_code_0x80_only",
+    "shuffled_training_labels": false,
+    "test_night": "2026-09-27",
+    "train_night": "2026-09-28"
+  },
+  {
+    "cohort": "A",
+    "features": [
+      "abs_delta_from_previous_raw",
+      "mean_abs_delta_5m",
+      "max_abs_delta_5m",
+      "byte_transitions_5m"
+    ],
+    "fit": {
+      "C": 1.0,
+      "class_weight": "balanced",
+      "decision_probability": 0.5,
+      "intercept": -2.5182205839242746,
+      "iterations": 9,
+      "original_unit_coefficients": [
+        -0.055819438310806595,
+        -0.03074107167049853,
+        -0.1160789834393504,
+        -2.0598425210462716
+      ],
+      "original_unit_intercept": 0.8132526523684604,
+      "solver": "liblinear",
+      "standardized_coefficients": [
+        -0.3544737561505652,
+        -0.12042762317108412,
+        -1.022444714124934,
+        -2.4038924369104557
+      ],
+      "training_means": [
+        2.8146788990825686,
+        2.8013761467889906,
+        6.612844036697248,
+        1.126605504587156
+      ],
+      "training_scales": [
+        6.350364082433617,
+        3.917482918679625,
+        8.808181152440456,
+        1.167027290848151
+      ]
+    },
+    "name": "ablation_delta_only",
+    "shuffled_training_labels": false,
+    "test_night": "2026-09-27",
+    "train_night": "2026-09-28"
+  },
+  {
+    "cohort": "A",
+    "features": [
+      "abs_delta_from_previous_raw",
+      "mean_abs_delta_5m",
+      "max_abs_delta_5m",
+      "byte_transitions_5m"
+    ],
+    "fit": {
+      "C": 1.0,
+      "class_weight": "balanced",
+      "decision_probability": 0.5,
+      "intercept": -2.5182205839242746,
+      "iterations": 9,
+      "original_unit_coefficients": [
+        -0.055819438310806595,
+        -0.03074107167049853,
+        -0.1160789834393504,
+        -2.0598425210462716
+      ],
+      "original_unit_intercept": 0.8132526523684604,
+      "solver": "liblinear",
+      "standardized_coefficients": [
+        -0.3544737561505652,
+        -0.12042762317108412,
+        -1.022444714124934,
+        -2.4038924369104557
+      ],
+      "training_means": [
+        2.8146788990825686,
+        2.8013761467889906,
+        6.612844036697248,
+        1.126605504587156
+      ],
+      "training_scales": [
+        6.350364082433617,
+        3.917482918679625,
+        8.808181152440456,
+        1.167027290848151
+      ]
+    },
+    "name": "ablation_common_delta_only",
+    "shuffled_training_labels": false,
+    "test_night": "2026-09-27",
+    "train_night": "2026-09-28"
+  },
+  {
+    "cohort": "A",
+    "features": [
+      "raw_mean_5m",
+      "raw_std_5m",
+      "raw_range_5m",
+      "fraction_non_0x80_5m",
+      "raw_std_30m",
+      "fraction_non_0x80_30m"
+    ],
+    "fit": {
+      "C": 1.0,
+      "class_weight": "balanced",
+      "decision_probability": 0.5,
+      "intercept": -4.972638712702817,
+      "iterations": 10,
+      "original_unit_coefficients": [
+        0.013212856820091143,
+        -0.09922287560704057,
+        -0.039796632243842875,
+        -3.110788515225133,
+        0.2553348243214025,
+        21.589516375867877
+      ],
+      "original_unit_intercept": -10.259108159435636,
+      "solver": "liblinear",
+      "standardized_coefficients": [
+        0.02856313997120143,
+        -0.35375038029794764,
+        -0.35567237043892935,
+        -0.5408096532856763,
+        0.590118887441623,
+        1.6466582703456807
+      ],
+      "training_means": [
+        129.57724770642187,
+        2.696629441382151,
+        6.744954128440367,
+        0.1596330275229364,
+        4.498713423245112,
+        0.16018348623853237
+      ],
+      "training_scales": [
+        2.1617686742634663,
+        3.5652099189196096,
+        8.93724796258249,
+        0.17384970101271477,
+        2.3111570817258023,
+        0.07627119763489777
+      ]
+    },
+    "name": "ablation_rolling",
+    "shuffled_training_labels": false,
+    "test_night": "2026-09-27",
+    "train_night": "2026-09-28"
+  },
+  {
+    "cohort": "A",
+    "features": [
+      "raw_mean_5m",
+      "raw_std_5m",
+      "raw_range_5m",
+      "fraction_non_0x80_5m",
+      "raw_std_30m",
+      "fraction_non_0x80_30m"
+    ],
+    "fit": {
+      "C": 1.0,
+      "class_weight": "balanced",
+      "decision_probability": 0.5,
+      "intercept": -4.972638712702817,
+      "iterations": 10,
+      "original_unit_coefficients": [
+        0.013212856820091143,
+        -0.09922287560704057,
+        -0.039796632243842875,
+        -3.110788515225133,
+        0.2553348243214025,
+        21.589516375867877
+      ],
+      "original_unit_intercept": -10.259108159435636,
+      "solver": "liblinear",
+      "standardized_coefficients": [
+        0.02856313997120143,
+        -0.35375038029794764,
+        -0.35567237043892935,
+        -0.5408096532856763,
+        0.590118887441623,
+        1.6466582703456807
+      ],
+      "training_means": [
+        129.57724770642187,
+        2.696629441382151,
+        6.744954128440367,
+        0.1596330275229364,
+        4.498713423245112,
+        0.16018348623853237
+      ],
+      "training_scales": [
+        2.1617686742634663,
+        3.5652099189196096,
+        8.93724796258249,
+        0.17384970101271477,
+        2.3111570817258023,
+        0.07627119763489777
+      ]
+    },
+    "name": "ablation_common_rolling",
+    "shuffled_training_labels": false,
+    "test_night": "2026-09-27",
+    "train_night": "2026-09-28"
+  },
+  {
+    "cohort": "A",
+    "features": [
+      "raw_u8",
+      "fraction_non_0x80_5m",
+      "mean_abs_delta_5m",
+      "raw_range_5m",
+      "fraction_non_0x80_30m"
+    ],
+    "fit": {
+      "C": 1.0,
+      "class_weight": "balanced",
+      "decision_probability": 0.5,
+      "intercept": -4.994339423995398,
+      "iterations": 10,
+      "original_unit_coefficients": [
+        -0.026257038619654782,
+        -4.557805877839759,
+        -0.034023837393754953,
+        -0.030851920605154834,
+        27.22653595629618
+      ],
+      "original_unit_intercept": -4.921924849934437,
+      "solver": "liblinear",
+      "standardized_coefficients": [
+        -0.13045755507298995,
+        -0.7923731891364362,
+        -0.13328780181796812,
+        -0.27573126457017677,
+        2.0766005048363163
+      ],
+      "training_means": [
+        129.5908256880734,
+        0.1596330275229364,
+        2.8013761467889906,
+        6.744954128440367,
+        0.16018348623853237
+      ],
+      "training_scales": [
+        4.968479384241586,
+        0.17384970101271477,
+        3.917482918679625,
+        8.93724796258249,
+        0.07627119763489777
+      ]
+    },
+    "name": "ablation_combined_movement",
+    "shuffled_training_labels": false,
+    "test_night": "2026-09-27",
+    "train_night": "2026-09-28"
+  },
+  {
+    "cohort": "A",
+    "features": [
+      "raw_u8",
+      "fraction_non_0x80_5m",
+      "mean_abs_delta_5m",
+      "raw_range_5m",
+      "fraction_non_0x80_30m"
+    ],
+    "fit": {
+      "C": 1.0,
+      "class_weight": "balanced",
+      "decision_probability": 0.5,
+      "intercept": -4.994339423995398,
+      "iterations": 10,
+      "original_unit_coefficients": [
+        -0.026257038619654782,
+        -4.557805877839759,
+        -0.034023837393754953,
+        -0.030851920605154834,
+        27.22653595629618
+      ],
+      "original_unit_intercept": -4.921924849934437,
+      "solver": "liblinear",
+      "standardized_coefficients": [
+        -0.13045755507298995,
+        -0.7923731891364362,
+        -0.13328780181796812,
+        -0.27573126457017677,
+        2.0766005048363163
+      ],
+      "training_means": [
+        129.5908256880734,
+        0.1596330275229364,
+        2.8013761467889906,
+        6.744954128440367,
+        0.16018348623853237
+      ],
+      "training_scales": [
+        4.968479384241586,
+        0.17384970101271477,
+        3.917482918679625,
+        8.93724796258249,
+        0.07627119763489777
+      ]
+    },
+    "name": "ablation_common_combined_movement",
+    "shuffled_training_labels": false,
+    "test_night": "2026-09-27",
+    "train_night": "2026-09-28"
+  },
+  {
+    "cohort": "A",
+    "features": [
+      "raw_u8",
+      "fraction_non_0x80_5m",
+      "mean_abs_delta_5m",
+      "raw_range_5m",
+      "fraction_non_0x80_30m"
+    ],
+    "fit": {
+      "C": 1.0,
+      "class_weight": "balanced",
+      "decision_probability": 0.5,
+      "intercept": -0.3847903716460155,
+      "iterations": 6,
+      "original_unit_coefficients": [
+        0.01045313079778486,
+        -0.941266742994484,
+        0.2948038522117897,
+        -0.0709511224476474,
+        11.850168788723526
+      ],
+      "original_unit_intercept": -3.8346587252551796,
+      "solver": "liblinear",
+      "standardized_coefficients": [
+        0.051936164869574884,
+        -0.16363894184280287,
+        1.1548890554006386,
+        -0.6341077745381775,
+        0.9038265656916291
+      ],
+      "training_means": [
+        129.5908256880734,
+        0.1596330275229364,
+        2.8013761467889906,
+        6.744954128440367,
+        0.16018348623853237
+      ],
+      "training_scales": [
+        4.968479384241586,
+        0.17384970101271477,
+        3.917482918679625,
+        8.93724796258249,
+        0.07627119763489777
+      ]
+    },
+    "name": "shuffle_A_movement",
+    "shuffled_training_labels": true,
+    "test_night": "2026-09-27",
+    "train_night": "2026-09-28"
+  },
+  {
+    "cohort": "A",
+    "features": [
+      "minute_of_night",
+      "clock_sin",
+      "clock_cos"
+    ],
+    "fit": {
+      "C": 1.0,
+      "class_weight": "balanced",
+      "decision_probability": 0.5,
+      "intercept": -4.755956185831649,
+      "iterations": 7,
+      "original_unit_coefficients": [
+        -0.0063469264607701305,
+        -10.553891364002197,
+        -4.889676907317857
+      ],
+      "original_unit_intercept": 6.018894083830907,
+      "solver": "liblinear",
+      "standardized_coefficients": [
+        -0.9985472375090687,
+        -3.554622930244517,
+        -2.5753612261146555
+      ],
+      "training_means": [
+        272.0,
+        0.6792985766868396,
+        0.3843286429511117
+      ],
+      "training_scales": [
+        157.3276835143771,
+        0.3368068523396805,
+        0.526693537207006
+      ]
+    },
+    "name": "time_only_oracle_schedule",
+    "shuffled_training_labels": false,
+    "test_night": "2026-09-27",
+    "train_night": "2026-09-28"
+  },
+  {
+    "cohort": "A",
+    "features": [
+      "raw_u8",
+      "fraction_non_0x80_5m",
+      "mean_abs_delta_5m",
+      "raw_range_5m",
+      "fraction_non_0x80_30m",
+      "minute_of_night",
+      "clock_sin",
+      "clock_cos"
+    ],
+    "fit": {
+      "C": 1.0,
+      "class_weight": "balanced",
+      "decision_probability": 0.5,
+      "intercept": -4.7885482701014475,
+      "iterations": 10,
+      "original_unit_coefficients": [
+        -0.03567783792345935,
+        -2.7289949388055934,
+        -0.05395873212482311,
+        -0.04081698470009873,
+        21.169398702804674,
+        -0.002071988655597081,
+        -2.092438293364253,
+        -0.47714374755823497
+      ],
+      "original_unit_intercept": -0.5255594840971805,
+      "solver": "liblinear",
+      "standardized_coefficients": [
+        -0.17726460219702042,
+        -0.4744349541765642,
+        -0.21138241141260408,
+        -0.36479151334971804,
+        1.6146153922735638,
+        -0.32598117545315725,
+        -0.704747555303027,
+        -0.2513085281576535
+      ],
+      "training_means": [
+        129.5908256880734,
+        0.1596330275229364,
+        2.8013761467889906,
+        6.744954128440367,
+        0.16018348623853237,
+        272.0,
+        0.6792985766868396,
+        0.3843286429511117
+      ],
+      "training_scales": [
+        4.968479384241586,
+        0.17384970101271477,
+        3.917482918679625,
+        8.93724796258249,
+        0.07627119763489777,
+        157.3276835143771,
+        0.3368068523396805,
+        0.526693537207006
+      ]
+    },
+    "name": "movement_plus_oracle_schedule",
+    "shuffled_training_labels": false,
+    "test_night": "2026-09-27",
+    "train_night": "2026-09-28"
+  }
+]
